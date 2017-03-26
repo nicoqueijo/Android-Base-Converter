@@ -14,9 +14,10 @@
     <string name="number_fourteen">14</string>
     <string name="number_fifteen">15</string>
     <string name="number_sixteen">16</string>
-    <string name="from">From:</string>
-    <string name="to">To:</string>
-    <string name="input">Input:</string>
-    <string name="output">Output:</string>
-    <string name="app_name">Base Converter</string>
+    <string name="base">BASE</string>
+    <string name="from">FROM:</string>
+    <string name="to">TO:</string>
+    <string name="input">INPUT:</string>
+    <string name="output">OUTPUT:</string>
+    <string name="app_name">BASE CONVERTER</string>
 </resources>

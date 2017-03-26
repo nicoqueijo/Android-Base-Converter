@@ -29,7 +29,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/from"
-                android:textSize="28dp"/>
+                android:textSize="25dp"/>
 
             <TextView
                 android:id="@+id/input_label"
@@ -39,7 +39,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/input"
-                android:textSize="28dp"/>
+                android:textSize="25dp"/>
 
             <TextView
                 android:id="@+id/to_label"
@@ -49,7 +49,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/to"
-                android:textSize="28dp"/>
+                android:textSize="25dp"/>
 
             <TextView
                 android:id="@+id/output_label"
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/output"
-                android:textSize="28dp"/>
+                android:textSize="25dp"/>
 
         </LinearLayout>
 
@@ -78,15 +78,24 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/base_label_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/base"/>
+
                 <SeekBar
                     android:id="@+id/seekbar_from_controller"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="14dp"
                     android:max="14"
                     android:progress="1"/>
 
                 <LinearLayout
+                    android:id="@+id/base_array_from"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -94,93 +103,123 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/from_base_label_two"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_two"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_three"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_four"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_four"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_five"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_five"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_six"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_six"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_seven"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_seven"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_eight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_eight"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_nine"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_nine"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_ten"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_ten"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_eleven"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_eleven"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_twelve"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_twelve"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_thirteen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_thirteen"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_fourteen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_fourteen"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_fifteen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_fifteen"/>
 
                     <TextView
+                        android:id="@+id/from_base_label_sixteen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_sixteen"/>
 
                 </LinearLayout>
@@ -199,10 +238,11 @@
                     android:id="@+id/input_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textSize="20dp"/>
+                    android:textSize="21dp"/>
 
             </LinearLayout>
 
@@ -214,15 +254,24 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/base_label_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/base"/>
+
                 <SeekBar
                     android:id="@+id/seekbar_to_controller"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="14dp"
                     android:max="14"
                     android:progress="1"/>
 
                 <LinearLayout
+                    android:id="@+id/base_array_to"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -230,93 +279,123 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/to_base_label_two"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_two"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_three"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_four"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_four"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_five"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_five"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_six"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_six"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_seven"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_seven"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_eight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_eight"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_nine"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_nine"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_ten"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_ten"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_eleven"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_eleven"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_twelve"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_twelve"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_thirteen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_thirteen"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_fourteen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_fourteen"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_fifteen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_fifteen"/>
 
                     <TextView
+                        android:id="@+id/to_base_label_sixteen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="@string/number_sixteen"/>
 
                 </LinearLayout>
@@ -336,10 +415,11 @@
                     android:id="@+id/output_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:gravity="center"
-                    android:text="485654"
-                    android:textSize="20dp"/>
+                    android:text="110101010011010101"
+                    android:textSize="21dp"/>
 
             </LinearLayout>
 
