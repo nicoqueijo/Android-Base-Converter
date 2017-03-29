@@ -1,12 +1,4 @@
 // TODO
-// Reset input if fromSeekbar is moved
-// TODO
-// Add input based on buttons presses
-// TODO
-// Clear input on clear button press
-// TODO
-// Delete last character on delete button press
-// TODO
 // Convert input to output based on toSeekbar
 // TODO
 // Change colour/theme
@@ -21,13 +13,14 @@
 
 package com.nicoqueijo.android.baseconverter;
 
-import android.nfc.cardemulation.OffHostApduService;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,8 +30,28 @@ public class MainActivity extends AppCompatActivity {
     final int SEEKBAR_TO_START_LOCATION = 0;
     final int SEEKBAR_BUTTON_OFFSET = 1;
 
+    final Character charZero = '0';
+    final Character charOne = '1';
+    final Character charTwo = '2';
+    final Character charThree = '3';
+    final Character charFour = '4';
+    final Character charFive = '5';
+    final Character charSix = '6';
+    final Character charSeven = '7';
+    final Character charEight = '8';
+    final Character charNine = '9';
+    final Character charA = 'A';
+    final Character charB = 'B';
+    final Character charC = 'C';
+    final Character charD = 'D';
+    final Character charE = 'E';
+    final Character charF = 'F';
+
     private SeekBar seekBarFrom;
     private SeekBar seekBarTo;
+
+    private TextView inputValue;
+    private TextView outputValue;
 
     private TextView numberLabelFromTwo;
     private TextView numberLabelFromThree;
@@ -88,6 +101,10 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonD;
     private Button buttonE;
     private Button buttonF;
+    private Button buttonDel;
+    private Button buttonClr;
+
+    private ArrayList<Character> userInput = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
 
         seekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
         seekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);
+
+        inputValue = (TextView) findViewById(R.id.input_value);
+        outputValue = (TextView) findViewById(R.id.output_value);
 
         numberLabelFromTwo = (TextView) findViewById(R.id.from_base_label_two);
         numberLabelFromThree = (TextView) findViewById(R.id.from_base_label_three);
@@ -145,6 +165,8 @@ public class MainActivity extends AppCompatActivity {
         buttonD = (Button) findViewById(R.id.button_D);
         buttonE = (Button) findViewById(R.id.button_E);
         buttonF = (Button) findViewById(R.id.button_F);
+        buttonDel = (Button) findViewById(R.id.button_del);
+        buttonClr = (Button) findViewById(R.id.button_clr);
 
         seekBarFrom.setProgress(SEEKBAR_FROM_START_LOCATION);
         seekBarTo.setProgress(SEEKBAR_TO_START_LOCATION);
@@ -189,6 +211,8 @@ public class MainActivity extends AppCompatActivity {
                         buttonsArray[j].setVisibility(View.INVISIBLE);
                     }
                 }
+                inputValue.setText("");
+                userInput.clear();
             }
 
             @Override
@@ -212,8 +236,6 @@ public class MainActivity extends AppCompatActivity {
                         numberLabelToArray[i].setVisibility(View.INVISIBLE);
                     }
                 }
-
-
             }
 
             @Override
@@ -224,6 +246,226 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+            }
+        });
+
+        buttonDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!userInput.isEmpty()) {
+                    userInput.remove(userInput.size() - 1);
+                }
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonClr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (!userInput.isEmpty()) {
+                    userInput.remove(userInput.size() - 1);
+                }
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonZero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charZero);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charOne);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charTwo);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charThree);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charFour);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charFive);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charSix);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonSeven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charSeven);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonEight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charEight);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonNine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charNine);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charA);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charB);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charC);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charD);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charE);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
+            }
+        });
+
+        buttonF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userInput.add(charF);
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                inputValue.setText(temp);
             }
         });
 

@@ -256,7 +256,6 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:gravity="center"
-                    android:text="101010101010101010"
                     android:textSize="21sp"/>
 
             </LinearLayout>
@@ -448,7 +447,6 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:gravity="center"
-                    android:text="110101010011010101"
                     android:textSize="21sp"/>
 
             </LinearLayout>
