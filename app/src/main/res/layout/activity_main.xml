@@ -108,7 +108,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_two"/>
+                        android:text="@string/label_two"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_three"
@@ -116,7 +117,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_three"/>
+                        android:text="@string/label_three"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_four"
@@ -124,7 +126,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_four"/>
+                        android:text="@string/label_four"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_five"
@@ -132,7 +135,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_five"/>
+                        android:text="@string/label_five"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_six"
@@ -140,7 +144,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_six"/>
+                        android:text="@string/label_six"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_seven"
@@ -148,7 +153,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_seven"/>
+                        android:text="@string/label_seven"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_eight"
@@ -156,7 +162,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_eight"/>
+                        android:text="@string/label_eight"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_nine"
@@ -164,7 +171,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_nine"/>
+                        android:text="@string/label_nine"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_ten"
@@ -172,7 +180,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_ten"/>
+                        android:text="@string/label_ten"
+                        android:visibility="visible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_eleven"
@@ -180,7 +189,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_eleven"/>
+                        android:text="@string/label_eleven"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_twelve"
@@ -188,7 +198,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_twelve"/>
+                        android:text="@string/label_twelve"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_thirteen"
@@ -196,7 +207,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_thirteen"/>
+                        android:text="@string/label_thirteen"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_fourteen"
@@ -204,7 +216,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_fourteen"/>
+                        android:text="@string/label_fourteen"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_fifteen"
@@ -212,7 +225,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_fifteen"/>
+                        android:text="@string/label_fifteen"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/from_base_label_sixteen"
@@ -220,7 +234,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_sixteen"/>
+                        android:text="@string/label_sixteen"
+                        android:visibility="invisible"/>
 
                 </LinearLayout>
 
@@ -284,7 +299,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_two"/>
+                        android:text="@string/label_two"
+                        android:visibility="visible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_three"
@@ -292,7 +308,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_three"/>
+                        android:text="@string/label_three"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_four"
@@ -300,7 +317,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_four"/>
+                        android:text="@string/label_four"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_five"
@@ -308,7 +326,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_five"/>
+                        android:text="@string/label_five"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_six"
@@ -316,7 +335,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_six"/>
+                        android:text="@string/label_six"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_seven"
@@ -324,7 +344,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_seven"/>
+                        android:text="@string/label_seven"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_eight"
@@ -332,7 +353,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_eight"/>
+                        android:text="@string/label_eight"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_nine"
@@ -340,7 +362,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_nine"/>
+                        android:text="@string/label_nine"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_ten"
@@ -348,7 +371,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_ten"/>
+                        android:text="@string/label_ten"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_eleven"
@@ -356,7 +380,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_eleven"/>
+                        android:text="@string/label_eleven"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_twelve"
@@ -364,7 +389,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_twelve"/>
+                        android:text="@string/label_twelve"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_thirteen"
@@ -372,7 +398,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_thirteen"/>
+                        android:text="@string/label_thirteen"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_fourteen"
@@ -380,7 +407,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_fourteen"/>
+                        android:text="@string/label_fourteen"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_fifteen"
@@ -388,7 +416,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_fifteen"/>
+                        android:text="@string/label_fifteen"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/to_base_label_sixteen"
@@ -396,7 +425,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/label_sixteen"/>
+                        android:text="@string/label_sixteen"
+                        android:visibility="invisible"/>
 
                 </LinearLayout>
 
@@ -451,39 +481,44 @@
                 android:weightSum="5">
 
                 <Button
-                    android:id="@+id/button_one"
+                    android:id="@+id/button_1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_one"/>/>
+                    android:text="@string/button_one"
+                    android:visibility="visible"/>/>
 
                 <Button
                     android:id="@+id/button_2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_two"/>
+                    android:text="@string/button_two"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_three"/>
+                    android:text="@string/button_three"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_A"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_A"/>
+                    android:text="@string/button_A"
+                    android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/button_B"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_B"/>
+                    android:text="@string/button_B"
+                    android:visibility="invisible"/>
 
             </LinearLayout>
 
@@ -501,35 +536,40 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_four"/>
+                    android:text="@string/button_four"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_five"/>
+                    android:text="@string/button_five"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_6"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_six"/>
+                    android:text="@string/button_six"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_C"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_C"/>
+                    android:text="@string/button_C"
+                    android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/button_D"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_D"/>
+                    android:text="@string/button_D"
+                    android:visibility="invisible"/>
 
             </LinearLayout>
 
@@ -547,35 +587,40 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_seven"/>
+                    android:text="@string/button_seven"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_8"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_eight"/>
+                    android:text="@string/button_eight"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_9"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_nine"/>
+                    android:text="@string/button_nine"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_E"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_E"/>
+                    android:text="@string/button_E"
+                    android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/button_F"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_F"/>
+                    android:text="@string/button_F"
+                    android:visibility="invisible"/>
 
             </LinearLayout>
 
@@ -599,7 +644,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_zero"/>
+                    android:text="@string/button_zero"
+                    android:visibility="visible"/>
 
                 <Button
                     android:layout_width="0dp"
@@ -612,14 +658,16 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_clr"/>
+                    android:text="@string/button_clr"
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_del"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/button_del"/>
+                    android:text="@string/button_del"
+                    android:visibility="visible"/>
 
             </LinearLayout>
 
