@@ -29,7 +29,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/from"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/input_label"
@@ -39,7 +39,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/input"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/to_label"
@@ -49,7 +49,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/to"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/output_label"
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/output"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
         </LinearLayout>
 
@@ -108,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_two"/>
+                        android:text="@string/label_two"/>
 
                     <TextView
                         android:id="@+id/from_base_label_three"
@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_three"/>
+                        android:text="@string/label_three"/>
 
                     <TextView
                         android:id="@+id/from_base_label_four"
@@ -124,7 +124,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_four"/>
+                        android:text="@string/label_four"/>
 
                     <TextView
                         android:id="@+id/from_base_label_five"
@@ -132,7 +132,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_five"/>
+                        android:text="@string/label_five"/>
 
                     <TextView
                         android:id="@+id/from_base_label_six"
@@ -140,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_six"/>
+                        android:text="@string/label_six"/>
 
                     <TextView
                         android:id="@+id/from_base_label_seven"
@@ -148,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_seven"/>
+                        android:text="@string/label_seven"/>
 
                     <TextView
                         android:id="@+id/from_base_label_eight"
@@ -156,7 +156,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_eight"/>
+                        android:text="@string/label_eight"/>
 
                     <TextView
                         android:id="@+id/from_base_label_nine"
@@ -164,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_nine"/>
+                        android:text="@string/label_nine"/>
 
                     <TextView
                         android:id="@+id/from_base_label_ten"
@@ -172,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_ten"/>
+                        android:text="@string/label_ten"/>
 
                     <TextView
                         android:id="@+id/from_base_label_eleven"
@@ -180,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_eleven"/>
+                        android:text="@string/label_eleven"/>
 
                     <TextView
                         android:id="@+id/from_base_label_twelve"
@@ -188,7 +188,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_twelve"/>
+                        android:text="@string/label_twelve"/>
 
                     <TextView
                         android:id="@+id/from_base_label_thirteen"
@@ -196,7 +196,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_thirteen"/>
+                        android:text="@string/label_thirteen"/>
 
                     <TextView
                         android:id="@+id/from_base_label_fourteen"
@@ -204,7 +204,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_fourteen"/>
+                        android:text="@string/label_fourteen"/>
 
                     <TextView
                         android:id="@+id/from_base_label_fifteen"
@@ -212,7 +212,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_fifteen"/>
+                        android:text="@string/label_fifteen"/>
 
                     <TextView
                         android:id="@+id/from_base_label_sixteen"
@@ -220,7 +220,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_sixteen"/>
+                        android:text="@string/label_sixteen"/>
 
                 </LinearLayout>
 
@@ -242,7 +242,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="center"
                     android:text="101010101010101010"
-                    android:textSize="21dp"/>
+                    android:textSize="21sp"/>
 
             </LinearLayout>
 
@@ -284,7 +284,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_two"/>
+                        android:text="@string/label_two"/>
 
                     <TextView
                         android:id="@+id/to_base_label_three"
@@ -292,7 +292,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_three"/>
+                        android:text="@string/label_three"/>
 
                     <TextView
                         android:id="@+id/to_base_label_four"
@@ -300,7 +300,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_four"/>
+                        android:text="@string/label_four"/>
 
                     <TextView
                         android:id="@+id/to_base_label_five"
@@ -308,7 +308,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_five"/>
+                        android:text="@string/label_five"/>
 
                     <TextView
                         android:id="@+id/to_base_label_six"
@@ -316,7 +316,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_six"/>
+                        android:text="@string/label_six"/>
 
                     <TextView
                         android:id="@+id/to_base_label_seven"
@@ -324,7 +324,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_seven"/>
+                        android:text="@string/label_seven"/>
 
                     <TextView
                         android:id="@+id/to_base_label_eight"
@@ -332,7 +332,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_eight"/>
+                        android:text="@string/label_eight"/>
 
                     <TextView
                         android:id="@+id/to_base_label_nine"
@@ -340,7 +340,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_nine"/>
+                        android:text="@string/label_nine"/>
 
                     <TextView
                         android:id="@+id/to_base_label_ten"
@@ -348,7 +348,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_ten"/>
+                        android:text="@string/label_ten"/>
 
                     <TextView
                         android:id="@+id/to_base_label_eleven"
@@ -356,7 +356,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_eleven"/>
+                        android:text="@string/label_eleven"/>
 
                     <TextView
                         android:id="@+id/to_base_label_twelve"
@@ -364,7 +364,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_twelve"/>
+                        android:text="@string/label_twelve"/>
 
                     <TextView
                         android:id="@+id/to_base_label_thirteen"
@@ -372,7 +372,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_thirteen"/>
+                        android:text="@string/label_thirteen"/>
 
                     <TextView
                         android:id="@+id/to_base_label_fourteen"
@@ -380,7 +380,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_fourteen"/>
+                        android:text="@string/label_fourteen"/>
 
                     <TextView
                         android:id="@+id/to_base_label_fifteen"
@@ -388,7 +388,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_fifteen"/>
+                        android:text="@string/label_fifteen"/>
 
                     <TextView
                         android:id="@+id/to_base_label_sixteen"
@@ -396,7 +396,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:text="@string/number_sixteen"/>
+                        android:text="@string/label_sixteen"/>
 
                 </LinearLayout>
 
@@ -419,7 +419,7 @@
                     android:layout_marginRight="15dp"
                     android:gravity="center"
                     android:text="110101010011010101"
-                    android:textSize="21dp"/>
+                    android:textSize="21sp"/>
 
             </LinearLayout>
 
@@ -428,127 +428,202 @@
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/other_info_container"
+        android:id="@+id/buttons_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="20dp"
         android:layout_weight="5">
 
-        <GridLayout
-            android:id="@+id/grid_buttons"
+        <LinearLayout
+            android:id="@+id/buttons_grid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:columnCount="5"
-            android:rowCount="4">
+            android:orientation="vertical"
+            android:weightSum="4">
 
-            <Button
-                android:id="@+id/button_1"
-                android:layout_column="0"
-                android:layout_row="0"
-                android:text="@string/button_1"/>
+            <!-- First Row -->
+            <LinearLayout
+                android:id="@+id/buttons_first_row"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5">
 
-            <Button
-                android:id="@+id/button_2"
-                android:layout_column="1"
-                android:layout_row="0"
-                android:text="@string/button_2"/>
+                <Button
+                    android:id="@+id/button_one"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_one"/>/>
 
-            <Button
-                android:id="@+id/button_3"
-                android:layout_column="2"
-                android:layout_row="0"
-                android:text="@string/button_3"/>
+                <Button
+                    android:id="@+id/button_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_two"/>
 
-            <Button
-                android:id="@+id/button_4"
-                android:layout_column="0"
-                android:layout_row="1"
-                android:text="@string/button_4"/>
+                <Button
+                    android:id="@+id/button_3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_three"/>
 
-            <Button
-                android:id="@+id/button_5"
-                android:layout_column="1"
-                android:layout_row="1"
-                android:text="@string/button_5"/>
+                <Button
+                    android:id="@+id/button_A"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_A"/>
 
-            <Button
-                android:id="@+id/button_6"
-                android:layout_column="2"
-                android:layout_row="1"
-                android:text="@string/button_6"/>
+                <Button
+                    android:id="@+id/button_B"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_B"/>
 
-            <Button
-                android:id="@+id/button_7"
-                android:layout_column="0"
-                android:layout_row="2"
-                android:text="@string/button_7"/>
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/button_8"
-                android:layout_column="1"
-                android:layout_row="2"
-                android:text="@string/button_8"/>
+            <!-- Second Row -->
+            <LinearLayout
+                android:id="@+id/buttons_second_row"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5">
 
-            <Button
-                android:id="@+id/button_9"
-                android:layout_column="2"
-                android:layout_row="2"
-                android:text="@string/button_9"/>
+                <Button
+                    android:id="@+id/button_4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_four"/>
 
-            <Button
-                android:id="@+id/button_0"
-                android:layout_column="1"
-                android:layout_row="3"
-                android:text="@string/button_0"/>
+                <Button
+                    android:id="@+id/button_5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_five"/>
 
-            <Button
-                android:id="@+id/button_A"
-                android:layout_column="3"
-                android:layout_row="0"
-                android:text="@string/button_A"/>
+                <Button
+                    android:id="@+id/button_6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_six"/>
 
-            <Button
-                android:id="@+id/button_1B"
-                android:layout_column="4"
-                android:layout_row="0"
-                android:text="@string/button_B"/>
+                <Button
+                    android:id="@+id/button_C"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_C"/>
 
-            <Button
-                android:id="@+id/button_C"
-                android:layout_column="3"
-                android:layout_row="1"
-                android:text="@string/button_C"/>
+                <Button
+                    android:id="@+id/button_D"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_D"/>
 
-            <Button
-                android:id="@+id/button_D"
-                android:layout_column="4"
-                android:layout_row="1"
-                android:text="@string/button_D"/>
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/button_E"
-                android:layout_column="3"
-                android:layout_row="2"
-                android:text="@string/button_E"/>
+            <!-- Third Row -->
+            <LinearLayout
+                android:id="@+id/buttons_third_row"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5">
 
-            <Button
-                android:id="@+id/button_F"
-                android:layout_column="4"
-                android:layout_row="2"
-                android:text="@string/button_F"/>
+                <Button
+                    android:id="@+id/button_7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_seven"/>
 
-            <Button
-                android:id="@+id/button_del"
-                android:layout_column="4"
-                android:layout_row="3"
-                android:text="@string/button_del"/>
+                <Button
+                    android:id="@+id/button_8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_eight"/>
 
-            <Button
-                android:id="@+id/button_clr"
-                android:layout_column="3"
-                android:layout_row="3"
-                android:text="@string/button_clr"/>
+                <Button
+                    android:id="@+id/button_9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_nine"/>
 
-        </GridLayout>
+                <Button
+                    android:id="@+id/button_E"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_E"/>
+
+                <Button
+                    android:id="@+id/button_F"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_F"/>
+
+            </LinearLayout>
+
+            <!-- Fourth Row -->
+            <LinearLayout
+                android:id="@+id/buttons_fourth_row"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"/>
+
+                <Button
+                    android:id="@+id/button_0"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_zero"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"/>
+
+                <Button
+                    android:id="@+id/button_clr"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_clr"/>
+
+                <Button
+                    android:id="@+id/button_del"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/button_del"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </FrameLayout>
 
