@@ -1,5 +1,9 @@
 // TODO
-// Convert input to output based on toSeekbar
+// Switch int type in conversion to something much bigger (Big Integer? long?)
+// TODO
+// Handle overflow exceptions.
+// TODO
+// Make all container layouts symmetrical
 // TODO
 // Change colour/theme
 // TODO
@@ -24,28 +28,29 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Make input SeekBar have a starting location of base 10 (offset of 2)
-    final int SEEKBAR_FROM_START_LOCATION = 8;
-    // Make output SeekBar have a starting location of base 2 (offset of 2)
-    final int SEEKBAR_TO_START_LOCATION = 0;
-    final int SEEKBAR_BUTTON_OFFSET = 1;
+    private final int SEEKBAR_FROM_START_LOCATION = 8;
+    private final int SEEKBAR_TO_START_LOCATION = 0;
+    private final int SEEKBAR_BUTTON_OFFSET = 1;
+    private final int SEEKBAR_PROGRESS_OFFSET = 2;
+    private final Character CHAR_ZERO = '0';
+    private final Character CHAR_ONE = '1';
+    private final Character CHAR_TWO = '2';
+    private final Character CHAR_THREE = '3';
+    private final Character CHAR_FOUR = '4';
+    private final Character CHAR_FIVE = '5';
+    private final Character CHAR_SIX = '6';
+    private final Character CHAR_SEVEN = '7';
+    private final Character CHAR_EIGHT = '8';
+    private final Character CHAR_NINE = '9';
+    private final Character CHAR_A = 'A';
+    private final Character CHAR_B = 'B';
+    private final Character CHAR_C = 'C';
+    private final Character CHAR_D = 'D';
+    private final Character CHAR_E = 'E';
+    private final Character CHAR_F = 'F';
 
-    final Character charZero = '0';
-    final Character charOne = '1';
-    final Character charTwo = '2';
-    final Character charThree = '3';
-    final Character charFour = '4';
-    final Character charFive = '5';
-    final Character charSix = '6';
-    final Character charSeven = '7';
-    final Character charEight = '8';
-    final Character charNine = '9';
-    final Character charA = 'A';
-    final Character charB = 'B';
-    final Character charC = 'C';
-    final Character charD = 'D';
-    final Character charE = 'E';
-    final Character charF = 'F';
+    private int currentSeekbarFromProgress = SEEKBAR_FROM_START_LOCATION;
+    private int currentSeekbarToProgress = SEEKBAR_TO_START_LOCATION;
 
     private SeekBar seekBarFrom;
     private SeekBar seekBarTo;
@@ -197,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
         seekBarFrom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                currentSeekbarFromProgress = progress;
                 for (int i = 0; i < numberLabelFromArray.length; i++) {
                     if (i == progress) {
                         numberLabelFromArray[i].setVisibility(View.VISIBLE);
@@ -212,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 inputValue.setText("");
+                outputValue.setText("");
                 userInput.clear();
             }
 
@@ -229,12 +236,23 @@ public class MainActivity extends AppCompatActivity {
         seekBarTo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                currentSeekbarToProgress = progress;
                 for (int i = 0; i < numberLabelToArray.length; i++) {
                     if (i == progress) {
                         numberLabelToArray[i].setVisibility(View.VISIBLE);
                     } else {
                         numberLabelToArray[i].setVisibility(View.INVISIBLE);
                     }
+                }
+                String temp = "";
+                for (Character i : userInput) {
+                    temp = temp + i;
+                }
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
                 }
             }
 
@@ -260,6 +278,12 @@ public class MainActivity extends AppCompatActivity {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
@@ -274,198 +298,296 @@ public class MainActivity extends AppCompatActivity {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                outputValue.setText("");
             }
         });
 
         buttonZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charZero);
+                userInput.add(CHAR_ZERO);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
+
             }
         });
 
         buttonOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charOne);
+                userInput.add(CHAR_ONE);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charTwo);
+                userInput.add(CHAR_TWO);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charThree);
+                userInput.add(CHAR_THREE);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charFour);
+                userInput.add(CHAR_FOUR);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charFive);
+                userInput.add(CHAR_FIVE);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charSix);
+                userInput.add(CHAR_SIX);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charSeven);
+                userInput.add(CHAR_SEVEN);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charEight);
+                userInput.add(CHAR_EIGHT);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charNine);
+                userInput.add(CHAR_NINE);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charA);
+                userInput.add(CHAR_A);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charB);
+                userInput.add(CHAR_B);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charC);
+                userInput.add(CHAR_C);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charD);
+                userInput.add(CHAR_D);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charE);
+                userInput.add(CHAR_E);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
         buttonF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userInput.add(charF);
+                userInput.add(CHAR_F);
                 String temp = "";
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
                 inputValue.setText(temp);
+                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                if (temp.equals("0")) {
+                    outputValue.setText("");
+                } else {
+                    outputValue.setText(temp);
+                }
             }
         });
 
