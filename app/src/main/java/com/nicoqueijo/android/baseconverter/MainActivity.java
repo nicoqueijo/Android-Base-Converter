@@ -2,8 +2,8 @@
 // Handle overflow exceptions.
 // TODO
 // Add pasting longpress input, copying longpress on output
-// TODO
-// Change fonts
+// Pasting might be done using regular expressions to verify valid input
+// Also pasting needs an event handler
 // TODO
 // Make all container layouts symmetrical
 // TODO
@@ -30,6 +30,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final String FONT_PATH = "fonts/";
+
+    private final String ALDRICH = "Aldrich/Aldrich-Regular.ttf";
+    private final String ELECTROLIZE = "Electrolize/Electrolize-Regular.ttf";
+    private final String EXO_2 = "Exo_2/Exo2-Regular.ttf";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
     private final int SEEKBAR_TO_START_LOCATION = 0;
@@ -232,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonC, buttonD, buttonE, buttonF, buttonDel, buttonClr
         };
 
-        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/Teko-Light.ttf");
+        Typeface customFont = Typeface.createFromAsset(getAssets(), FONT_PATH + EXO_2);
 
         for (int i = 0; i < allViewsArray.length; i++) {
             if (allViewsArray[i] instanceof TextView) {
