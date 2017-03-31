@@ -13,31 +13,30 @@ public class BaseConverterActivity {
         return result;
     }
 
-
     public static String anythingToBaseTen(String subject, int baseFrom) {
-        int result = 0;
+        long result = 0L;
         int subjectLength = subject.length();
         int exponent;
 
         for (int i = 0; i < subjectLength; i++) {
             char ch = subject.charAt(i);
             exponent = subjectLength - i - OFFSET_OF_ONE;
-            result += (int) Math.pow(baseFrom, exponent) * HEX_TABLE.indexOf(ch);
+            result += (long) Math.pow(baseFrom, exponent) * HEX_TABLE.indexOf(ch);
         }
 
         return result + "";
     }
 
     public static String baseTenToAnything(String subject, int baseTo) {
-        int valueAsNum = Integer.parseInt(subject);
+        long valueAsNum = Long.parseLong(subject);
 
-        int quotient = valueAsNum;
-        int remainder;
+        long quotient = valueAsNum;
+        long remainder;
         String result = "";
 
         do {
             remainder = quotient % baseTo;
-            result = HEX_TABLE.charAt(remainder) + result;
+            result = HEX_TABLE.charAt((int) remainder) + result;
             quotient /= baseTo;
         } while (quotient != 0);
 
