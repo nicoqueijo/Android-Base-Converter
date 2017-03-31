@@ -1,15 +1,17 @@
 // TODO
-// Switch int type in conversion to something much bigger (Big Integer? long?)
-// TODO
 // Handle overflow exceptions.
+// TODO
+// Add pasting longpress input, copying longpress on output
+// TODO
+// Change fonts
 // TODO
 // Make all container layouts symmetrical
 // TODO
 // Change colour/theme
 // TODO
-// Change fonts
-// TODO
 // Find and change app icon/logo
+// TODO
+// Refactor entire back-end. Apply code reusability using methods.
 // TODO
 // Document everything
 // TODO
@@ -17,6 +19,7 @@
 
 package com.nicoqueijo.android.baseconverter;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -55,8 +58,17 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar seekBarFrom;
     private SeekBar seekBarTo;
 
-    private TextView inputValue;
-    private TextView outputValue;
+    private TextView fromLabel;
+    private TextView toLabel;
+
+    private TextView inputLabel;
+    private TextView outputLabel;
+
+    private TextView baseToLabel;
+    private TextView baseFromLabel;
+
+    private TextView inputValueLabel;
+    private TextView outputValueLabel;
 
     private TextView numberLabelFromTwo;
     private TextView numberLabelFromThree;
@@ -119,8 +131,17 @@ public class MainActivity extends AppCompatActivity {
         seekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
         seekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);
 
-        inputValue = (TextView) findViewById(R.id.input_value);
-        outputValue = (TextView) findViewById(R.id.output_value);
+        fromLabel = (TextView) findViewById(R.id.from_label);
+        toLabel = (TextView) findViewById(R.id.to_label);
+
+        inputLabel = (TextView) findViewById(R.id.input_label);
+        outputLabel = (TextView) findViewById(R.id.output_label);
+
+        baseFromLabel = (TextView) findViewById(R.id.base_label_from);
+        baseToLabel = (TextView) findViewById(R.id.base_label_to);
+
+        inputValueLabel = (TextView) findViewById(R.id.input_value);
+        outputValueLabel = (TextView) findViewById(R.id.output_value);
 
         numberLabelFromTwo = (TextView) findViewById(R.id.from_base_label_two);
         numberLabelFromThree = (TextView) findViewById(R.id.from_base_label_three);
@@ -173,9 +194,6 @@ public class MainActivity extends AppCompatActivity {
         buttonDel = (Button) findViewById(R.id.button_del);
         buttonClr = (Button) findViewById(R.id.button_clr);
 
-        seekBarFrom.setProgress(SEEKBAR_FROM_START_LOCATION);
-        seekBarTo.setProgress(SEEKBAR_TO_START_LOCATION);
-
         final TextView[] numberLabelFromArray = new TextView[]{
                 numberLabelFromTwo, numberLabelFromThree, numberLabelFromFour,
                 numberLabelFromFive, numberLabelFromSix, numberLabelFromSeven,
@@ -199,6 +217,36 @@ public class MainActivity extends AppCompatActivity {
                 buttonC, buttonD, buttonE, buttonF
         };
 
+        final View[] allViewsArray = new View[]{
+                fromLabel, toLabel, inputLabel, outputLabel, baseToLabel, baseFromLabel,
+                inputValueLabel, outputValueLabel, numberLabelFromTwo, numberLabelFromThree,
+                numberLabelFromFour, numberLabelFromFive, numberLabelFromSix, numberLabelFromSeven,
+                numberLabelFromEight, numberLabelFromNine, numberLabelFromTen, numberLabelFromEleven,
+                numberLabelFromTwelve, numberLabelFromThirteen, numberLabelFromFourteen,
+                numberLabelFromFifteen, numberLabelFromSixteen, numberLabelToTwo, numberLabelToThree,
+                numberLabelToFour, numberLabelToFive, numberLabelToSix, numberLabelToSeven,
+                numberLabelToEight, numberLabelToNine, numberLabelToTen, numberLabelToEleven,
+                numberLabelToTwelve, numberLabelToThirteen, numberLabelToFourteen, numberLabelToFifteen,
+                numberLabelToSixteen, buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour,
+                buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine, buttonA, buttonB,
+                buttonC, buttonD, buttonE, buttonF, buttonDel, buttonClr
+        };
+
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/Teko-Light.ttf");
+
+        for (int i = 0; i < allViewsArray.length; i++) {
+            if (allViewsArray[i] instanceof TextView) {
+                TextView temp = (TextView) allViewsArray[i];
+                temp.setTypeface(customFont);
+            } else if (allViewsArray[i] instanceof Button) {
+                Button temp = (Button) allViewsArray[i];
+                temp.setTypeface(customFont);
+            }
+        }
+
+        seekBarFrom.setProgress(SEEKBAR_FROM_START_LOCATION);
+        seekBarTo.setProgress(SEEKBAR_TO_START_LOCATION);
+
         seekBarFrom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -217,8 +265,8 @@ public class MainActivity extends AppCompatActivity {
                         buttonsArray[j].setVisibility(View.INVISIBLE);
                     }
                 }
-                inputValue.setText("");
-                outputValue.setText("");
+                inputValueLabel.setText("");
+                outputValueLabel.setText("");
                 userInput.clear();
             }
 
@@ -250,9 +298,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
 
@@ -277,12 +325,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -297,8 +345,8 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
-                outputValue.setText("");
+                inputValueLabel.setText(temp);
+                outputValueLabel.setText("");
             }
         });
 
@@ -310,12 +358,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
 
             }
@@ -329,12 +377,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -347,12 +395,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -365,12 +413,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -383,12 +431,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -401,12 +449,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -419,12 +467,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -437,12 +485,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -455,12 +503,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -473,12 +521,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -491,12 +539,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -509,12 +557,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -527,12 +575,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -545,12 +593,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -563,12 +611,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });
@@ -581,12 +629,12 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : userInput) {
                     temp = temp + i;
                 }
-                inputValue.setText(temp);
+                inputValueLabel.setText(temp);
                 temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (temp.equals("0")) {
-                    outputValue.setText("");
+                    outputValueLabel.setText("");
                 } else {
-                    outputValue.setText(temp);
+                    outputValueLabel.setText(temp);
                 }
             }
         });

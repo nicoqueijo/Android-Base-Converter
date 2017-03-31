@@ -9,7 +9,7 @@ import static java.lang.Double.MAX_VALUE;
  * Created by nicoqueijo on 30/03/2017.
  */
 
-public class Tester {
+public class AlgorithmTester {
 
     public static void main(String[] args) {
 
