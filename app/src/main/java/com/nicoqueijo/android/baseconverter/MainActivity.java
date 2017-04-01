@@ -1,27 +1,37 @@
 // TODO
+// Change title bar font
+// TODO
+// Change seekbar bar and thumb thickness
+// TODO
 // Handle overflow exceptions.
 // TODO
 // Add pasting longpress input, copying longpress on output
 // Pasting might be done using regular expressions to verify valid input
 // Also pasting needs an event handler
 // TODO
-// Make all container layouts symmetrical
-// TODO
 // Change colour/theme
 // TODO
-// Find and change app icon/logo
+// Add hamburger menu with app info, how to use instructions, icon launcher credit
+// TODO
+// Credit icon launcher
 // TODO
 // Refactor entire back-end. Apply code reusability using methods.
 // TODO
 // Document everything
 // TODO
-// Test on multiple devices and publish to playstore
+// Test on multiple devices
+// TODO
+// Publish to playstore
 
 package com.nicoqueijo.android.baseconverter;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -35,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final String ALDRICH = "Aldrich/Aldrich-Regular.ttf";
     private final String ELECTROLIZE = "Electrolize/Electrolize-Regular.ttf";
-    private final String EXO_2 = "Exo_2/Exo2-Regular.ttf";
+    private final String EXO_2 = "Exo_2/Exo2-SemiBold.ttf";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
     private final int SEEKBAR_TO_START_LOCATION = 0;
@@ -60,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
     private int currentSeekbarFromProgress = SEEKBAR_FROM_START_LOCATION;
     private int currentSeekbarToProgress = SEEKBAR_TO_START_LOCATION;
+
+    private ArrayList<Character> userInput = new ArrayList<>();
+
+    private TextView title;
 
     private SeekBar seekBarFrom;
     private SeekBar seekBarTo;
@@ -127,12 +141,12 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonDel;
     private Button buttonClr;
 
-    private ArrayList<Character> userInput = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Typeface customFont = Typeface.createFromAsset(getAssets(), FONT_PATH + EXO_2);
 
         seekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
         seekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);
@@ -238,8 +252,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonC, buttonD, buttonE, buttonF, buttonDel, buttonClr
         };
 
-        Typeface customFont = Typeface.createFromAsset(getAssets(), FONT_PATH + EXO_2);
-
+        // loops through all views that containt text an changes the font
         for (int i = 0; i < allViewsArray.length; i++) {
             if (allViewsArray[i] instanceof TextView) {
                 TextView temp = (TextView) allViewsArray[i];

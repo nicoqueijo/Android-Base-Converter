@@ -6,14 +6,14 @@ public class BaseConverterActivity {
     private final static int OFFSET_OF_ONE = 1;
     private final static String HEX_TABLE = "0123456789ABCDEF";
 
-    public static String baseConverter(String inputValue, int baseFrom, int baseTo) {
+    protected static String baseConverter(String inputValue, int baseFrom, int baseTo) {
         String result = "";
         result = anythingToBaseTen(inputValue, baseFrom);
         result = baseTenToAnything(result, baseTo);
         return result;
     }
 
-    public static String anythingToBaseTen(String subject, int baseFrom) {
+    protected static String anythingToBaseTen(String subject, int baseFrom) {
         long result = 0L;
         int subjectLength = subject.length();
         int exponent;
@@ -27,9 +27,8 @@ public class BaseConverterActivity {
         return result + "";
     }
 
-    public static String baseTenToAnything(String subject, int baseTo) {
+    protected static String baseTenToAnything(String subject, int baseTo) {
         long valueAsNum = Long.parseLong(subject);
-
         long quotient = valueAsNum;
         long remainder;
         String result = "";
