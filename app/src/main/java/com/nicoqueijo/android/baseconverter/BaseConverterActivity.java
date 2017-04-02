@@ -13,7 +13,7 @@ public class BaseConverterActivity {
         return result;
     }
 
-    protected static String anythingToBaseTen(String subject, int baseFrom) {
+    private static String anythingToBaseTen(String subject, int baseFrom) {
         long result = 0L;
         int subjectLength = subject.length();
         int exponent;
@@ -27,7 +27,7 @@ public class BaseConverterActivity {
         return result + "";
     }
 
-    protected static String baseTenToAnything(String subject, int baseTo) {
+    private static String baseTenToAnything(String subject, int baseTo) {
         long valueAsNum = Long.parseLong(subject);
         long quotient = valueAsNum;
         long remainder;
