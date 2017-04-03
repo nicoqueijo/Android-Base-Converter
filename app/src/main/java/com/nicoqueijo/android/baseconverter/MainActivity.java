@@ -24,6 +24,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -852,7 +853,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case BASE_TWO:
-                if (userInput.size() >= 63) {
+                if (userInput.size() >= 51) {
                     overflowToast.show();
                     return true;
                 }
