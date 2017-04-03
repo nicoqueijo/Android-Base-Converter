@@ -36,12 +36,28 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private final String EXO_2_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
-    private final String copyMessage = "Copied to clipboard!";
+    private final String copiedToClipboardMessage = "Copied to clipboard!";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
     private final int SEEKBAR_TO_START_LOCATION = 0;
     private final int SEEKBAR_BUTTON_OFFSET = 1;
     private final int SEEKBAR_PROGRESS_OFFSET = 2;
+
+    private final int BASE_TWO = 2;
+    private final int BASE_THREE = 3;
+    private final int BASE_FOUR = 4;
+    private final int BASE_FIVE = 5;
+    private final int BASE_SIX = 6;
+    private final int BASE_SEVEN = 7;
+    private final int BASE_EIGHT = 8;
+    private final int BASE_NINE = 9;
+    private final int BASE_TEN = 10;
+    private final int BASE_ELEVEN = 11;
+    private final int BASE_TWELVE = 12;
+    private final int BASE_THIRTEEN = 13;
+    private final int BASE_FOURTEEN = 14;
+    private final int BASE_FIFTEEN = 15;
+    private final int BASE_SIXTEEN = 16;
 
     private final Character CHAR_ZERO = '0';
     private final Character CHAR_ONE = '1';
@@ -329,9 +345,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View view) {
                 String outputText = outputValueLabel.getText().toString();
-                clipData = ClipData.newPlainText("text", outputText);
-                clipBoardManager.setPrimaryClip(clipData);
-                Toast.makeText(getApplicationContext(), copyMessage, Toast.LENGTH_SHORT).show();
+                if (!outputText.isEmpty()) {
+                    clipData = ClipData.newPlainText("text", outputText);
+                    clipBoardManager.setPrimaryClip(clipData);
+                    Toast.makeText(getApplicationContext(), copiedToClipboardMessage, Toast.LENGTH_SHORT).show();
+                }
                 return true;
             }
         });
@@ -340,9 +358,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View view) {
                 String inputText = inputValueLabel.getText().toString();
-                clipData = ClipData.newPlainText("text", inputText);
-                clipBoardManager.setPrimaryClip(clipData);
-                Toast.makeText(getApplicationContext(), copyMessage, Toast.LENGTH_SHORT).show();
+                if (!inputText.isEmpty()) {
+                    clipData = ClipData.newPlainText("text", inputText);
+                    clipBoardManager.setPrimaryClip(clipData);
+                    Toast.makeText(getApplicationContext(), copiedToClipboardMessage, Toast.LENGTH_SHORT).show();
+                }
                 return true;
             }
         });
@@ -744,96 +764,96 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         CharSequence text = "Number too large!";
         int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
+        Toast overflowToast = Toast.makeText(context, text, duration);
 
         switch (currentBaseFrom) {
-            case 16:
+            case BASE_SIXTEEN:
                 if (userInput.size() >= 14) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 15:
+            case BASE_FIFTEEN:
                 if (userInput.size() >= 14) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 14:
+            case BASE_FOURTEEN:
                 if (userInput.size() >= 15) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 13:
+            case BASE_THIRTEEN:
                 if (userInput.size() >= 15) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 12:
+            case BASE_TWELVE:
                 if (userInput.size() >= 16) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 11:
+            case BASE_ELEVEN:
                 if (userInput.size() >= 16) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 10:
+            case BASE_TEN:
                 if (userInput.size() >= 17) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 9:
+            case BASE_NINE:
                 if (userInput.size() >= 17) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 8:
+            case BASE_EIGHT:
                 if (userInput.size() >= 21) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 7:
+            case BASE_SEVEN:
                 if (userInput.size() >= 21) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 6:
+            case BASE_SIX:
                 if (userInput.size() >= 23) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 5:
+            case BASE_FIVE:
                 if (userInput.size() >= 23) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 4:
+            case BASE_FOUR:
                 if (userInput.size() >= 31) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 3:
+            case BASE_THREE:
                 if (userInput.size() >= 34) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
-            case 2:
+            case BASE_TWO:
                 if (userInput.size() >= 63) {
-                    toast.show();
+                    overflowToast.show();
                     return true;
                 }
                 break;
