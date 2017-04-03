@@ -3,10 +3,6 @@
 // TODO
 // Change seekbar bar and thumb thickness
 // TODO
-// Add pasting longpress input, copying longpress on output
-// Pasting might be done using regular expressions to verify valid input
-// Also pasting needs an event handler
-// TODO
 // Change colour/theme
 // TODO
 // Add hamburger menu with app info, how to use instructions, icon launcher credit
@@ -23,6 +19,8 @@
 
 package com.nicoqueijo.android.baseconverter;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -37,16 +35,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String FONT_PATH = "fonts/";
-
-    private final String ALDRICH = "Aldrich/Aldrich-Regular.ttf";
-    private final String ELECTROLIZE = "Electrolize/Electrolize-Regular.ttf";
-    private final String EXO_2 = "Exo_2/Exo2-SemiBold.ttf";
+    private final String EXO_2_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
+    private final String copyMessage = "Copied to clipboard!";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
     private final int SEEKBAR_TO_START_LOCATION = 0;
     private final int SEEKBAR_BUTTON_OFFSET = 1;
     private final int SEEKBAR_PROGRESS_OFFSET = 2;
+
     private final Character CHAR_ZERO = '0';
     private final Character CHAR_ONE = '1';
     private final Character CHAR_TWO = '2';
@@ -66,10 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
     private int currentSeekbarFromProgress = SEEKBAR_FROM_START_LOCATION;
     private int currentSeekbarToProgress = SEEKBAR_TO_START_LOCATION;
-
-    private ArrayList<Character> userInput = new ArrayList<>();
-
-    private TextView title;
 
     private SeekBar seekBarFrom;
     private SeekBar seekBarTo;
@@ -137,12 +129,23 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonDel;
     private Button buttonClr;
 
+    private TextView[] numberLabelFromArray;
+    private TextView[] numberLabelToArray;
+    private Button[] buttonsArray;
+    private View[] allViewsArray;
+
+    private ArrayList<Character> userInput = new ArrayList<>();
+    private Typeface customFont;
+    private ClipboardManager clipBoardManager;
+    private ClipData clipData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Typeface customFont = Typeface.createFromAsset(getAssets(), FONT_PATH + EXO_2);
+        customFont = Typeface.createFromAsset(getAssets(), EXO_2_FONT_PATH);
+        clipBoardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
         seekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
         seekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);
@@ -210,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDel = (Button) findViewById(R.id.button_del);
         buttonClr = (Button) findViewById(R.id.button_clr);
 
-        final TextView[] numberLabelFromArray = new TextView[]{
+        numberLabelFromArray = new TextView[]{
                 numberLabelFromTwo, numberLabelFromThree, numberLabelFromFour,
                 numberLabelFromFive, numberLabelFromSix, numberLabelFromSeven,
                 numberLabelFromEight, numberLabelFromNine, numberLabelFromTen,
@@ -218,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                 numberLabelFromFourteen, numberLabelFromFifteen, numberLabelFromSixteen
         };
 
-        final TextView[] numberLabelToArray = new TextView[]{
+        numberLabelToArray = new TextView[]{
                 numberLabelToTwo, numberLabelToThree, numberLabelToFour,
                 numberLabelToFive, numberLabelToSix, numberLabelToSeven,
                 numberLabelToEight, numberLabelToNine, numberLabelToTen,
@@ -226,14 +229,14 @@ public class MainActivity extends AppCompatActivity {
                 numberLabelToFourteen, numberLabelToFifteen, numberLabelToSixteen
         };
 
-        final Button[] buttonsArray = new Button[]{
+        buttonsArray = new Button[]{
                 buttonZero, buttonOne, buttonTwo, buttonThree,
                 buttonFour, buttonFive, buttonSix, buttonSeven,
                 buttonEight, buttonNine, buttonA, buttonB,
                 buttonC, buttonD, buttonE, buttonF
         };
 
-        final View[] allViewsArray = new View[]{
+        allViewsArray = new View[]{
                 fromLabel, toLabel, inputLabel, outputLabel, baseToLabel, baseFromLabel,
                 inputValueLabel, outputValueLabel, numberLabelFromTwo, numberLabelFromThree,
                 numberLabelFromFour, numberLabelFromFive, numberLabelFromSix, numberLabelFromSeven,
@@ -248,16 +251,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonC, buttonD, buttonE, buttonF, buttonDel, buttonClr
         };
 
-        // loops through all views that containt text an changes the font
-        for (int i = 0; i < allViewsArray.length; i++) {
-            if (allViewsArray[i] instanceof TextView) {
-                TextView temp = (TextView) allViewsArray[i];
-                temp.setTypeface(customFont);
-            } else if (allViewsArray[i] instanceof Button) {
-                Button temp = (Button) allViewsArray[i];
-                temp.setTypeface(customFont);
-            }
-        }
+        setCustomFont();
 
         seekBarFrom.setProgress(SEEKBAR_FROM_START_LOCATION);
         seekBarTo.setProgress(SEEKBAR_TO_START_LOCATION);
@@ -307,16 +301,16 @@ public class MainActivity extends AppCompatActivity {
                         numberLabelToArray[i].setVisibility(View.INVISIBLE);
                     }
                 }
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
 
@@ -331,23 +325,45 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        outputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                String outputText = outputValueLabel.getText().toString();
+                clipData = ClipData.newPlainText("text", outputText);
+                clipBoardManager.setPrimaryClip(clipData);
+                Toast.makeText(getApplicationContext(), copyMessage, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+
+        inputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                String inputText = inputValueLabel.getText().toString();
+                clipData = ClipData.newPlainText("text", inputText);
+                clipBoardManager.setPrimaryClip(clipData);
+                Toast.makeText(getApplicationContext(), copyMessage, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+
         buttonDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!userInput.isEmpty()) {
                     userInput.remove(userInput.size() - 1);
                 }
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -358,11 +374,11 @@ public class MainActivity extends AppCompatActivity {
                 while (!userInput.isEmpty()) {
                     userInput.remove(userInput.size() - 1);
                 }
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
+                inputValueLabel.setText(output);
                 outputValueLabel.setText("");
             }
         });
@@ -370,117 +386,21 @@ public class MainActivity extends AppCompatActivity {
         buttonZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 8:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 7:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 6:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 5:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 4:
-                        if (userInput.size() >= 31) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 3:
-                        if (userInput.size() >= 34) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 2:
-                        if (userInput.size() >= 63) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_ZERO);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
 
             }
@@ -489,117 +409,21 @@ public class MainActivity extends AppCompatActivity {
         buttonOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 8:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 7:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 6:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 5:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 4:
-                        if (userInput.size() >= 31) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 3:
-                        if (userInput.size() >= 34) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 2:
-                        if (userInput.size() >= 63) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_ONE);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -607,111 +431,21 @@ public class MainActivity extends AppCompatActivity {
         buttonTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 8:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 7:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 6:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 5:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 4:
-                        if (userInput.size() >= 31) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 3:
-                        if (userInput.size() >= 34) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_TWO);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -719,105 +453,21 @@ public class MainActivity extends AppCompatActivity {
         buttonThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 8:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 7:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 6:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 5:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 4:
-                        if (userInput.size() >= 31) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_THREE);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -825,99 +475,21 @@ public class MainActivity extends AppCompatActivity {
         buttonFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 8:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 7:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 6:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 5:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_FOUR);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -925,93 +497,21 @@ public class MainActivity extends AppCompatActivity {
         buttonFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 8:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 7:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 6:
-                        if (userInput.size() >= 23) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_FIVE);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1019,87 +519,21 @@ public class MainActivity extends AppCompatActivity {
         buttonSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 8:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 7:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_SIX);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1107,81 +541,21 @@ public class MainActivity extends AppCompatActivity {
         buttonSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 8:
-                        if (userInput.size() >= 21) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_SEVEN);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1189,75 +563,21 @@ public class MainActivity extends AppCompatActivity {
         buttonEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 9:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_EIGHT);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1265,69 +585,21 @@ public class MainActivity extends AppCompatActivity {
         buttonNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 10:
-                        if (userInput.size() >= 17) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_NINE);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1335,63 +607,21 @@ public class MainActivity extends AppCompatActivity {
         buttonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 11:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_A);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1399,57 +629,21 @@ public class MainActivity extends AppCompatActivity {
         buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 12:
-                        if (userInput.size() >= 16) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_B);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1457,51 +651,21 @@ public class MainActivity extends AppCompatActivity {
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 13:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_C);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1509,45 +673,21 @@ public class MainActivity extends AppCompatActivity {
         buttonD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 14:
-                        if (userInput.size() >= 15) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_D);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1555,39 +695,21 @@ public class MainActivity extends AppCompatActivity {
         buttonE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
-                    case 15:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_E);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
@@ -1595,37 +717,141 @@ public class MainActivity extends AppCompatActivity {
         buttonF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
-                Context context = getApplicationContext();
-                CharSequence text = "Number too large!";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                switch (currentBaseFrom) {
-                    case 16:
-                        if (userInput.size() >= 14) {
-                            toast.show();
-                            return;
-                        }
-                        break;
+                if (triggersOverflow()) {
+                    return;
                 }
-
                 userInput.add(CHAR_F);
-                String temp = "";
+                String output = "";
                 for (Character i : userInput) {
-                    temp = temp + i;
+                    output = output + i;
                 }
-                inputValueLabel.setText(temp);
-                temp = BaseConverterActivity.baseConverter(temp, currentSeekbarFromProgress +
+                inputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (temp.equals("0")) {
+                if (output.equals("0")) {
                     outputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(temp);
+                    outputValueLabel.setText(output);
                 }
             }
         });
 
+    }
+
+    private boolean triggersOverflow() {
+
+        int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
+        Context context = getApplicationContext();
+        CharSequence text = "Number too large!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+
+        switch (currentBaseFrom) {
+            case 16:
+                if (userInput.size() >= 14) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 15:
+                if (userInput.size() >= 14) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 14:
+                if (userInput.size() >= 15) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 13:
+                if (userInput.size() >= 15) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 12:
+                if (userInput.size() >= 16) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 11:
+                if (userInput.size() >= 16) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 10:
+                if (userInput.size() >= 17) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 9:
+                if (userInput.size() >= 17) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 8:
+                if (userInput.size() >= 21) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 7:
+                if (userInput.size() >= 21) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 6:
+                if (userInput.size() >= 23) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 5:
+                if (userInput.size() >= 23) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 4:
+                if (userInput.size() >= 31) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 3:
+                if (userInput.size() >= 34) {
+                    toast.show();
+                    return true;
+                }
+                break;
+            case 2:
+                if (userInput.size() >= 63) {
+                    toast.show();
+                    return true;
+                }
+                break;
+        }
+        return false;
+    }
+
+    // Loops through all views that contain text and sets the font
+    private void setCustomFont() {
+        for (int i = 0; i < allViewsArray.length; i++) {
+            if (allViewsArray[i] instanceof TextView) {
+                TextView currentTextView = (TextView) allViewsArray[i];
+                currentTextView.setTypeface(customFont);
+            } else if (allViewsArray[i] instanceof Button) {
+                Button currentButton = (Button) allViewsArray[i];
+                currentButton.setTypeface(customFont);
+            }
+        }
     }
 
 }
