@@ -24,7 +24,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -273,6 +272,10 @@ public class MainActivity extends AppCompatActivity {
         seekBarFrom.setProgress(SEEKBAR_FROM_START_LOCATION);
         seekBarTo.setProgress(SEEKBAR_TO_START_LOCATION);
 
+        /**
+         * Enables/disables buttons according to the position of the first seekbar.
+         * Also resets the current input if seekbar moves.
+         */
         seekBarFrom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -307,6 +310,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Performs a conversion of the current input to the base of the new position of the
+         * second seekbar.
+         */
         seekBarTo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -342,6 +349,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Copies the current output value to the clipboard if longpressed.
+         */
         outputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -355,6 +365,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Copies the current input value to the clipboard if longpressed.
+         */
         inputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -368,6 +381,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Removes the last digit from the current input and recalculates the conversion.
+         */
         buttonDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -389,6 +405,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Removes all digits from current input and sets a blank output.
+         */
         buttonClr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -404,6 +423,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit to
+         * the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -427,6 +450,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -449,6 +476,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -471,6 +502,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -493,6 +528,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -515,6 +554,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -537,6 +580,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -559,6 +606,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -581,6 +632,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -603,6 +658,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -625,6 +684,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -647,6 +710,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -669,6 +736,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -691,6 +762,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -713,6 +788,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -735,6 +814,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * to the input, performs the conversion to the new base, and sets it to the output.
+         */
         buttonF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -759,6 +842,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Determines if overflow can occur from additional input based on the current working base.
+     *
+     * @return if adding an additional digit would trigger overflow.
+     */
     private boolean triggersOverflow() {
 
         int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
@@ -862,7 +950,9 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    // Loops through all views that contain text and sets the font
+    /**
+     * Loops through all views that contain text and sets the font to the custom font.
+     */
     private void setCustomFont() {
         for (int i = 0; i < allViewsArray.length; i++) {
             if (allViewsArray[i] instanceof TextView) {
