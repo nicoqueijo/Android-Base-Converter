@@ -483,7 +483,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_one"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -492,7 +494,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="#9B00FF"
                     android:text="@string/button_two"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -501,7 +505,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="#9B00FF"
                     android:text="@string/button_three"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -510,7 +516,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_A"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="invisible"/>
 
@@ -519,7 +527,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_B"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="invisible"/>
 
@@ -540,7 +550,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_four"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -549,7 +561,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_five"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -558,7 +572,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_six"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -567,7 +583,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_C"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="invisible"/>
 
@@ -576,7 +594,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_D"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="invisible"/>
 
@@ -596,7 +616,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_seven"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -605,7 +627,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_eight"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -614,7 +638,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_nine"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -623,7 +649,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_E"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="invisible"/>
 
@@ -632,7 +660,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_F"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="invisible"/>
 
@@ -658,7 +688,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_zero"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -673,7 +705,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_clr"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
@@ -682,7 +716,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:text="@string/button_del"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:visibility="visible"/>
 
