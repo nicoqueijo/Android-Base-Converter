@@ -1,21 +1,12 @@
-// TODO
-// Change title bar font
-// TODO
-// Change seekbar bar and thumb thickness
-// TODO
-// Change colour/theme
-// TODO
-// Add hamburger menu with app info, how to use instructions, icon launcher credit
-// TODO
-// Credit icon launcher
-// TODO
-// Refactor entire back-end. Apply code reusability using methods.
-// TODO
-// Document everything
-// TODO
-// Test on multiple devices
-// TODO
-// Publish to playstore
+// TODO: Change title bar font
+// TODO: Change seekbar bar and thumb thickness
+// TODO: Try to add base number labels inside the seekbar thumb
+// TODO: Change colour/theme
+// TODO: Add hamburger menu with app info, how to use instructions, icon launcher credit
+// TODO: Refactor entire back-end. Apply code reusability using methods.
+// TODO: Document everything
+// TODO: Test on multiple devices
+// TODO: Publish to playstore
 
 package com.nicoqueijo.android.baseconverter;
 
