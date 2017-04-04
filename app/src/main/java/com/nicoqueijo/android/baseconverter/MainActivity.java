@@ -1,4 +1,4 @@
-// TODO: Change title bar font
+// TODO: Change action bar font
 // TODO: Change seekbar drawable
 // TODO: Change thumb drawable
 // TODO: Change buttons drawable
