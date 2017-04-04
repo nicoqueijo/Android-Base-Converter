@@ -76,10 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView fromLabel;
     private TextView toLabel;
-
     private TextView inputLabel;
     private TextView outputLabel;
-
     private TextView baseToLabel;
     private TextView baseFromLabel;
 
@@ -144,6 +142,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Character> userInput = new ArrayList<>();
     private Typeface customFont;
+
+    private Toast overflowToast = null;
     private ClipboardManager clipBoardManager;
     private ClipData clipData;
 
@@ -265,8 +265,8 @@ public class MainActivity extends AppCompatActivity {
         seekBarTo.setProgress(SEEKBAR_TO_START_LOCATION);
 
         /**
-         * Enables/disables buttons according to the position of the first seekbar.
-         * Also resets the current input if seekbar moves.
+         * Enables/disables buttons according to the position of the from-seekbar.
+         * Also resets the current input if from-seekbar moves.
          */
         seekBarFrom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -304,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
 
         /**
          * Performs a conversion of the current input to the base of the new position of the
-         * second seekbar.
+         * to-seekbar.
          */
         seekBarTo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Copies the current output value to the clipboard if longpressed.
+         * Copies the current output value to the clipboard if the view where it sits on is longpressed.
          */
         outputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -358,7 +358,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Copies the current input value to the clipboard if longpressed.
+         * Copies the current input value to the clipboard if the view where it sits on is longpressed.
          */
         inputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -374,7 +374,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Removes the last digit from the current input and recalculates the conversion.
+         * Listener for the DEL button. Removes the last digit from the current input, recalculates the conversion, and re-outputs.
          */
         buttonDel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -398,7 +398,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Removes all digits from current input and sets a blank output.
+         * Listener for the CLR button. Removes all digits from current input and sets a blank output.
          */
         buttonClr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -416,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit to
+         * Listener for button 0. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit to
          * the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonZero.setOnClickListener(new View.OnClickListener() {
@@ -443,7 +443,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 1. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonOne.setOnClickListener(new View.OnClickListener() {
@@ -469,7 +469,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 2. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonTwo.setOnClickListener(new View.OnClickListener() {
@@ -495,7 +495,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 3. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonThree.setOnClickListener(new View.OnClickListener() {
@@ -521,7 +521,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 4. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonFour.setOnClickListener(new View.OnClickListener() {
@@ -547,7 +547,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 5. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonFive.setOnClickListener(new View.OnClickListener() {
@@ -573,7 +573,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 6. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonSix.setOnClickListener(new View.OnClickListener() {
@@ -599,7 +599,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 7. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonSeven.setOnClickListener(new View.OnClickListener() {
@@ -625,7 +625,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 8. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonEight.setOnClickListener(new View.OnClickListener() {
@@ -651,7 +651,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button 9. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonNine.setOnClickListener(new View.OnClickListener() {
@@ -677,7 +677,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button A. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonA.setOnClickListener(new View.OnClickListener() {
@@ -703,7 +703,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button B. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonB.setOnClickListener(new View.OnClickListener() {
@@ -729,7 +729,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button C. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonC.setOnClickListener(new View.OnClickListener() {
@@ -755,7 +755,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button D. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonD.setOnClickListener(new View.OnClickListener() {
@@ -781,7 +781,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button E. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonE.setOnClickListener(new View.OnClickListener() {
@@ -807,7 +807,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+         * Listener for button F. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
          * to the input, performs the conversion to the new base, and sets it to the output.
          */
         buttonF.setOnClickListener(new View.OnClickListener() {
@@ -843,103 +843,118 @@ public class MainActivity extends AppCompatActivity {
 
         int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
         Context context = getApplicationContext();
-        CharSequence message = "Number too large!";
-        int duration = Toast.LENGTH_SHORT;
-        Toast overflowToast = Toast.makeText(context, message, duration);
+        CharSequence overflowToastMessage = "Number too large!";
+        int toastDuration = Toast.LENGTH_SHORT;
 
         switch (currentBaseFrom) {
             case BASE_SIXTEEN:
                 if (userInput.size() >= 14) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_FIFTEEN:
                 if (userInput.size() >= 14) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_FOURTEEN:
                 if (userInput.size() >= 15) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_THIRTEEN:
                 if (userInput.size() >= 15) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_TWELVE:
                 if (userInput.size() >= 16) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_ELEVEN:
                 if (userInput.size() >= 16) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_TEN:
                 if (userInput.size() >= 17) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_NINE:
                 if (userInput.size() >= 17) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_EIGHT:
                 if (userInput.size() >= 21) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_SEVEN:
                 if (userInput.size() >= 21) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_SIX:
                 if (userInput.size() >= 23) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_FIVE:
                 if (userInput.size() >= 23) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_FOUR:
                 if (userInput.size() >= 31) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_THREE:
                 if (userInput.size() >= 34) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_TWO:
                 if (userInput.size() >= 51) {
-                    overflowToast.show();
+                    showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
         }
         return false;
+    }
+
+    /**
+     * Displays a toast notifying the user the number is getting to large and input cannot grow any further.
+     * Cancels the current toast if there is one present to avoid a cluster of toasts queueing up.
+     *
+     * @param context  The current context.
+     * @param message  The message to display.
+     * @param duration The amount of time to display the message.
+     */
+    private void showOverflowMessage(Context context, CharSequence message, int duration) {
+        if (overflowToast != null) {
+            overflowToast.cancel();
+        }
+        overflowToast = Toast.makeText(context, message, duration);
+        overflowToast.show();
     }
 
     /**
