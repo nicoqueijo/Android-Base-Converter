@@ -1,7 +1,8 @@
 // TODO: Change title bar font
-// TODO: Change seekbar bar and thumb thickness
+// TODO: Change seekbar drawable
+// TODO: Change thumb drawable
+// TODO: Change buttons drawable
 // TODO: Try to add base number labels inside the seekbar thumb
-// TODO: Change colour/theme
 // TODO: Add hamburger menu with app info, how to use instructions, icon launcher credit
 // TODO: Refactor entire back-end. Apply code reusability using methods.
 // TODO: Document everything
@@ -834,7 +835,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Determines if overflow can occur from additional input based on the current working base.
+     * Determines if overflow can occur from additional input based on the current from-base.
      *
      * @return if adding an additional digit would trigger overflow.
      */
@@ -842,9 +843,9 @@ public class MainActivity extends AppCompatActivity {
 
         int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
         Context context = getApplicationContext();
-        CharSequence text = "Number too large!";
+        CharSequence message = "Number too large!";
         int duration = Toast.LENGTH_SHORT;
-        Toast overflowToast = Toast.makeText(context, text, duration);
+        Toast overflowToast = Toast.makeText(context, message, duration);
 
         switch (currentBaseFrom) {
             case BASE_SIXTEEN:
