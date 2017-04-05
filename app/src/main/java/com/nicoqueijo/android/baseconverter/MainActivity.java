@@ -10,12 +10,13 @@
 
 package com.nicoqueijo.android.baseconverter;
 
-import android.app.ActionBar;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.constraint.solver.SolverVariable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -32,7 +33,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String EXO_2_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
+    private final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
+    private final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
     private final String copiedToClipboardMessage = "Copied to clipboard!";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
@@ -146,7 +148,8 @@ public class MainActivity extends AppCompatActivity {
     private View[] allViewsArray;
 
     private ArrayList<Character> userInput = new ArrayList<>();
-    private Typeface customFont;
+    private Typeface customFontSemiBold;
+    private Typeface customFontRegular;
 
     private Toast overflowToast = null;
     private ClipboardManager clipBoardManager;
@@ -157,7 +160,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        customFont = Typeface.createFromAsset(getAssets(), EXO_2_FONT_PATH);
+        customFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
+        customFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
         clipBoardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
         seekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
@@ -839,7 +843,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -847,22 +855,43 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < menu.size(); i++) {
             MenuItem menuItem = menu.getItem(i);
-            applyFontToMenuItem(menuItem, customFont);
+            applyFontToMenuItem(menuItem, customFontSemiBold);
         }
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        final String aboutMessage = "ABOUT\n\n" +
+                "The source code for this project can be found at github.com/nicoqueijo";
+        final String howToUseMessage = "HOW TO USE\n\n" +
+                "Use the first slider to set the base of the number you want to convert.\n" +
+                "Enter the number you want to convert using the buttons.\n" +
+                "Use the second slider to convert the number to a new base";
+        final String iconInfoMessage = "ICON INFO\n\n" +
+                "Launcher icon for this app made by Freepik from www.flaticon.com is licensed by CC 3.0 BY";
+
         switch (item.getItemId()) {
             case (R.id.menu_about):
-
+                AlertDialog aboutBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(aboutMessage).show();
+                TextView aboutTextView = (TextView) aboutBuilder.findViewById(android.R.id.message);
+                aboutTextView.setTypeface(customFontRegular);
                 break;
             case (R.id.menu_how_to_use):
-
+                AlertDialog howToUseBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(howToUseMessage).show();
+                TextView howToUseTextView = (TextView) howToUseBuilder.findViewById(android.R.id.message);
+                howToUseTextView.setTypeface(customFontRegular);
                 break;
             case (R.id.menu_icon_info):
-
+                AlertDialog iconInfoBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(iconInfoMessage).show();
+                TextView iconInfoTextView = (TextView) iconInfoBuilder.findViewById(android.R.id.message);
+                iconInfoTextView.setTypeface(customFontRegular);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -1011,10 +1040,10 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < allViewsArray.length; i++) {
             if (allViewsArray[i] instanceof TextView) {
                 TextView currentTextView = (TextView) allViewsArray[i];
-                currentTextView.setTypeface(customFont);
+                currentTextView.setTypeface(customFontSemiBold);
             } else if (allViewsArray[i] instanceof Button) {
                 Button currentButton = (Button) allViewsArray[i];
-                currentButton.setTypeface(customFont);
+                currentButton.setTypeface(customFontSemiBold);
             }
         }
     }
