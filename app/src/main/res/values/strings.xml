@@ -39,4 +39,7 @@
     <string name="output">OUTPUT:</string>
     <string name="title">Base Converter</string>
     <string name="app_name">BASE CONVERTER</string>
+    <string name="about">ABOUT</string>
+    <string name="how_to_use">HOW TO USE</string>
+    <string name="icon_info">ICON INFO</string>
 </resources>

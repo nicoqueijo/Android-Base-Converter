@@ -1,4 +1,3 @@
-// TODO: Change action bar font
 // TODO: Change seekbar drawable
 // TODO: Change thumb drawable
 // TODO: Change buttons drawable
@@ -11,12 +10,18 @@
 
 package com.nicoqueijo.android.baseconverter;
 
+import android.app.ActionBar;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -833,6 +838,48 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem menuItem = menu.getItem(i);
+            applyFontToMenuItem(menuItem, customFont);
+        }
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case (R.id.menu_about):
+
+                break;
+            case (R.id.menu_how_to_use):
+
+                break;
+            case (R.id.menu_icon_info):
+
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Sets a menu item to a particular font.
+     *
+     * @param menuItem The menu item to change to affect.
+     * @param font     The font to be applied.
+     */
+    private void applyFontToMenuItem(MenuItem menuItem, Typeface font) {
+        SpannableString mNewTitle = new SpannableString(menuItem.getTitle());
+        mNewTitle.setSpan(new CustomTypefaceSpan("", font), 0, mNewTitle.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        menuItem.setTitle(mNewTitle);
+    }
+
 
     /**
      * Determines if overflow can occur from additional input based on the current from-base.
