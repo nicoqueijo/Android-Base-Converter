@@ -15,7 +15,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.constraint.solver.SolverVariable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
@@ -844,9 +843,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Creates a hamburger-style menu and sets the font to each menu item.
      *
-     * @param menu
-     * @return
+     * @param menu The menu to be created.
+     * @return Status of the operation.
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -861,9 +861,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Creates an alert dialog window with a custom message and displays it when a menu item is selected.
      *
-     * @param item
-     * @return
+     * @param item The menu item being selected.
+     * @return Status of the operation.
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
