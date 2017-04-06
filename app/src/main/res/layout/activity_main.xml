@@ -93,6 +93,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_two"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -102,6 +103,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_three"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -111,6 +113,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_four"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -120,6 +123,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_five"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -129,6 +133,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_six"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -138,6 +143,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_seven"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -147,6 +153,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_eight"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -156,6 +163,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_nine"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -165,6 +173,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_ten"
+                        android:textSize="15dp"
                         android:visibility="visible"/>
 
                     <TextView
@@ -174,6 +183,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_eleven"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -183,6 +193,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_twelve"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -192,6 +203,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_thirteen"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -201,6 +213,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_fourteen"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -210,6 +223,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_fifteen"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -219,6 +233,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_sixteen"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                 </LinearLayout>
@@ -240,7 +255,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/base"/>
+                    android:text="@string/base"
+                    android:textSize="13dp"/>
 
             </LinearLayout>
 
@@ -286,6 +302,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_two"
+                        android:textSize="15dp"
                         android:visibility="visible"/>
 
                     <TextView
@@ -295,6 +312,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_three"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -304,6 +322,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_four"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -313,6 +332,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_five"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -322,6 +342,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_six"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -331,6 +352,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_seven"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -340,6 +362,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_eight"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -349,6 +372,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_nine"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -358,6 +382,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_ten"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -367,6 +392,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_eleven"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -376,6 +402,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_twelve"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -385,6 +412,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_thirteen"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -394,6 +422,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_fourteen"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -403,6 +432,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_fifteen"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                     <TextView
@@ -412,6 +442,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="@string/label_sixteen"
+                        android:textSize="15dp"
                         android:visibility="invisible"/>
 
                 </LinearLayout>
@@ -433,8 +464,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/base"/>
-
+                    android:text="@string/base"
+                    android:textSize="13dp"/>
 
             </LinearLayout>
 

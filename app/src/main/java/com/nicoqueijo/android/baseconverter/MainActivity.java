@@ -1,5 +1,3 @@
-// TODO: Change seekbar drawable
-// TODO: Try to add base number labels inside the seekbar thumb
 // TODO: Refactor entire back-end. Apply code reusability using methods
 // TODO: Document everything
 // TODO: Test on multiple devices
@@ -156,19 +154,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        customFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
-        customFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
-        clipBoardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-
         seekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
         seekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);
 
         fromLabel = (TextView) findViewById(R.id.from_label);
         toLabel = (TextView) findViewById(R.id.to_label);
-
         inputLabel = (TextView) findViewById(R.id.input_label);
         outputLabel = (TextView) findViewById(R.id.output_label);
-
         baseFromLabel = (TextView) findViewById(R.id.base_label_from);
         baseToLabel = (TextView) findViewById(R.id.base_label_to);
 
@@ -263,6 +255,10 @@ public class MainActivity extends AppCompatActivity {
                 buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine, buttonA, buttonB,
                 buttonC, buttonD, buttonE, buttonF, buttonDel, buttonClr
         };
+
+        customFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
+        customFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
+        clipBoardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
         setCustomFont();
 
