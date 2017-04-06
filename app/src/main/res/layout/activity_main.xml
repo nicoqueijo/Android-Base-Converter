@@ -78,23 +78,6 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/base_label_from"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/base"/>
-
-                <SeekBar
-                    android:id="@+id/seekbar_from_controller"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="15dp"
-                    android:max="14"
-                    android:progress="1"
-                    android:thumb="@drawable/custom_thumb"/>
-
                 <LinearLayout
                     android:id="@+id/base_array_from"
                     android:layout_width="match_parent"
@@ -240,6 +223,25 @@
 
                 </LinearLayout>
 
+                <SeekBar
+                    android:id="@+id/seekbar_from_controller"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="15dp"
+                    android:max="14"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:progress="1"
+                    android:thumb="@drawable/custom_thumb"/>
+
+                <TextView
+                    android:id="@+id/base_label_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/base"/>
+
             </LinearLayout>
 
             <LinearLayout
@@ -268,23 +270,6 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/base_label_to"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/base"/>
-
-                <SeekBar
-                    android:id="@+id/seekbar_to_controller"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="14dp"
-                    android:max="14"
-                    android:progress="1"
-                    android:thumb="@drawable/custom_thumb"/>
 
                 <LinearLayout
                     android:id="@+id/base_array_to"
@@ -430,6 +415,25 @@
                         android:visibility="invisible"/>
 
                 </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seekbar_to_controller"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="14dp"
+                    android:max="14"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:progress="1"
+                    android:thumb="@drawable/custom_thumb"/>
+
+                <TextView
+                    android:id="@+id/base_label_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/base"/>
 
 
             </LinearLayout>
