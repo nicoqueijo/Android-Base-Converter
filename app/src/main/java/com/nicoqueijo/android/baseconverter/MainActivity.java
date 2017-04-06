@@ -2,8 +2,7 @@
 // TODO: Change thumb drawable
 // TODO: Change buttons drawable
 // TODO: Try to add base number labels inside the seekbar thumb
-// TODO: Add hamburger menu with app info, how to use instructions, icon launcher credit
-// TODO: Refactor entire back-end. Apply code reusability using methods.
+// TODO: Refactor entire back-end. Apply code reusability using methods
 // TODO: Document everything
 // TODO: Test on multiple devices
 // TODO: Publish to playstore
@@ -872,9 +871,10 @@ public class MainActivity extends AppCompatActivity {
         final String aboutMessage = "ABOUT\n\n" +
                 "The source code for this project can be found at github.com/nicoqueijo";
         final String howToUseMessage = "HOW TO USE\n\n" +
-                "Use the first slider to set the base of the number you want to convert.\n" +
-                "Enter the number you want to convert using the buttons.\n" +
-                "Use the second slider to convert the number to a new base";
+                "Use the first slider to set the base of the number you want to convert.\n\n" +
+                "Enter the number you want to convert using the buttons.\n\n" +
+                "Use the second slider to convert the number to a new base.\n\n" +
+                "You can also copy the input or output by longpressing it.";
         final String iconInfoMessage = "ICON INFO\n\n" +
                 "Launcher icon for this app made by Freepik from www.flaticon.com is licensed by CC 3.0 BY";
 
