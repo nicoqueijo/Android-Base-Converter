@@ -1,6 +1,4 @@
 // TODO: Change seekbar drawable
-// TODO: Change thumb drawable
-// TODO: Change buttons drawable
 // TODO: Try to add base number labels inside the seekbar thumb
 // TODO: Refactor entire back-end. Apply code reusability using methods
 // TODO: Document everything

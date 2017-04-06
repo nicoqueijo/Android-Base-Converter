@@ -92,7 +92,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="15dp"
                     android:max="14"
-                    android:progress="1"/>
+                    android:progress="1"
+                    android:thumb="@drawable/custom_thumb"/>
 
                 <LinearLayout
                     android:id="@+id/base_array_from"
@@ -282,7 +283,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="14dp"
                     android:max="14"
-                    android:progress="1"/>
+                    android:progress="1"
+                    android:thumb="@drawable/custom_thumb"/>
 
                 <LinearLayout
                     android:id="@+id/base_array_to"
