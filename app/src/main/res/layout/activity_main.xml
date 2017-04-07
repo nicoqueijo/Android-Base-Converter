@@ -87,7 +87,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/from_base_label_two"
+                        android:id="@+id/from_base_label_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -97,7 +97,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_three"
+                        android:id="@+id/from_base_label_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -107,7 +107,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_four"
+                        android:id="@+id/from_base_label_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -117,7 +117,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_five"
+                        android:id="@+id/from_base_label_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -127,7 +127,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_six"
+                        android:id="@+id/from_base_label_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -137,7 +137,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_seven"
+                        android:id="@+id/from_base_label_7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -147,7 +147,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_eight"
+                        android:id="@+id/from_base_label_8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -157,7 +157,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_nine"
+                        android:id="@+id/from_base_label_9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -167,7 +167,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_ten"
+                        android:id="@+id/from_base_label_10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -177,7 +177,7 @@
                         android:visibility="visible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_eleven"
+                        android:id="@+id/from_base_label_11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -187,7 +187,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_twelve"
+                        android:id="@+id/from_base_label_12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -197,7 +197,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_thirteen"
+                        android:id="@+id/from_base_label_13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -207,7 +207,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_fourteen"
+                        android:id="@+id/from_base_label_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -217,7 +217,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_fifteen"
+                        android:id="@+id/from_base_label_15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -227,7 +227,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/from_base_label_sixteen"
+                        android:id="@+id/from_base_label_16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -296,7 +296,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/to_base_label_two"
+                        android:id="@+id/to_base_label_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -306,7 +306,7 @@
                         android:visibility="visible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_three"
+                        android:id="@+id/to_base_label_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -316,7 +316,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_four"
+                        android:id="@+id/to_base_label_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -326,7 +326,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_five"
+                        android:id="@+id/to_base_label_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -336,7 +336,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_six"
+                        android:id="@+id/to_base_label_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -346,7 +346,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_seven"
+                        android:id="@+id/to_base_label_7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -356,7 +356,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_eight"
+                        android:id="@+id/to_base_label_8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -366,7 +366,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_nine"
+                        android:id="@+id/to_base_label_9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -376,7 +376,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_ten"
+                        android:id="@+id/to_base_label_10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -386,7 +386,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_eleven"
+                        android:id="@+id/to_base_label_11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -396,7 +396,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_twelve"
+                        android:id="@+id/to_base_label_12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -406,7 +406,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_thirteen"
+                        android:id="@+id/to_base_label_13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -416,7 +416,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_fourteen"
+                        android:id="@+id/to_base_label_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -426,7 +426,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_fifteen"
+                        android:id="@+id/to_base_label_15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -436,7 +436,7 @@
                         android:visibility="invisible"/>
 
                     <TextView
-                        android:id="@+id/to_base_label_sixteen"
+                        android:id="@+id/to_base_label_16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

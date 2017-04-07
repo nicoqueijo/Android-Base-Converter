@@ -1,8 +1,3 @@
-// TODO: Refactor entire back-end. Apply code reusability using methods
-// TODO: Document everything
-// TODO: Test on multiple devices
-// TODO: Publish to playstore
-
 package com.nicoqueijo.android.baseconverter;
 
 import android.content.ClipData;
@@ -36,32 +31,32 @@ public class MainActivity extends AppCompatActivity {
     private final int SEEKBAR_BUTTON_OFFSET = 1;
     private final int SEEKBAR_PROGRESS_OFFSET = 2;
 
-    private final int BASE_TWO = 2;
-    private final int BASE_THREE = 3;
-    private final int BASE_FOUR = 4;
-    private final int BASE_FIVE = 5;
-    private final int BASE_SIX = 6;
-    private final int BASE_SEVEN = 7;
-    private final int BASE_EIGHT = 8;
-    private final int BASE_NINE = 9;
-    private final int BASE_TEN = 10;
-    private final int BASE_ELEVEN = 11;
-    private final int BASE_TWELVE = 12;
-    private final int BASE_THIRTEEN = 13;
-    private final int BASE_FOURTEEN = 14;
-    private final int BASE_FIFTEEN = 15;
-    private final int BASE_SIXTEEN = 16;
+    private final int BASE_2 = 2;
+    private final int BASE_3 = 3;
+    private final int BASE_4 = 4;
+    private final int BASE_5 = 5;
+    private final int BASE_6 = 6;
+    private final int BASE_7 = 7;
+    private final int BASE_8 = 8;
+    private final int BASE_9 = 9;
+    private final int BASE_10 = 10;
+    private final int BASE_11 = 11;
+    private final int BASE_12 = 12;
+    private final int BASE_13 = 13;
+    private final int BASE_14 = 14;
+    private final int BASE_15 = 15;
+    private final int BASE_16 = 16;
 
-    private final Character CHAR_ZERO = '0';
-    private final Character CHAR_ONE = '1';
-    private final Character CHAR_TWO = '2';
-    private final Character CHAR_THREE = '3';
-    private final Character CHAR_FOUR = '4';
-    private final Character CHAR_FIVE = '5';
-    private final Character CHAR_SIX = '6';
-    private final Character CHAR_SEVEN = '7';
-    private final Character CHAR_EIGHT = '8';
-    private final Character CHAR_NINE = '9';
+    private final Character CHAR_0 = '0';
+    private final Character CHAR_1 = '1';
+    private final Character CHAR_2 = '2';
+    private final Character CHAR_3 = '3';
+    private final Character CHAR_4 = '4';
+    private final Character CHAR_5 = '5';
+    private final Character CHAR_6 = '6';
+    private final Character CHAR_7 = '7';
+    private final Character CHAR_8 = '8';
+    private final Character CHAR_9 = '9';
     private final Character CHAR_A = 'A';
     private final Character CHAR_B = 'B';
     private final Character CHAR_C = 'C';
@@ -85,48 +80,48 @@ public class MainActivity extends AppCompatActivity {
     private TextView inputValueLabel;
     private TextView outputValueLabel;
 
-    private TextView numberLabelFromTwo;
-    private TextView numberLabelFromThree;
-    private TextView numberLabelFromFour;
-    private TextView numberLabelFromFive;
-    private TextView numberLabelFromSix;
-    private TextView numberLabelFromSeven;
-    private TextView numberLabelFromEight;
-    private TextView numberLabelFromNine;
-    private TextView numberLabelFromTen;
-    private TextView numberLabelFromEleven;
-    private TextView numberLabelFromTwelve;
-    private TextView numberLabelFromThirteen;
-    private TextView numberLabelFromFourteen;
-    private TextView numberLabelFromFifteen;
-    private TextView numberLabelFromSixteen;
+    private TextView numberLabelFrom2;
+    private TextView numberLabelFrom3;
+    private TextView numberLabelFrom4;
+    private TextView numberLabelFrom5;
+    private TextView numberLabelFrom6;
+    private TextView numberLabelFrom7;
+    private TextView numberLabelFrom8;
+    private TextView numberLabelFrom9;
+    private TextView numberLabelFrom10;
+    private TextView numberLabelFrom11;
+    private TextView numberLabelFrom12;
+    private TextView numberLabelFrom13;
+    private TextView numberLabelFrom14;
+    private TextView numberLabelFrom15;
+    private TextView numberLabelFrom16;
 
-    private TextView numberLabelToTwo;
-    private TextView numberLabelToThree;
-    private TextView numberLabelToFour;
-    private TextView numberLabelToFive;
-    private TextView numberLabelToSix;
-    private TextView numberLabelToSeven;
-    private TextView numberLabelToEight;
-    private TextView numberLabelToNine;
-    private TextView numberLabelToTen;
-    private TextView numberLabelToEleven;
-    private TextView numberLabelToTwelve;
-    private TextView numberLabelToThirteen;
-    private TextView numberLabelToFourteen;
-    private TextView numberLabelToFifteen;
-    private TextView numberLabelToSixteen;
+    private TextView numberLabelTo2;
+    private TextView numberLabelTo3;
+    private TextView numberLabelTo4;
+    private TextView numberLabelTo5;
+    private TextView numberLabelTo6;
+    private TextView numberLabelTo7;
+    private TextView numberLabelTo8;
+    private TextView numberLabelTo9;
+    private TextView numberLabelTo10;
+    private TextView numberLabelTo11;
+    private TextView numberLabelTo12;
+    private TextView numberLabelTo13;
+    private TextView numberLabelTo14;
+    private TextView numberLabelTo15;
+    private TextView numberLabelTo16;
 
-    private Button buttonZero;
-    private Button buttonOne;
-    private Button buttonTwo;
-    private Button buttonThree;
-    private Button buttonFour;
-    private Button buttonFive;
-    private Button buttonSix;
-    private Button buttonSeven;
-    private Button buttonEight;
-    private Button buttonNine;
+    private Button button0;
+    private Button button1;
+    private Button button2;
+    private Button button3;
+    private Button button4;
+    private Button button5;
+    private Button button6;
+    private Button button7;
+    private Button button8;
+    private Button button9;
     private Button buttonA;
     private Button buttonB;
     private Button buttonC;
@@ -167,48 +162,48 @@ public class MainActivity extends AppCompatActivity {
         inputValueLabel = (TextView) findViewById(R.id.input_value);
         outputValueLabel = (TextView) findViewById(R.id.output_value);
 
-        numberLabelFromTwo = (TextView) findViewById(R.id.from_base_label_two);
-        numberLabelFromThree = (TextView) findViewById(R.id.from_base_label_three);
-        numberLabelFromFour = (TextView) findViewById(R.id.from_base_label_four);
-        numberLabelFromFive = (TextView) findViewById(R.id.from_base_label_five);
-        numberLabelFromSix = (TextView) findViewById(R.id.from_base_label_six);
-        numberLabelFromSeven = (TextView) findViewById(R.id.from_base_label_seven);
-        numberLabelFromEight = (TextView) findViewById(R.id.from_base_label_eight);
-        numberLabelFromNine = (TextView) findViewById(R.id.from_base_label_nine);
-        numberLabelFromTen = (TextView) findViewById(R.id.from_base_label_ten);
-        numberLabelFromEleven = (TextView) findViewById(R.id.from_base_label_eleven);
-        numberLabelFromTwelve = (TextView) findViewById(R.id.from_base_label_twelve);
-        numberLabelFromThirteen = (TextView) findViewById(R.id.from_base_label_thirteen);
-        numberLabelFromFourteen = (TextView) findViewById(R.id.from_base_label_fourteen);
-        numberLabelFromFifteen = (TextView) findViewById(R.id.from_base_label_fifteen);
-        numberLabelFromSixteen = (TextView) findViewById(R.id.from_base_label_sixteen);
+        numberLabelFrom2 = (TextView) findViewById(R.id.from_base_label_2);
+        numberLabelFrom3 = (TextView) findViewById(R.id.from_base_label_3);
+        numberLabelFrom4 = (TextView) findViewById(R.id.from_base_label_4);
+        numberLabelFrom5 = (TextView) findViewById(R.id.from_base_label_5);
+        numberLabelFrom6 = (TextView) findViewById(R.id.from_base_label_6);
+        numberLabelFrom7 = (TextView) findViewById(R.id.from_base_label_7);
+        numberLabelFrom8 = (TextView) findViewById(R.id.from_base_label_8);
+        numberLabelFrom9 = (TextView) findViewById(R.id.from_base_label_9);
+        numberLabelFrom10 = (TextView) findViewById(R.id.from_base_label_10);
+        numberLabelFrom11 = (TextView) findViewById(R.id.from_base_label_11);
+        numberLabelFrom12 = (TextView) findViewById(R.id.from_base_label_12);
+        numberLabelFrom13 = (TextView) findViewById(R.id.from_base_label_13);
+        numberLabelFrom14 = (TextView) findViewById(R.id.from_base_label_14);
+        numberLabelFrom15 = (TextView) findViewById(R.id.from_base_label_15);
+        numberLabelFrom16 = (TextView) findViewById(R.id.from_base_label_16);
 
-        numberLabelToTwo = (TextView) findViewById(R.id.to_base_label_two);
-        numberLabelToThree = (TextView) findViewById(R.id.to_base_label_three);
-        numberLabelToFour = (TextView) findViewById(R.id.to_base_label_four);
-        numberLabelToFive = (TextView) findViewById(R.id.to_base_label_five);
-        numberLabelToSix = (TextView) findViewById(R.id.to_base_label_six);
-        numberLabelToSeven = (TextView) findViewById(R.id.to_base_label_seven);
-        numberLabelToEight = (TextView) findViewById(R.id.to_base_label_eight);
-        numberLabelToNine = (TextView) findViewById(R.id.to_base_label_nine);
-        numberLabelToTen = (TextView) findViewById(R.id.to_base_label_ten);
-        numberLabelToEleven = (TextView) findViewById(R.id.to_base_label_eleven);
-        numberLabelToTwelve = (TextView) findViewById(R.id.to_base_label_twelve);
-        numberLabelToThirteen = (TextView) findViewById(R.id.to_base_label_thirteen);
-        numberLabelToFourteen = (TextView) findViewById(R.id.to_base_label_fourteen);
-        numberLabelToFifteen = (TextView) findViewById(R.id.to_base_label_fifteen);
-        numberLabelToSixteen = (TextView) findViewById(R.id.to_base_label_sixteen);
+        numberLabelTo2 = (TextView) findViewById(R.id.to_base_label_2);
+        numberLabelTo3 = (TextView) findViewById(R.id.to_base_label_3);
+        numberLabelTo4 = (TextView) findViewById(R.id.to_base_label_4);
+        numberLabelTo5 = (TextView) findViewById(R.id.to_base_label_5);
+        numberLabelTo6 = (TextView) findViewById(R.id.to_base_label_6);
+        numberLabelTo7 = (TextView) findViewById(R.id.to_base_label_7);
+        numberLabelTo8 = (TextView) findViewById(R.id.to_base_label_8);
+        numberLabelTo9 = (TextView) findViewById(R.id.to_base_label_9);
+        numberLabelTo10 = (TextView) findViewById(R.id.to_base_label_10);
+        numberLabelTo11 = (TextView) findViewById(R.id.to_base_label_11);
+        numberLabelTo12 = (TextView) findViewById(R.id.to_base_label_12);
+        numberLabelTo13 = (TextView) findViewById(R.id.to_base_label_13);
+        numberLabelTo14 = (TextView) findViewById(R.id.to_base_label_14);
+        numberLabelTo15 = (TextView) findViewById(R.id.to_base_label_15);
+        numberLabelTo16 = (TextView) findViewById(R.id.to_base_label_16);
 
-        buttonZero = (Button) findViewById(R.id.button_0);
-        buttonOne = (Button) findViewById(R.id.button_1);
-        buttonTwo = (Button) findViewById(R.id.button_2);
-        buttonThree = (Button) findViewById(R.id.button_3);
-        buttonFour = (Button) findViewById(R.id.button_4);
-        buttonFive = (Button) findViewById(R.id.button_5);
-        buttonSix = (Button) findViewById(R.id.button_6);
-        buttonSeven = (Button) findViewById(R.id.button_7);
-        buttonEight = (Button) findViewById(R.id.button_8);
-        buttonNine = (Button) findViewById(R.id.button_9);
+        button0 = (Button) findViewById(R.id.button_0);
+        button1 = (Button) findViewById(R.id.button_1);
+        button2 = (Button) findViewById(R.id.button_2);
+        button3 = (Button) findViewById(R.id.button_3);
+        button4 = (Button) findViewById(R.id.button_4);
+        button5 = (Button) findViewById(R.id.button_5);
+        button6 = (Button) findViewById(R.id.button_6);
+        button7 = (Button) findViewById(R.id.button_7);
+        button8 = (Button) findViewById(R.id.button_8);
+        button9 = (Button) findViewById(R.id.button_9);
         buttonA = (Button) findViewById(R.id.button_A);
         buttonB = (Button) findViewById(R.id.button_B);
         buttonC = (Button) findViewById(R.id.button_C);
@@ -219,40 +214,40 @@ public class MainActivity extends AppCompatActivity {
         buttonClr = (Button) findViewById(R.id.button_clr);
 
         numberLabelFromArray = new TextView[]{
-                numberLabelFromTwo, numberLabelFromThree, numberLabelFromFour,
-                numberLabelFromFive, numberLabelFromSix, numberLabelFromSeven,
-                numberLabelFromEight, numberLabelFromNine, numberLabelFromTen,
-                numberLabelFromEleven, numberLabelFromTwelve, numberLabelFromThirteen,
-                numberLabelFromFourteen, numberLabelFromFifteen, numberLabelFromSixteen
+                numberLabelFrom2, numberLabelFrom3, numberLabelFrom4,
+                numberLabelFrom5, numberLabelFrom6, numberLabelFrom7,
+                numberLabelFrom8, numberLabelFrom9, numberLabelFrom10,
+                numberLabelFrom11, numberLabelFrom12, numberLabelFrom13,
+                numberLabelFrom14, numberLabelFrom15, numberLabelFrom16
         };
 
         numberLabelToArray = new TextView[]{
-                numberLabelToTwo, numberLabelToThree, numberLabelToFour,
-                numberLabelToFive, numberLabelToSix, numberLabelToSeven,
-                numberLabelToEight, numberLabelToNine, numberLabelToTen,
-                numberLabelToEleven, numberLabelToTwelve, numberLabelToThirteen,
-                numberLabelToFourteen, numberLabelToFifteen, numberLabelToSixteen
+                numberLabelTo2, numberLabelTo3, numberLabelTo4,
+                numberLabelTo5, numberLabelTo6, numberLabelTo7,
+                numberLabelTo8, numberLabelTo9, numberLabelTo10,
+                numberLabelTo11, numberLabelTo12, numberLabelTo13,
+                numberLabelTo14, numberLabelTo15, numberLabelTo16
         };
 
         buttonsArray = new Button[]{
-                buttonZero, buttonOne, buttonTwo, buttonThree,
-                buttonFour, buttonFive, buttonSix, buttonSeven,
-                buttonEight, buttonNine, buttonA, buttonB,
+                button0, button1, button2, button3,
+                button4, button5, button6, button7,
+                button8, button9, buttonA, buttonB,
                 buttonC, buttonD, buttonE, buttonF
         };
 
         allViewsArray = new View[]{
                 fromLabel, toLabel, inputLabel, outputLabel, baseToLabel, baseFromLabel,
-                inputValueLabel, outputValueLabel, numberLabelFromTwo, numberLabelFromThree,
-                numberLabelFromFour, numberLabelFromFive, numberLabelFromSix, numberLabelFromSeven,
-                numberLabelFromEight, numberLabelFromNine, numberLabelFromTen, numberLabelFromEleven,
-                numberLabelFromTwelve, numberLabelFromThirteen, numberLabelFromFourteen,
-                numberLabelFromFifteen, numberLabelFromSixteen, numberLabelToTwo, numberLabelToThree,
-                numberLabelToFour, numberLabelToFive, numberLabelToSix, numberLabelToSeven,
-                numberLabelToEight, numberLabelToNine, numberLabelToTen, numberLabelToEleven,
-                numberLabelToTwelve, numberLabelToThirteen, numberLabelToFourteen, numberLabelToFifteen,
-                numberLabelToSixteen, buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour,
-                buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine, buttonA, buttonB,
+                inputValueLabel, outputValueLabel, numberLabelFrom2, numberLabelFrom3,
+                numberLabelFrom4, numberLabelFrom5, numberLabelFrom6, numberLabelFrom7,
+                numberLabelFrom8, numberLabelFrom9, numberLabelFrom10, numberLabelFrom11,
+                numberLabelFrom12, numberLabelFrom13, numberLabelFrom14,
+                numberLabelFrom15, numberLabelFrom16, numberLabelTo2, numberLabelTo3,
+                numberLabelTo4, numberLabelTo5, numberLabelTo6, numberLabelTo7,
+                numberLabelTo8, numberLabelTo9, numberLabelTo10, numberLabelTo11,
+                numberLabelTo12, numberLabelTo13, numberLabelTo14, numberLabelTo15,
+                numberLabelTo16, button0, button1, button2, button3, button4,
+                button5, button6, button7, button8, button9, buttonA, buttonB,
                 buttonC, buttonD, buttonE, buttonF, buttonDel, buttonClr
         };
 
@@ -292,11 +287,13 @@ public class MainActivity extends AppCompatActivity {
                 userInput.clear();
             }
 
+            // Unused but declaration required for listener.
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
 
+            // Unused but declaration required for listener.
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
@@ -331,11 +328,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+            // Unused but declaration required for listener.
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
 
+            // Unused but declaration required for listener.
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
@@ -375,7 +374,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Listener for the DEL button. Removes the last digit from the current input, recalculates the conversion, and re-outputs.
+         * Listener for the DEL button. Removes the last digit from the current input, recalculates
+         * the conversion, and re-outputs.
          */
         buttonDel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -417,422 +417,206 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Listener for button 0. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit to
-         * the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 0. Calls the processNumberButtonPress method passing the character
+         * '0' as the argument.
          */
-        buttonZero.setOnClickListener(new View.OnClickListener() {
+        button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_ZERO);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
-
+                processNumberButtonPress(CHAR_0);
             }
         });
 
         /**
-         * Listener for button 1. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 1. Calls the processNumberButtonPress method passing the character
+         * '1' as the argument.
          */
-        buttonOne.setOnClickListener(new View.OnClickListener() {
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_ONE);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_1);
             }
         });
 
         /**
-         * Listener for button 2. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 2. Calls the processNumberButtonPress method passing the character
+         * '2' as the argument.
          */
-        buttonTwo.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_TWO);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_2);
             }
         });
 
         /**
-         * Listener for button 3. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 3. Calls the processNumberButtonPress method passing the character
+         * '3' as the argument.
          */
-        buttonThree.setOnClickListener(new View.OnClickListener() {
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_THREE);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_3);
             }
         });
 
         /**
-         * Listener for button 4. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 4. Calls the processNumberButtonPress method passing the character
+         * '4' as the argument.
          */
-        buttonFour.setOnClickListener(new View.OnClickListener() {
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_FOUR);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_4);
             }
         });
 
         /**
-         * Listener for button 5. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 5. Calls the processNumberButtonPress method passing the character
+         * '5' as the argument.
          */
-        buttonFive.setOnClickListener(new View.OnClickListener() {
+        button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_FIVE);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_5);
             }
         });
 
         /**
-         * Listener for button 6. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 6. Calls the processNumberButtonPress method passing the character
+         * '6' as the argument.
          */
-        buttonSix.setOnClickListener(new View.OnClickListener() {
+        button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_SIX);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_6);
             }
         });
 
         /**
-         * Listener for button 7. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 7. Calls the processNumberButtonPress method passing the character
+         * '7' as the argument.
          */
-        buttonSeven.setOnClickListener(new View.OnClickListener() {
+        button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_SEVEN);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_7);
             }
         });
 
         /**
-         * Listener for button 8. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 8. Calls the processNumberButtonPress method passing the character
+         * '8' as the argument.
          */
-        buttonEight.setOnClickListener(new View.OnClickListener() {
+        button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_EIGHT);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_8);
             }
         });
 
         /**
-         * Listener for button 9. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button 9. Calls the processNumberButtonPress method passing the character
+         * '9' as the argument.
          */
-        buttonNine.setOnClickListener(new View.OnClickListener() {
+        button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_NINE);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_9);
             }
         });
 
         /**
-         * Listener for button A. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button A. Calls the processNumberButtonPress method passing the character
+         * 'A' as the argument.
          */
         buttonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_A);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_A);
             }
         });
 
         /**
-         * Listener for button B. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button B. Calls the processNumberButtonPress method passing the character
+         * 'B' as the argument.
          */
         buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_B);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_B);
             }
         });
 
         /**
-         * Listener for button C. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button C. Calls the processNumberButtonPress method passing the character
+         * 'C' as the argument.
          */
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_C);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_C);
             }
         });
 
         /**
-         * Listener for button D. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button D. Calls the processNumberButtonPress method passing the character
+         * 'D' as the argument.
          */
         buttonD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_D);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_D);
             }
         });
 
         /**
-         * Listener for button E. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button E. Calls the processNumberButtonPress method passing the character
+         * 'E' as the argument.
          */
         buttonE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_E);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_E);
             }
         });
 
         /**
-         * Listener for button F. Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-         * to the input, performs the conversion to the new base, and sets it to the output.
+         * Listener for button F. Calls the processNumberButtonPress method passing the character
+         * 'F' as the argument.
          */
         buttonF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triggersOverflow()) {
-                    return;
-                }
-                userInput.add(CHAR_F);
-                String output = "";
-                for (Character i : userInput) {
-                    output = output + i;
-                }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-                if (output.equals("0")) {
-                    outputValueLabel.setText("");
-                } else {
-                    outputValueLabel.setText(output);
-                }
+                processNumberButtonPress(CHAR_F);
             }
         });
 
+    }
+
+    /**
+     * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
+     * to the input, performs the conversion to the new base, and sets it to the output.
+     *
+     * @param numberPressed The digit to be processed.
+     */
+    private void processNumberButtonPress(Character numberPressed) {
+        if (triggersOverflow()) {
+            return;
+        }
+        userInput.add(numberPressed);
+        String output = "";
+        for (Character i : userInput) {
+            output = output + i;
+        }
+        inputValueLabel.setText(output);
+        output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
+                SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+        if (output.equals("0")) {
+            outputValueLabel.setText("");
+        } else {
+            outputValueLabel.setText(output);
+        }
     }
 
     /**
@@ -918,91 +702,91 @@ public class MainActivity extends AppCompatActivity {
         int toastDuration = Toast.LENGTH_SHORT;
 
         switch (currentBaseFrom) {
-            case BASE_SIXTEEN:
+            case BASE_16:
                 if (userInput.size() >= 14) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_FIFTEEN:
+            case BASE_15:
                 if (userInput.size() >= 14) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_FOURTEEN:
+            case BASE_14:
                 if (userInput.size() >= 15) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_THIRTEEN:
+            case BASE_13:
                 if (userInput.size() >= 15) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_TWELVE:
+            case BASE_12:
                 if (userInput.size() >= 16) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_ELEVEN:
+            case BASE_11:
                 if (userInput.size() >= 16) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_TEN:
+            case BASE_10:
                 if (userInput.size() >= 17) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_NINE:
+            case BASE_9:
                 if (userInput.size() >= 17) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_EIGHT:
+            case BASE_8:
                 if (userInput.size() >= 21) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_SEVEN:
+            case BASE_7:
                 if (userInput.size() >= 21) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_SIX:
+            case BASE_6:
                 if (userInput.size() >= 23) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_FIVE:
+            case BASE_5:
                 if (userInput.size() >= 23) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_FOUR:
+            case BASE_4:
                 if (userInput.size() >= 31) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_THREE:
+            case BASE_3:
                 if (userInput.size() >= 34) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
-            case BASE_TWO:
+            case BASE_2:
                 if (userInput.size() >= 51) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
@@ -1013,7 +797,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Displays a toast notifying the user the number is getting to large and input cannot grow any further.
+     * Displays a toast notifying the user the number is getting too large and input cannot grow any further.
      * Cancels the current toast if there is one present to avoid a cluster of toasts queueing up.
      *
      * @param context  The current context.
