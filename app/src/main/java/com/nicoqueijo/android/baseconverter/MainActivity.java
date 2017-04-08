@@ -20,6 +20,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Android application. Converts numbers from one base to another supporting base 2 through 16.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
