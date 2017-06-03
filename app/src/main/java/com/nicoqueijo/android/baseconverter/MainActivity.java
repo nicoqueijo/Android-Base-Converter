@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
     private final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
-    private final String copiedToClipboardMessage = "Copied to clipboard!";
+    private final String COPIED_TO_CLIPBOARD_MESSAGE = "Copied to clipboard!";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
     private final int SEEKBAR_TO_START_LOCATION = 0;
@@ -354,7 +354,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!outputText.isEmpty()) {
                     clipData = ClipData.newPlainText("text", outputText);
                     clipBoardManager.setPrimaryClip(clipData);
-                    Toast.makeText(getApplicationContext(), copiedToClipboardMessage, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), COPIED_TO_CLIPBOARD_MESSAGE, Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }
@@ -370,7 +370,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!inputText.isEmpty()) {
                     clipData = ClipData.newPlainText("text", inputText);
                     clipBoardManager.setPrimaryClip(clipData);
-                    Toast.makeText(getApplicationContext(), copiedToClipboardMessage, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), COPIED_TO_CLIPBOARD_MESSAGE, Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }
