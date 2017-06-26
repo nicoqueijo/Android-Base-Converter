@@ -650,7 +650,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        
+
         switch (item.getItemId()) {
             case (R.id.menu_about):
                 AlertDialog aboutBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(R.string.about_message).show();
