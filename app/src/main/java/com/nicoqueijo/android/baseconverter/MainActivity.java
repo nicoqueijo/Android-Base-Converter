@@ -67,227 +67,227 @@ public class MainActivity extends AppCompatActivity {
     private final Character CHAR_E = 'E';
     private final Character CHAR_F = 'F';
 
-    private int currentSeekbarFromProgress = SEEKBAR_FROM_START_LOCATION;
-    private int currentSeekbarToProgress = SEEKBAR_TO_START_LOCATION;
+    private int mCurrentSeekbarFromProgress = SEEKBAR_FROM_START_LOCATION;
+    private int mCurrentSeekbarToProgress = SEEKBAR_TO_START_LOCATION;
 
-    private SeekBar seekBarFrom;
-    private SeekBar seekBarTo;
+    private SeekBar mSeekBarFrom;
+    private SeekBar mSeekBarTo;
 
-    private TextView fromLabel;
-    private TextView toLabel;
-    private TextView inputLabel;
-    private TextView outputLabel;
-    private TextView baseToLabel;
-    private TextView baseFromLabel;
+    private TextView mFromLabel;
+    private TextView mToLabel;
+    private TextView mInputLabel;
+    private TextView mOutputLabel;
+    private TextView mBaseToLabel;
+    private TextView mBaseFromLabel;
 
-    private TextView inputValueLabel;
-    private TextView outputValueLabel;
+    private TextView mInputValueLabel;
+    private TextView mOutputValueLabel;
 
-    private TextView numberLabelFrom2;
-    private TextView numberLabelFrom3;
-    private TextView numberLabelFrom4;
-    private TextView numberLabelFrom5;
-    private TextView numberLabelFrom6;
-    private TextView numberLabelFrom7;
-    private TextView numberLabelFrom8;
-    private TextView numberLabelFrom9;
-    private TextView numberLabelFrom10;
-    private TextView numberLabelFrom11;
-    private TextView numberLabelFrom12;
-    private TextView numberLabelFrom13;
-    private TextView numberLabelFrom14;
-    private TextView numberLabelFrom15;
-    private TextView numberLabelFrom16;
+    private TextView mNumberLabelFrom2;
+    private TextView mNumberLabelFrom3;
+    private TextView mNumberLabelFrom4;
+    private TextView mNumberLabelFrom5;
+    private TextView mNumberLabelFrom6;
+    private TextView mNumberLabelFrom7;
+    private TextView mNumberLabelFrom8;
+    private TextView mNumberLabelFrom9;
+    private TextView mNumberLabelFrom10;
+    private TextView mNumberLabelFrom11;
+    private TextView mNumberLabelFrom12;
+    private TextView mNumberLabelFrom13;
+    private TextView mNumberLabelFrom14;
+    private TextView mNumberLabelFrom15;
+    private TextView mNumberLabelFrom16;
 
-    private TextView numberLabelTo2;
-    private TextView numberLabelTo3;
-    private TextView numberLabelTo4;
-    private TextView numberLabelTo5;
-    private TextView numberLabelTo6;
-    private TextView numberLabelTo7;
-    private TextView numberLabelTo8;
-    private TextView numberLabelTo9;
-    private TextView numberLabelTo10;
-    private TextView numberLabelTo11;
-    private TextView numberLabelTo12;
-    private TextView numberLabelTo13;
-    private TextView numberLabelTo14;
-    private TextView numberLabelTo15;
-    private TextView numberLabelTo16;
+    private TextView mNumberLabelTo2;
+    private TextView mNumberLabelTo3;
+    private TextView mNumberLabelTo4;
+    private TextView mNumberLabelTo5;
+    private TextView mNumberLabelTo6;
+    private TextView mNumberLabelTo7;
+    private TextView mNumberLabelTo8;
+    private TextView mNumberLabelTo9;
+    private TextView mNumberLabelTo10;
+    private TextView mNumberLabelTo11;
+    private TextView mNumberLabelTo12;
+    private TextView mNumberLabelTo13;
+    private TextView mNumberLabelTo14;
+    private TextView mNumberLabelTo15;
+    private TextView mNumberLabelTo16;
 
-    private Button button0;
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
-    private Button button6;
-    private Button button7;
-    private Button button8;
-    private Button button9;
-    private Button buttonA;
-    private Button buttonB;
-    private Button buttonC;
-    private Button buttonD;
-    private Button buttonE;
-    private Button buttonF;
-    private Button buttonDel;
-    private Button buttonClr;
+    private Button mButton0;
+    private Button mButton1;
+    private Button mButton2;
+    private Button mButton3;
+    private Button mButton4;
+    private Button mButton5;
+    private Button mButton6;
+    private Button mButton7;
+    private Button mButton8;
+    private Button mButton9;
+    private Button mButtonA;
+    private Button mButtonB;
+    private Button mButtonC;
+    private Button mButtonD;
+    private Button mButtonE;
+    private Button mButtonF;
+    private Button mButtonDel;
+    private Button mButtonClr;
 
-    private TextView[] numberLabelFromArray;
-    private TextView[] numberLabelToArray;
-    private Button[] buttonsArray;
-    private View[] allViewsArray;
+    private TextView[] mNumberLabelFromArray;
+    private TextView[] mNumberLabelToArray;
+    private Button[] mButtonsArray;
+    private View[] mAllViewsArray;
 
-    private ArrayList<Character> userInput = new ArrayList<>();
-    private Typeface customFontSemiBold;
-    private Typeface customFontRegular;
+    private ArrayList<Character> mUserInput = new ArrayList<>();
+    private Typeface mCustomFontSemiBold;
+    private Typeface mCustomFontRegular;
 
-    private Toast overflowToast = null;
-    private ClipboardManager clipBoardManager;
-    private ClipData clipData;
+    private Toast mOverflowToast = null;
+    private ClipboardManager mClipboardmanager;
+    private ClipData mClipData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        seekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
-        seekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);
+        mSeekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
+        mSeekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);
 
-        fromLabel = (TextView) findViewById(R.id.from_label);
-        toLabel = (TextView) findViewById(R.id.to_label);
-        inputLabel = (TextView) findViewById(R.id.input_label);
-        outputLabel = (TextView) findViewById(R.id.output_label);
-        baseFromLabel = (TextView) findViewById(R.id.base_label_from);
-        baseToLabel = (TextView) findViewById(R.id.base_label_to);
+        mFromLabel = (TextView) findViewById(R.id.from_label);
+        mToLabel = (TextView) findViewById(R.id.to_label);
+        mInputLabel = (TextView) findViewById(R.id.input_label);
+        mOutputLabel = (TextView) findViewById(R.id.output_label);
+        mBaseFromLabel = (TextView) findViewById(R.id.base_label_from);
+        mBaseToLabel = (TextView) findViewById(R.id.base_label_to);
 
-        inputValueLabel = (TextView) findViewById(R.id.input_value);
-        outputValueLabel = (TextView) findViewById(R.id.output_value);
+        mInputValueLabel = (TextView) findViewById(R.id.input_value);
+        mOutputValueLabel = (TextView) findViewById(R.id.output_value);
 
-        numberLabelFrom2 = (TextView) findViewById(R.id.from_base_label_2);
-        numberLabelFrom3 = (TextView) findViewById(R.id.from_base_label_3);
-        numberLabelFrom4 = (TextView) findViewById(R.id.from_base_label_4);
-        numberLabelFrom5 = (TextView) findViewById(R.id.from_base_label_5);
-        numberLabelFrom6 = (TextView) findViewById(R.id.from_base_label_6);
-        numberLabelFrom7 = (TextView) findViewById(R.id.from_base_label_7);
-        numberLabelFrom8 = (TextView) findViewById(R.id.from_base_label_8);
-        numberLabelFrom9 = (TextView) findViewById(R.id.from_base_label_9);
-        numberLabelFrom10 = (TextView) findViewById(R.id.from_base_label_10);
-        numberLabelFrom11 = (TextView) findViewById(R.id.from_base_label_11);
-        numberLabelFrom12 = (TextView) findViewById(R.id.from_base_label_12);
-        numberLabelFrom13 = (TextView) findViewById(R.id.from_base_label_13);
-        numberLabelFrom14 = (TextView) findViewById(R.id.from_base_label_14);
-        numberLabelFrom15 = (TextView) findViewById(R.id.from_base_label_15);
-        numberLabelFrom16 = (TextView) findViewById(R.id.from_base_label_16);
+        mNumberLabelFrom2 = (TextView) findViewById(R.id.from_base_label_2);
+        mNumberLabelFrom3 = (TextView) findViewById(R.id.from_base_label_3);
+        mNumberLabelFrom4 = (TextView) findViewById(R.id.from_base_label_4);
+        mNumberLabelFrom5 = (TextView) findViewById(R.id.from_base_label_5);
+        mNumberLabelFrom6 = (TextView) findViewById(R.id.from_base_label_6);
+        mNumberLabelFrom7 = (TextView) findViewById(R.id.from_base_label_7);
+        mNumberLabelFrom8 = (TextView) findViewById(R.id.from_base_label_8);
+        mNumberLabelFrom9 = (TextView) findViewById(R.id.from_base_label_9);
+        mNumberLabelFrom10 = (TextView) findViewById(R.id.from_base_label_10);
+        mNumberLabelFrom11 = (TextView) findViewById(R.id.from_base_label_11);
+        mNumberLabelFrom12 = (TextView) findViewById(R.id.from_base_label_12);
+        mNumberLabelFrom13 = (TextView) findViewById(R.id.from_base_label_13);
+        mNumberLabelFrom14 = (TextView) findViewById(R.id.from_base_label_14);
+        mNumberLabelFrom15 = (TextView) findViewById(R.id.from_base_label_15);
+        mNumberLabelFrom16 = (TextView) findViewById(R.id.from_base_label_16);
 
-        numberLabelTo2 = (TextView) findViewById(R.id.to_base_label_2);
-        numberLabelTo3 = (TextView) findViewById(R.id.to_base_label_3);
-        numberLabelTo4 = (TextView) findViewById(R.id.to_base_label_4);
-        numberLabelTo5 = (TextView) findViewById(R.id.to_base_label_5);
-        numberLabelTo6 = (TextView) findViewById(R.id.to_base_label_6);
-        numberLabelTo7 = (TextView) findViewById(R.id.to_base_label_7);
-        numberLabelTo8 = (TextView) findViewById(R.id.to_base_label_8);
-        numberLabelTo9 = (TextView) findViewById(R.id.to_base_label_9);
-        numberLabelTo10 = (TextView) findViewById(R.id.to_base_label_10);
-        numberLabelTo11 = (TextView) findViewById(R.id.to_base_label_11);
-        numberLabelTo12 = (TextView) findViewById(R.id.to_base_label_12);
-        numberLabelTo13 = (TextView) findViewById(R.id.to_base_label_13);
-        numberLabelTo14 = (TextView) findViewById(R.id.to_base_label_14);
-        numberLabelTo15 = (TextView) findViewById(R.id.to_base_label_15);
-        numberLabelTo16 = (TextView) findViewById(R.id.to_base_label_16);
+        mNumberLabelTo2 = (TextView) findViewById(R.id.to_base_label_2);
+        mNumberLabelTo3 = (TextView) findViewById(R.id.to_base_label_3);
+        mNumberLabelTo4 = (TextView) findViewById(R.id.to_base_label_4);
+        mNumberLabelTo5 = (TextView) findViewById(R.id.to_base_label_5);
+        mNumberLabelTo6 = (TextView) findViewById(R.id.to_base_label_6);
+        mNumberLabelTo7 = (TextView) findViewById(R.id.to_base_label_7);
+        mNumberLabelTo8 = (TextView) findViewById(R.id.to_base_label_8);
+        mNumberLabelTo9 = (TextView) findViewById(R.id.to_base_label_9);
+        mNumberLabelTo10 = (TextView) findViewById(R.id.to_base_label_10);
+        mNumberLabelTo11 = (TextView) findViewById(R.id.to_base_label_11);
+        mNumberLabelTo12 = (TextView) findViewById(R.id.to_base_label_12);
+        mNumberLabelTo13 = (TextView) findViewById(R.id.to_base_label_13);
+        mNumberLabelTo14 = (TextView) findViewById(R.id.to_base_label_14);
+        mNumberLabelTo15 = (TextView) findViewById(R.id.to_base_label_15);
+        mNumberLabelTo16 = (TextView) findViewById(R.id.to_base_label_16);
 
-        button0 = (Button) findViewById(R.id.button_0);
-        button1 = (Button) findViewById(R.id.button_1);
-        button2 = (Button) findViewById(R.id.button_2);
-        button3 = (Button) findViewById(R.id.button_3);
-        button4 = (Button) findViewById(R.id.button_4);
-        button5 = (Button) findViewById(R.id.button_5);
-        button6 = (Button) findViewById(R.id.button_6);
-        button7 = (Button) findViewById(R.id.button_7);
-        button8 = (Button) findViewById(R.id.button_8);
-        button9 = (Button) findViewById(R.id.button_9);
-        buttonA = (Button) findViewById(R.id.button_A);
-        buttonB = (Button) findViewById(R.id.button_B);
-        buttonC = (Button) findViewById(R.id.button_C);
-        buttonD = (Button) findViewById(R.id.button_D);
-        buttonE = (Button) findViewById(R.id.button_E);
-        buttonF = (Button) findViewById(R.id.button_F);
-        buttonDel = (Button) findViewById(R.id.button_del);
-        buttonClr = (Button) findViewById(R.id.button_clr);
+        mButton0 = (Button) findViewById(R.id.button_0);
+        mButton1 = (Button) findViewById(R.id.button_1);
+        mButton2 = (Button) findViewById(R.id.button_2);
+        mButton3 = (Button) findViewById(R.id.button_3);
+        mButton4 = (Button) findViewById(R.id.button_4);
+        mButton5 = (Button) findViewById(R.id.button_5);
+        mButton6 = (Button) findViewById(R.id.button_6);
+        mButton7 = (Button) findViewById(R.id.button_7);
+        mButton8 = (Button) findViewById(R.id.button_8);
+        mButton9 = (Button) findViewById(R.id.button_9);
+        mButtonA = (Button) findViewById(R.id.button_A);
+        mButtonB = (Button) findViewById(R.id.button_B);
+        mButtonC = (Button) findViewById(R.id.button_C);
+        mButtonD = (Button) findViewById(R.id.button_D);
+        mButtonE = (Button) findViewById(R.id.button_E);
+        mButtonF = (Button) findViewById(R.id.button_F);
+        mButtonDel = (Button) findViewById(R.id.button_del);
+        mButtonClr = (Button) findViewById(R.id.button_clr);
 
-        numberLabelFromArray = new TextView[]{
-                numberLabelFrom2, numberLabelFrom3, numberLabelFrom4,
-                numberLabelFrom5, numberLabelFrom6, numberLabelFrom7,
-                numberLabelFrom8, numberLabelFrom9, numberLabelFrom10,
-                numberLabelFrom11, numberLabelFrom12, numberLabelFrom13,
-                numberLabelFrom14, numberLabelFrom15, numberLabelFrom16
+        mNumberLabelFromArray = new TextView[]{
+                mNumberLabelFrom2, mNumberLabelFrom3, mNumberLabelFrom4,
+                mNumberLabelFrom5, mNumberLabelFrom6, mNumberLabelFrom7,
+                mNumberLabelFrom8, mNumberLabelFrom9, mNumberLabelFrom10,
+                mNumberLabelFrom11, mNumberLabelFrom12, mNumberLabelFrom13,
+                mNumberLabelFrom14, mNumberLabelFrom15, mNumberLabelFrom16
         };
 
-        numberLabelToArray = new TextView[]{
-                numberLabelTo2, numberLabelTo3, numberLabelTo4,
-                numberLabelTo5, numberLabelTo6, numberLabelTo7,
-                numberLabelTo8, numberLabelTo9, numberLabelTo10,
-                numberLabelTo11, numberLabelTo12, numberLabelTo13,
-                numberLabelTo14, numberLabelTo15, numberLabelTo16
+        mNumberLabelToArray = new TextView[]{
+                mNumberLabelTo2, mNumberLabelTo3, mNumberLabelTo4,
+                mNumberLabelTo5, mNumberLabelTo6, mNumberLabelTo7,
+                mNumberLabelTo8, mNumberLabelTo9, mNumberLabelTo10,
+                mNumberLabelTo11, mNumberLabelTo12, mNumberLabelTo13,
+                mNumberLabelTo14, mNumberLabelTo15, mNumberLabelTo16
         };
 
-        buttonsArray = new Button[]{
-                button0, button1, button2, button3,
-                button4, button5, button6, button7,
-                button8, button9, buttonA, buttonB,
-                buttonC, buttonD, buttonE, buttonF
+        mButtonsArray = new Button[]{
+                mButton0, mButton1, mButton2, mButton3,
+                mButton4, mButton5, mButton6, mButton7,
+                mButton8, mButton9, mButtonA, mButtonB,
+                mButtonC, mButtonD, mButtonE, mButtonF
         };
 
-        allViewsArray = new View[]{
-                fromLabel, toLabel, inputLabel, outputLabel, baseToLabel, baseFromLabel,
-                inputValueLabel, outputValueLabel, numberLabelFrom2, numberLabelFrom3,
-                numberLabelFrom4, numberLabelFrom5, numberLabelFrom6, numberLabelFrom7,
-                numberLabelFrom8, numberLabelFrom9, numberLabelFrom10, numberLabelFrom11,
-                numberLabelFrom12, numberLabelFrom13, numberLabelFrom14,
-                numberLabelFrom15, numberLabelFrom16, numberLabelTo2, numberLabelTo3,
-                numberLabelTo4, numberLabelTo5, numberLabelTo6, numberLabelTo7,
-                numberLabelTo8, numberLabelTo9, numberLabelTo10, numberLabelTo11,
-                numberLabelTo12, numberLabelTo13, numberLabelTo14, numberLabelTo15,
-                numberLabelTo16, button0, button1, button2, button3, button4,
-                button5, button6, button7, button8, button9, buttonA, buttonB,
-                buttonC, buttonD, buttonE, buttonF, buttonDel, buttonClr
+        mAllViewsArray = new View[]{
+                mFromLabel, mToLabel, mInputLabel, mOutputLabel, mBaseToLabel, mBaseFromLabel,
+                mInputValueLabel, mOutputValueLabel, mNumberLabelFrom2, mNumberLabelFrom3,
+                mNumberLabelFrom4, mNumberLabelFrom5, mNumberLabelFrom6, mNumberLabelFrom7,
+                mNumberLabelFrom8, mNumberLabelFrom9, mNumberLabelFrom10, mNumberLabelFrom11,
+                mNumberLabelFrom12, mNumberLabelFrom13, mNumberLabelFrom14,
+                mNumberLabelFrom15, mNumberLabelFrom16, mNumberLabelTo2, mNumberLabelTo3,
+                mNumberLabelTo4, mNumberLabelTo5, mNumberLabelTo6, mNumberLabelTo7,
+                mNumberLabelTo8, mNumberLabelTo9, mNumberLabelTo10, mNumberLabelTo11,
+                mNumberLabelTo12, mNumberLabelTo13, mNumberLabelTo14, mNumberLabelTo15,
+                mNumberLabelTo16, mButton0, mButton1, mButton2, mButton3, mButton4,
+                mButton5, mButton6, mButton7, mButton8, mButton9, mButtonA, mButtonB,
+                mButtonC, mButtonD, mButtonE, mButtonF, mButtonDel, mButtonClr
         };
 
-        customFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
-        customFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
-        clipBoardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        mCustomFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
+        mCustomFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
+        mClipboardmanager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
         setCustomFont();
 
-        seekBarFrom.setProgress(SEEKBAR_FROM_START_LOCATION);
-        seekBarTo.setProgress(SEEKBAR_TO_START_LOCATION);
+        mSeekBarFrom.setProgress(SEEKBAR_FROM_START_LOCATION);
+        mSeekBarTo.setProgress(SEEKBAR_TO_START_LOCATION);
 
         /**
          * Enables/disables buttons according to the position of the from-seekbar.
          * Also resets the current input if from-seekbar moves.
          */
-        seekBarFrom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mSeekBarFrom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                currentSeekbarFromProgress = progress;
-                for (int i = 0; i < numberLabelFromArray.length; i++) {
+                mCurrentSeekbarFromProgress = progress;
+                for (int i = 0; i < mNumberLabelFromArray.length; i++) {
                     if (i == progress) {
-                        numberLabelFromArray[i].setVisibility(View.VISIBLE);
+                        mNumberLabelFromArray[i].setVisibility(View.VISIBLE);
                     } else {
-                        numberLabelFromArray[i].setVisibility(View.INVISIBLE);
+                        mNumberLabelFromArray[i].setVisibility(View.INVISIBLE);
                     }
                 }
-                for (int j = 0; j < buttonsArray.length; j++) {
+                for (int j = 0; j < mButtonsArray.length; j++) {
                     if (j <= progress + SEEKBAR_BUTTON_OFFSET) {
-                        buttonsArray[j].setVisibility(View.VISIBLE);
+                        mButtonsArray[j].setVisibility(View.VISIBLE);
                     } else {
-                        buttonsArray[j].setVisibility(View.INVISIBLE);
+                        mButtonsArray[j].setVisibility(View.INVISIBLE);
                     }
                 }
-                inputValueLabel.setText("");
-                outputValueLabel.setText("");
-                userInput.clear();
+                mInputValueLabel.setText("");
+                mOutputValueLabel.setText("");
+                mUserInput.clear();
             }
 
             // Unused but declaration required for listener.
@@ -307,27 +307,27 @@ public class MainActivity extends AppCompatActivity {
          * Performs a conversion of the current input to the base of the new position of the
          * to-seekbar.
          */
-        seekBarTo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mSeekBarTo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                currentSeekbarToProgress = progress;
-                for (int i = 0; i < numberLabelToArray.length; i++) {
+                mCurrentSeekbarToProgress = progress;
+                for (int i = 0; i < mNumberLabelToArray.length; i++) {
                     if (i == progress) {
-                        numberLabelToArray[i].setVisibility(View.VISIBLE);
+                        mNumberLabelToArray[i].setVisibility(View.VISIBLE);
                     } else {
-                        numberLabelToArray[i].setVisibility(View.INVISIBLE);
+                        mNumberLabelToArray[i].setVisibility(View.INVISIBLE);
                     }
                 }
                 String output = "";
-                for (Character i : userInput) {
+                for (Character i : mUserInput) {
                     output = output + i;
                 }
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                output = BaseConverterActivity.baseConverter(output, mCurrentSeekbarFromProgress +
+                        SEEKBAR_PROGRESS_OFFSET, mCurrentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (output.equals("0")) {
-                    outputValueLabel.setText("");
+                    mOutputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(output);
+                    mOutputValueLabel.setText(output);
                 }
             }
 
@@ -347,13 +347,13 @@ public class MainActivity extends AppCompatActivity {
         /**
          * Copies the current output value to the clipboard if the view where it sits on is longpressed.
          */
-        outputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
+        mOutputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                String outputText = outputValueLabel.getText().toString();
+                String outputText = mOutputValueLabel.getText().toString();
                 if (!outputText.isEmpty()) {
-                    clipData = ClipData.newPlainText("text", outputText);
-                    clipBoardManager.setPrimaryClip(clipData);
+                    mClipData = ClipData.newPlainText("text", outputText);
+                    mClipboardmanager.setPrimaryClip(mClipData);
                     Toast.makeText(getApplicationContext(), COPIED_TO_CLIPBOARD_MESSAGE, Toast.LENGTH_SHORT).show();
                 }
                 return true;
@@ -363,13 +363,13 @@ public class MainActivity extends AppCompatActivity {
         /**
          * Copies the current input value to the clipboard if the view where it sits on is longpressed.
          */
-        inputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
+        mInputValueLabel.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                String inputText = inputValueLabel.getText().toString();
+                String inputText = mInputValueLabel.getText().toString();
                 if (!inputText.isEmpty()) {
-                    clipData = ClipData.newPlainText("text", inputText);
-                    clipBoardManager.setPrimaryClip(clipData);
+                    mClipData = ClipData.newPlainText("text", inputText);
+                    mClipboardmanager.setPrimaryClip(mClipData);
                     Toast.makeText(getApplicationContext(), COPIED_TO_CLIPBOARD_MESSAGE, Toast.LENGTH_SHORT).show();
                 }
                 return true;
@@ -380,23 +380,23 @@ public class MainActivity extends AppCompatActivity {
          * Listener for the DEL button. Removes the last digit from the current input, recalculates
          * the conversion, and re-outputs.
          */
-        buttonDel.setOnClickListener(new View.OnClickListener() {
+        mButtonDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!userInput.isEmpty()) {
-                    userInput.remove(userInput.size() - 1);
+                if (!mUserInput.isEmpty()) {
+                    mUserInput.remove(mUserInput.size() - 1);
                 }
                 String output = "";
-                for (Character i : userInput) {
+                for (Character i : mUserInput) {
                     output = output + i;
                 }
-                inputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                        SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+                mInputValueLabel.setText(output);
+                output = BaseConverterActivity.baseConverter(output, mCurrentSeekbarFromProgress +
+                        SEEKBAR_PROGRESS_OFFSET, mCurrentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (output.equals("0")) {
-                    outputValueLabel.setText("");
+                    mOutputValueLabel.setText("");
                 } else {
-                    outputValueLabel.setText(output);
+                    mOutputValueLabel.setText(output);
                 }
             }
         });
@@ -404,18 +404,18 @@ public class MainActivity extends AppCompatActivity {
         /**
          * Listener for the CLR button. Removes all digits from current input and sets a blank output.
          */
-        buttonClr.setOnClickListener(new View.OnClickListener() {
+        mButtonClr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (!userInput.isEmpty()) {
-                    userInput.remove(userInput.size() - 1);
+                while (!mUserInput.isEmpty()) {
+                    mUserInput.remove(mUserInput.size() - 1);
                 }
                 String output = "";
-                for (Character i : userInput) {
+                for (Character i : mUserInput) {
                     output = output + i;
                 }
-                inputValueLabel.setText(output);
-                outputValueLabel.setText("");
+                mInputValueLabel.setText(output);
+                mOutputValueLabel.setText("");
             }
         });
 
@@ -423,7 +423,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 0. Calls the processNumberButtonPress method passing the character
          * '0' as the argument.
          */
-        button0.setOnClickListener(new View.OnClickListener() {
+        mButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_0);
@@ -434,7 +434,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 1. Calls the processNumberButtonPress method passing the character
          * '1' as the argument.
          */
-        button1.setOnClickListener(new View.OnClickListener() {
+        mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_1);
@@ -445,7 +445,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 2. Calls the processNumberButtonPress method passing the character
          * '2' as the argument.
          */
-        button2.setOnClickListener(new View.OnClickListener() {
+        mButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_2);
@@ -456,7 +456,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 3. Calls the processNumberButtonPress method passing the character
          * '3' as the argument.
          */
-        button3.setOnClickListener(new View.OnClickListener() {
+        mButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_3);
@@ -467,7 +467,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 4. Calls the processNumberButtonPress method passing the character
          * '4' as the argument.
          */
-        button4.setOnClickListener(new View.OnClickListener() {
+        mButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_4);
@@ -478,7 +478,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 5. Calls the processNumberButtonPress method passing the character
          * '5' as the argument.
          */
-        button5.setOnClickListener(new View.OnClickListener() {
+        mButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_5);
@@ -489,7 +489,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 6. Calls the processNumberButtonPress method passing the character
          * '6' as the argument.
          */
-        button6.setOnClickListener(new View.OnClickListener() {
+        mButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_6);
@@ -500,7 +500,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 7. Calls the processNumberButtonPress method passing the character
          * '7' as the argument.
          */
-        button7.setOnClickListener(new View.OnClickListener() {
+        mButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_7);
@@ -511,7 +511,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 8. Calls the processNumberButtonPress method passing the character
          * '8' as the argument.
          */
-        button8.setOnClickListener(new View.OnClickListener() {
+        mButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_8);
@@ -522,7 +522,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button 9. Calls the processNumberButtonPress method passing the character
          * '9' as the argument.
          */
-        button9.setOnClickListener(new View.OnClickListener() {
+        mButton9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_9);
@@ -533,7 +533,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button A. Calls the processNumberButtonPress method passing the character
          * 'A' as the argument.
          */
-        buttonA.setOnClickListener(new View.OnClickListener() {
+        mButtonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_A);
@@ -544,7 +544,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button B. Calls the processNumberButtonPress method passing the character
          * 'B' as the argument.
          */
-        buttonB.setOnClickListener(new View.OnClickListener() {
+        mButtonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_B);
@@ -555,7 +555,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button C. Calls the processNumberButtonPress method passing the character
          * 'C' as the argument.
          */
-        buttonC.setOnClickListener(new View.OnClickListener() {
+        mButtonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_C);
@@ -566,7 +566,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button D. Calls the processNumberButtonPress method passing the character
          * 'D' as the argument.
          */
-        buttonD.setOnClickListener(new View.OnClickListener() {
+        mButtonD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_D);
@@ -577,7 +577,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button E. Calls the processNumberButtonPress method passing the character
          * 'E' as the argument.
          */
-        buttonE.setOnClickListener(new View.OnClickListener() {
+        mButtonE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_E);
@@ -588,7 +588,7 @@ public class MainActivity extends AppCompatActivity {
          * Listener for button F. Calls the processNumberButtonPress method passing the character
          * 'F' as the argument.
          */
-        buttonF.setOnClickListener(new View.OnClickListener() {
+        mButtonF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 processNumberButtonPress(CHAR_F);
@@ -606,21 +606,21 @@ public class MainActivity extends AppCompatActivity {
      * @param numberPressed The digit to be processed.
      */
     private void processNumberButtonPress(Character numberPressed) {
-        if (numberPressed == CHAR_0 && userInput.isEmpty()) {
+        if (numberPressed == CHAR_0 && mUserInput.isEmpty()) {
             return;
         }
         if (triggersOverflow()) {
             return;
         }
-        userInput.add(numberPressed);
+        mUserInput.add(numberPressed);
         String output = "";
-        for (Character i : userInput) {
+        for (Character i : mUserInput) {
             output = output + i;
         }
-        inputValueLabel.setText(output);
-        output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
-                SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-        outputValueLabel.setText(output);
+        mInputValueLabel.setText(output);
+        output = BaseConverterActivity.baseConverter(output, mCurrentSeekbarFromProgress +
+                SEEKBAR_PROGRESS_OFFSET, mCurrentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
+        mOutputValueLabel.setText(output);
     }
 
     /**
@@ -636,7 +636,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < menu.size(); i++) {
             MenuItem menuItem = menu.getItem(i);
-            applyFontToMenuItem(menuItem, customFontSemiBold);
+            applyFontToMenuItem(menuItem, mCustomFontSemiBold);
         }
         return super.onCreateOptionsMenu(menu);
     }
@@ -664,17 +664,17 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.menu_about):
                 AlertDialog aboutBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(aboutMessage).show();
                 TextView aboutTextView = (TextView) aboutBuilder.findViewById(android.R.id.message);
-                aboutTextView.setTypeface(customFontRegular);
+                aboutTextView.setTypeface(mCustomFontRegular);
                 break;
             case (R.id.menu_how_to_use):
                 AlertDialog howToUseBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(howToUseMessage).show();
                 TextView howToUseTextView = (TextView) howToUseBuilder.findViewById(android.R.id.message);
-                howToUseTextView.setTypeface(customFontRegular);
+                howToUseTextView.setTypeface(mCustomFontRegular);
                 break;
             case (R.id.menu_icon_info):
                 AlertDialog iconInfoBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(iconInfoMessage).show();
                 TextView iconInfoTextView = (TextView) iconInfoBuilder.findViewById(android.R.id.message);
-                iconInfoTextView.setTypeface(customFontRegular);
+                iconInfoTextView.setTypeface(mCustomFontRegular);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -700,98 +700,98 @@ public class MainActivity extends AppCompatActivity {
      */
     private boolean triggersOverflow() {
 
-        int currentBaseFrom = currentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
+        int currentBaseFrom = mCurrentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
         Context context = getApplicationContext();
         CharSequence overflowToastMessage = "Number too large!";
         int toastDuration = Toast.LENGTH_SHORT;
 
         switch (currentBaseFrom) {
             case BASE_16:
-                if (userInput.size() >= 14) {
+                if (mUserInput.size() >= 14) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_15:
-                if (userInput.size() >= 14) {
+                if (mUserInput.size() >= 14) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_14:
-                if (userInput.size() >= 15) {
+                if (mUserInput.size() >= 15) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_13:
-                if (userInput.size() >= 15) {
+                if (mUserInput.size() >= 15) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_12:
-                if (userInput.size() >= 16) {
+                if (mUserInput.size() >= 16) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_11:
-                if (userInput.size() >= 16) {
+                if (mUserInput.size() >= 16) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_10:
-                if (userInput.size() >= 17) {
+                if (mUserInput.size() >= 17) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_9:
-                if (userInput.size() >= 17) {
+                if (mUserInput.size() >= 17) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_8:
-                if (userInput.size() >= 21) {
+                if (mUserInput.size() >= 21) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_7:
-                if (userInput.size() >= 21) {
+                if (mUserInput.size() >= 21) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_6:
-                if (userInput.size() >= 23) {
+                if (mUserInput.size() >= 23) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_5:
-                if (userInput.size() >= 23) {
+                if (mUserInput.size() >= 23) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_4:
-                if (userInput.size() >= 31) {
+                if (mUserInput.size() >= 31) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_3:
-                if (userInput.size() >= 34) {
+                if (mUserInput.size() >= 34) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
                 break;
             case BASE_2:
-                if (userInput.size() >= 51) {
+                if (mUserInput.size() >= 51) {
                     showOverflowMessage(context, overflowToastMessage, toastDuration);
                     return true;
                 }
@@ -809,24 +809,24 @@ public class MainActivity extends AppCompatActivity {
      * @param duration The amount of time to display the message.
      */
     private void showOverflowMessage(Context context, CharSequence message, int duration) {
-        if (overflowToast != null) {
-            overflowToast.cancel();
+        if (mOverflowToast != null) {
+            mOverflowToast.cancel();
         }
-        overflowToast = Toast.makeText(context, message, duration);
-        overflowToast.show();
+        mOverflowToast = Toast.makeText(context, message, duration);
+        mOverflowToast.show();
     }
 
     /**
      * Loops through all views that contain text and sets the font to the custom font.
      */
     private void setCustomFont() {
-        for (int i = 0; i < allViewsArray.length; i++) {
-            if (allViewsArray[i] instanceof TextView) {
-                TextView currentTextView = (TextView) allViewsArray[i];
-                currentTextView.setTypeface(customFontSemiBold);
-            } else if (allViewsArray[i] instanceof Button) {
-                Button currentButton = (Button) allViewsArray[i];
-                currentButton.setTypeface(customFontSemiBold);
+        for (int i = 0; i < mAllViewsArray.length; i++) {
+            if (mAllViewsArray[i] instanceof TextView) {
+                TextView currentTextView = (TextView) mAllViewsArray[i];
+                currentTextView.setTypeface(mCustomFontSemiBold);
+            } else if (mAllViewsArray[i] instanceof Button) {
+                Button currentButton = (Button) mAllViewsArray[i];
+                currentButton.setTypeface(mCustomFontSemiBold);
             }
         }
     }
