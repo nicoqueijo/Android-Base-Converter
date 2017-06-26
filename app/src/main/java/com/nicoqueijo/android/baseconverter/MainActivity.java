@@ -650,30 +650,20 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-        final String aboutMessage = "ABOUT\n\n" +
-                "The source code for this project can be found at github.com/nicoqueijo";
-        final String howToUseMessage = "HOW TO USE\n\n" +
-                "Use the first slider to set the base of the number you want to convert.\n\n" +
-                "Enter the number you want to convert using the buttons.\n\n" +
-                "Use the second slider to convert the number to a new base.\n\n" +
-                "You can also copy the input or output by longpressing it.";
-        final String iconInfoMessage = "ICON INFO\n\n" +
-                "Launcher icon for this app made by Freepik from www.flaticon.com is licensed by CC 3.0 BY";
-
+        
         switch (item.getItemId()) {
             case (R.id.menu_about):
-                AlertDialog aboutBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(aboutMessage).show();
+                AlertDialog aboutBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(R.string.about_message).show();
                 TextView aboutTextView = (TextView) aboutBuilder.findViewById(android.R.id.message);
                 aboutTextView.setTypeface(mCustomFontRegular);
                 break;
             case (R.id.menu_how_to_use):
-                AlertDialog howToUseBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(howToUseMessage).show();
+                AlertDialog howToUseBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(R.string.how_to_use_message).show();
                 TextView howToUseTextView = (TextView) howToUseBuilder.findViewById(android.R.id.message);
                 howToUseTextView.setTypeface(mCustomFontRegular);
                 break;
             case (R.id.menu_icon_info):
-                AlertDialog iconInfoBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(iconInfoMessage).show();
+                AlertDialog iconInfoBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(R.string.icon_info_message).show();
                 TextView iconInfoTextView = (TextView) iconInfoBuilder.findViewById(android.R.id.message);
                 iconInfoTextView.setTypeface(mCustomFontRegular);
                 break;

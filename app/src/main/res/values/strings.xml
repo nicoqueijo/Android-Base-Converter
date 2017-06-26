@@ -42,4 +42,15 @@
     <string name="about">ABOUT</string>
     <string name="how_to_use">HOW TO USE</string>
     <string name="icon_info">ICON INFO</string>
+    <string name="about_message">ABOUT\n\nThe source code for this project can be found at
+        github.com/nicoqueijo
+    </string>
+    <string name="how_to_use_message">HOW TO USE\n\nUse the first slider to set the base of
+        the number you want to convert.\n\nEnter the number you want to convert using the
+        buttons.\n\nUse the second slider to convert the number to a new base.\n\nYou can
+        also copy the input or output by longpressing it.
+    </string>
+    <string name="icon_info_message">ICON INFO\n\nLauncher icon for this app made by Freepik
+        from www.flaticon.com is licensed by CC 3.0 BY
+    </string>
 </resources>
