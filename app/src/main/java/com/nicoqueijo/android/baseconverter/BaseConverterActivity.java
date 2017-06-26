@@ -40,7 +40,6 @@ public class BaseConverterActivity {
             exponent = subjectLength - i - OFFSET_OF_ONE;
             result += (long) Math.pow(baseFrom, exponent) * HEX_TABLE.indexOf(ch);
         }
-
         return result + "";
     }
 
@@ -62,7 +61,6 @@ public class BaseConverterActivity {
             result = HEX_TABLE.charAt((int) remainder) + result;
             quotient /= baseTo;
         } while (quotient != 0);
-
         return result;
     }
 

@@ -598,12 +598,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if adding another digit would cause overflow. If it doesn't, it adds that digit
-     * to the input, performs the conversion to the new base, and sets it to the output.
+     * Checks if the input is 0. If it is, there is nothing to process so the method returns.
+     * If the input is greater than 0 then it checks if adding another digit would cause overflow.
+     * If it doesn't, it adds that digit to the input, performs the conversion to the new base,
+     * and sets it to the output.
      *
      * @param numberPressed The digit to be processed.
      */
     private void processNumberButtonPress(Character numberPressed) {
+        if (numberPressed == CHAR_0 && userInput.isEmpty()) {
+            return;
+        }
         if (triggersOverflow()) {
             return;
         }
@@ -615,11 +620,7 @@ public class MainActivity extends AppCompatActivity {
         inputValueLabel.setText(output);
         output = BaseConverterActivity.baseConverter(output, currentSeekbarFromProgress +
                 SEEKBAR_PROGRESS_OFFSET, currentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
-        if (output.equals("0")) {
-            outputValueLabel.setText("");
-        } else {
-            outputValueLabel.setText(output);
-        }
+        outputValueLabel.setText(output);
     }
 
     /**
