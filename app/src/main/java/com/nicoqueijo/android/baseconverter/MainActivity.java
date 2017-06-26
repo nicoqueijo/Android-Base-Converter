@@ -278,11 +278,11 @@ public class MainActivity extends AppCompatActivity {
                         mNumberLabelFromArray[i].setVisibility(View.INVISIBLE);
                     }
                 }
-                for (int j = 0; j < mButtonsArray.length; j++) {
-                    if (j <= progress + SEEKBAR_BUTTON_OFFSET) {
-                        mButtonsArray[j].setVisibility(View.VISIBLE);
+                for (int i = 0; i < mButtonsArray.length; i++) {
+                    if (i <= progress + SEEKBAR_BUTTON_OFFSET) {
+                        mButtonsArray[i].setVisibility(View.VISIBLE);
                     } else {
-                        mButtonsArray[j].setVisibility(View.INVISIBLE);
+                        mButtonsArray[i].setVisibility(View.INVISIBLE);
                     }
                 }
                 mInputValueLabel.setText("");
@@ -405,10 +405,11 @@ public class MainActivity extends AppCompatActivity {
          * Listener for the CLR button. Removes all digits from current input and sets a blank output.
          */
         mButtonClr.setOnClickListener(new View.OnClickListener() {
+            final int OFF_BY_ONE = 1;
             @Override
             public void onClick(View view) {
                 while (!mUserInput.isEmpty()) {
-                    mUserInput.remove(mUserInput.size() - 1);
+                    mUserInput.remove(mUserInput.size() - OFF_BY_ONE);
                 }
                 String output = "";
                 for (Character i : mUserInput) {
