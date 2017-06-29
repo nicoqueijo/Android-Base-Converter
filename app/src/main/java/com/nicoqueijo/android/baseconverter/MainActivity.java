@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
     private Typeface mCustomFontRegular;
 
     private Toast mOverflowToast = null;
-    private ClipboardManager mClipboardmanager;
+    private ClipboardManager mClipboardManager;
     private ClipData mClipData;
 
     @Override
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
 
         mCustomFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
         mCustomFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
-        mClipboardmanager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        mClipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
         setCustomFont();
 
@@ -353,7 +353,7 @@ public class MainActivity extends AppCompatActivity {
                 String outputText = mOutputValueLabel.getText().toString();
                 if (!outputText.isEmpty()) {
                     mClipData = ClipData.newPlainText("text", outputText);
-                    mClipboardmanager.setPrimaryClip(mClipData);
+                    mClipboardManager.setPrimaryClip(mClipData);
                     Toast.makeText(getApplicationContext(), COPIED_TO_CLIPBOARD_MESSAGE, Toast.LENGTH_SHORT).show();
                 }
                 return true;
@@ -369,7 +369,7 @@ public class MainActivity extends AppCompatActivity {
                 String inputText = mInputValueLabel.getText().toString();
                 if (!inputText.isEmpty()) {
                     mClipData = ClipData.newPlainText("text", inputText);
-                    mClipboardmanager.setPrimaryClip(mClipData);
+                    mClipboardManager.setPrimaryClip(mClipData);
                     Toast.makeText(getApplicationContext(), COPIED_TO_CLIPBOARD_MESSAGE, Toast.LENGTH_SHORT).show();
                 }
                 return true;
@@ -406,6 +406,7 @@ public class MainActivity extends AppCompatActivity {
          */
         mButtonClr.setOnClickListener(new View.OnClickListener() {
             final int OFF_BY_ONE = 1;
+
             @Override
             public void onClick(View view) {
                 while (!mUserInput.isEmpty()) {
@@ -596,6 +597,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    /**
+     * Saves the current input and output values as well as the internal representation of the
+     * input for further processing.
+     *
+     * @param outState the bundle object that saves/restores data.
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String input = "";
+        for (Character i : mUserInput) {
+            input = input + i;
+        }
+        outState.putString("input", input);
+        outState.putString("inputLabelString", (String) mInputValueLabel.getText());
+        outState.putString("outputLabelString", (String) mOutputValueLabel.getText());
+    }
+
+    /**
+     * Restores the current input and output values as well as the internal representation of the
+     * input for further processing.
+     *
+     * @param savedInstanceState the bundle object that saves/restores data.
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String input = savedInstanceState.getString("input");
+        for (int i = 0; i < input.length(); i++) {
+            mUserInput.add(input.charAt(i));
+        }
+        mInputValueLabel.setText(savedInstanceState.getString("inputLabelString"));
+        mOutputValueLabel.setText(savedInstanceState.getString("outputLabelString"));
     }
 
     /**

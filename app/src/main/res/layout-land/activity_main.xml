@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.nicoqueijo.android.baseconverter.MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal"
+              tools:context="com.nicoqueijo.android.baseconverter.MainActivity">
 
     <LinearLayout
         android:id="@+id/container_converter"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="8"
         android:orientation="horizontal">
 
@@ -18,27 +17,27 @@
             android:id="@+id/container_labels"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/from_label"
-                style="@style/TextLabelStylePortrait"
+                style="@style/TextLabelStyleLandscape"
                 android:text="@string/from"/>
 
             <TextView
                 android:id="@+id/input_label"
-                style="@style/TextLabelStylePortrait"
+                style="@style/TextLabelStyleLandscape"
                 android:text="@string/input"/>
 
             <TextView
                 android:id="@+id/to_label"
-                style="@style/TextLabelStylePortrait"
+                style="@style/TextLabelStyleLandscape"
                 android:text="@string/to"/>
 
             <TextView
                 android:id="@+id/output_label"
-                style="@style/TextLabelStylePortrait"
+                style="@style/TextLabelStyleLandscape"
                 android:text="@string/output"/>
 
         </LinearLayout>
@@ -47,7 +46,7 @@
             android:id="@+id/container_controls"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="9"
             android:orientation="vertical">
 
             <LinearLayout
@@ -320,9 +319,9 @@
 
     <FrameLayout
         android:id="@+id/buttons_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="15dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
         android:layout_weight="5">
 
         <LinearLayout
