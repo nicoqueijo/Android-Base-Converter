@@ -1,19 +1,4 @@
 <resources>
-    <string name="label_2">&#160;2&#160;</string>
-    <string name="label_3">&#160;3&#160;</string>
-    <string name="label_4">&#160;4&#160;</string>
-    <string name="label_5">&#160;5&#160;</string>
-    <string name="label_6">&#160;6&#160;</string>
-    <string name="label_7">&#160;7&#160;</string>
-    <string name="label_8">&#160;8&#160;</string>
-    <string name="label_9">&#160;9&#160;</string>
-    <string name="label_10">10</string>
-    <string name="label_11">11</string>
-    <string name="label_12">12</string>
-    <string name="label_13">13</string>
-    <string name="label_14">14</string>
-    <string name="label_15">15</string>
-    <string name="label_16">16</string>
     <string name="button_0">0</string>
     <string name="button_1">1</string>
     <string name="button_2">2</string>
