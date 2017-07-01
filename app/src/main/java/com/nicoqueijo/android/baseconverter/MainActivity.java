@@ -79,41 +79,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView mOutputLabel;
     private TextView mBaseToLabel;
     private TextView mBaseFromLabel;
+    private TextView mBaseFromNumberLabel;
+    private TextView mBaseToNumberLabel;
 
     private TextView mInputValueLabel;
     private TextView mOutputValueLabel;
-
-    private TextView mNumberLabelFrom2;
-    private TextView mNumberLabelFrom3;
-    private TextView mNumberLabelFrom4;
-    private TextView mNumberLabelFrom5;
-    private TextView mNumberLabelFrom6;
-    private TextView mNumberLabelFrom7;
-    private TextView mNumberLabelFrom8;
-    private TextView mNumberLabelFrom9;
-    private TextView mNumberLabelFrom10;
-    private TextView mNumberLabelFrom11;
-    private TextView mNumberLabelFrom12;
-    private TextView mNumberLabelFrom13;
-    private TextView mNumberLabelFrom14;
-    private TextView mNumberLabelFrom15;
-    private TextView mNumberLabelFrom16;
-
-    private TextView mNumberLabelTo2;
-    private TextView mNumberLabelTo3;
-    private TextView mNumberLabelTo4;
-    private TextView mNumberLabelTo5;
-    private TextView mNumberLabelTo6;
-    private TextView mNumberLabelTo7;
-    private TextView mNumberLabelTo8;
-    private TextView mNumberLabelTo9;
-    private TextView mNumberLabelTo10;
-    private TextView mNumberLabelTo11;
-    private TextView mNumberLabelTo12;
-    private TextView mNumberLabelTo13;
-    private TextView mNumberLabelTo14;
-    private TextView mNumberLabelTo15;
-    private TextView mNumberLabelTo16;
 
     private Button mButton0;
     private Button mButton1;
@@ -134,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonDel;
     private Button mButtonClr;
 
-    private TextView[] mNumberLabelFromArray;
-    private TextView[] mNumberLabelToArray;
     private Button[] mButtonsArray;
     private View[] mAllViewsArray;
 
@@ -161,41 +129,11 @@ public class MainActivity extends AppCompatActivity {
         mOutputLabel = (TextView) findViewById(R.id.output_label);
         mBaseFromLabel = (TextView) findViewById(R.id.base_label_from);
         mBaseToLabel = (TextView) findViewById(R.id.base_label_to);
+        mBaseFromNumberLabel = (TextView) findViewById(R.id.base_from_number_label);
+        mBaseToNumberLabel = (TextView) findViewById(R.id.base_to_number_label);
 
         mInputValueLabel = (TextView) findViewById(R.id.input_value);
         mOutputValueLabel = (TextView) findViewById(R.id.output_value);
-
-        mNumberLabelFrom2 = (TextView) findViewById(R.id.from_base_label_2);
-        mNumberLabelFrom3 = (TextView) findViewById(R.id.from_base_label_3);
-        mNumberLabelFrom4 = (TextView) findViewById(R.id.from_base_label_4);
-        mNumberLabelFrom5 = (TextView) findViewById(R.id.from_base_label_5);
-        mNumberLabelFrom6 = (TextView) findViewById(R.id.from_base_label_6);
-        mNumberLabelFrom7 = (TextView) findViewById(R.id.from_base_label_7);
-        mNumberLabelFrom8 = (TextView) findViewById(R.id.from_base_label_8);
-        mNumberLabelFrom9 = (TextView) findViewById(R.id.from_base_label_9);
-        mNumberLabelFrom10 = (TextView) findViewById(R.id.from_base_label_10);
-        mNumberLabelFrom11 = (TextView) findViewById(R.id.from_base_label_11);
-        mNumberLabelFrom12 = (TextView) findViewById(R.id.from_base_label_12);
-        mNumberLabelFrom13 = (TextView) findViewById(R.id.from_base_label_13);
-        mNumberLabelFrom14 = (TextView) findViewById(R.id.from_base_label_14);
-        mNumberLabelFrom15 = (TextView) findViewById(R.id.from_base_label_15);
-        mNumberLabelFrom16 = (TextView) findViewById(R.id.from_base_label_16);
-
-        mNumberLabelTo2 = (TextView) findViewById(R.id.to_base_label_2);
-        mNumberLabelTo3 = (TextView) findViewById(R.id.to_base_label_3);
-        mNumberLabelTo4 = (TextView) findViewById(R.id.to_base_label_4);
-        mNumberLabelTo5 = (TextView) findViewById(R.id.to_base_label_5);
-        mNumberLabelTo6 = (TextView) findViewById(R.id.to_base_label_6);
-        mNumberLabelTo7 = (TextView) findViewById(R.id.to_base_label_7);
-        mNumberLabelTo8 = (TextView) findViewById(R.id.to_base_label_8);
-        mNumberLabelTo9 = (TextView) findViewById(R.id.to_base_label_9);
-        mNumberLabelTo10 = (TextView) findViewById(R.id.to_base_label_10);
-        mNumberLabelTo11 = (TextView) findViewById(R.id.to_base_label_11);
-        mNumberLabelTo12 = (TextView) findViewById(R.id.to_base_label_12);
-        mNumberLabelTo13 = (TextView) findViewById(R.id.to_base_label_13);
-        mNumberLabelTo14 = (TextView) findViewById(R.id.to_base_label_14);
-        mNumberLabelTo15 = (TextView) findViewById(R.id.to_base_label_15);
-        mNumberLabelTo16 = (TextView) findViewById(R.id.to_base_label_16);
 
         mButton0 = (Button) findViewById(R.id.button_0);
         mButton1 = (Button) findViewById(R.id.button_1);
@@ -216,22 +154,6 @@ public class MainActivity extends AppCompatActivity {
         mButtonDel = (Button) findViewById(R.id.button_del);
         mButtonClr = (Button) findViewById(R.id.button_clr);
 
-        mNumberLabelFromArray = new TextView[]{
-                mNumberLabelFrom2, mNumberLabelFrom3, mNumberLabelFrom4,
-                mNumberLabelFrom5, mNumberLabelFrom6, mNumberLabelFrom7,
-                mNumberLabelFrom8, mNumberLabelFrom9, mNumberLabelFrom10,
-                mNumberLabelFrom11, mNumberLabelFrom12, mNumberLabelFrom13,
-                mNumberLabelFrom14, mNumberLabelFrom15, mNumberLabelFrom16
-        };
-
-        mNumberLabelToArray = new TextView[]{
-                mNumberLabelTo2, mNumberLabelTo3, mNumberLabelTo4,
-                mNumberLabelTo5, mNumberLabelTo6, mNumberLabelTo7,
-                mNumberLabelTo8, mNumberLabelTo9, mNumberLabelTo10,
-                mNumberLabelTo11, mNumberLabelTo12, mNumberLabelTo13,
-                mNumberLabelTo14, mNumberLabelTo15, mNumberLabelTo16
-        };
-
         mButtonsArray = new Button[]{
                 mButton0, mButton1, mButton2, mButton3,
                 mButton4, mButton5, mButton6, mButton7,
@@ -241,15 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAllViewsArray = new View[]{
                 mFromLabel, mToLabel, mInputLabel, mOutputLabel, mBaseToLabel, mBaseFromLabel,
-                mInputValueLabel, mOutputValueLabel, mNumberLabelFrom2, mNumberLabelFrom3,
-                mNumberLabelFrom4, mNumberLabelFrom5, mNumberLabelFrom6, mNumberLabelFrom7,
-                mNumberLabelFrom8, mNumberLabelFrom9, mNumberLabelFrom10, mNumberLabelFrom11,
-                mNumberLabelFrom12, mNumberLabelFrom13, mNumberLabelFrom14,
-                mNumberLabelFrom15, mNumberLabelFrom16, mNumberLabelTo2, mNumberLabelTo3,
-                mNumberLabelTo4, mNumberLabelTo5, mNumberLabelTo6, mNumberLabelTo7,
-                mNumberLabelTo8, mNumberLabelTo9, mNumberLabelTo10, mNumberLabelTo11,
-                mNumberLabelTo12, mNumberLabelTo13, mNumberLabelTo14, mNumberLabelTo15,
-                mNumberLabelTo16, mButton0, mButton1, mButton2, mButton3, mButton4,
+                mInputValueLabel, mOutputValueLabel, mButton0, mButton1, mButton2, mButton3, mButton4,
                 mButton5, mButton6, mButton7, mButton8, mButton9, mButtonA, mButtonB,
                 mButtonC, mButtonD, mButtonE, mButtonF, mButtonDel, mButtonClr
         };
@@ -271,13 +185,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 mCurrentSeekbarFromProgress = progress;
-                for (int i = 0; i < mNumberLabelFromArray.length; i++) {
-                    if (i == progress) {
-                        mNumberLabelFromArray[i].setVisibility(View.VISIBLE);
-                    } else {
-                        mNumberLabelFromArray[i].setVisibility(View.INVISIBLE);
-                    }
-                }
+                mBaseFromNumberLabel.setText(String.valueOf(mCurrentSeekbarFromProgress
+                        + SEEKBAR_PROGRESS_OFFSET));
                 for (int i = 0; i < mButtonsArray.length; i++) {
                     if (i <= progress + SEEKBAR_BUTTON_OFFSET) {
                         mButtonsArray[i].setVisibility(View.VISIBLE);
@@ -311,13 +220,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 mCurrentSeekbarToProgress = progress;
-                for (int i = 0; i < mNumberLabelToArray.length; i++) {
-                    if (i == progress) {
-                        mNumberLabelToArray[i].setVisibility(View.VISIBLE);
-                    } else {
-                        mNumberLabelToArray[i].setVisibility(View.INVISIBLE);
-                    }
-                }
+                mBaseToNumberLabel.setText(String.valueOf(mCurrentSeekbarToProgress
+                        + SEEKBAR_PROGRESS_OFFSET));
                 String output = "";
                 for (Character i : mUserInput) {
                     output = output + i;

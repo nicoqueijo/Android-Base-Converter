@@ -52,7 +52,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:text">@string/base</item>
-        <item name="android:textSize">13dp</item>
+        <item name="android:textSize">15dp</item>
     </style>
 
     <style name="InputOutputStyle">

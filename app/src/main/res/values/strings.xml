@@ -32,7 +32,7 @@
     <string name="button_F">F</string>
     <string name="button_del">DEL</string>
     <string name="button_clr">CLR</string>
-    <string name="base">BASE</string>
+    <string name="base">BASE:</string>
     <string name="from">FROM:</string>
     <string name="to">TO:</string>
     <string name="input">INPUT:</string>
