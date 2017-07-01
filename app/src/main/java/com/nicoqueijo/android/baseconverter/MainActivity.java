@@ -25,8 +25,8 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
-    private final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
+    private static final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
+    private static final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
     private final String COPIED_TO_CLIPBOARD_MESSAGE = "Copied to clipboard!";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
@@ -163,9 +163,10 @@ public class MainActivity extends AppCompatActivity {
 
         mAllViewsArray = new View[]{
                 mFromLabel, mToLabel, mInputLabel, mOutputLabel, mBaseToLabel, mBaseFromLabel,
-                mInputValueLabel, mOutputValueLabel, mButton0, mButton1, mButton2, mButton3, mButton4,
-                mButton5, mButton6, mButton7, mButton8, mButton9, mButtonA, mButtonB,
-                mButtonC, mButtonD, mButtonE, mButtonF, mButtonDel, mButtonClr
+                mBaseToNumberLabel, mBaseFromNumberLabel, mInputValueLabel, mOutputValueLabel,
+                mButton0, mButton1, mButton2, mButton3, mButton4, mButton5, mButton6, mButton7,
+                mButton8, mButton9, mButtonA, mButtonB, mButtonC, mButtonD, mButtonE, mButtonF,
+                mButtonDel, mButtonClr
         };
 
         mCustomFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
