@@ -7,7 +7,8 @@ Converts numbers from one base to another supporting base 2 through 16.
 <img src="screenshots/google_play.png" a_blank href="https://play.google.com/store/apps/details?id=com.nicoqueijo.android.baseconverter">
 </a>
 
-<br>
+<br />
+<br />
 <img src="screenshots/demo_gif.gif" width="45%">
 <img src="screenshots/nexus5x-portrait1.png">
 <img src="screenshots/nexus5x-portrait2.png">
