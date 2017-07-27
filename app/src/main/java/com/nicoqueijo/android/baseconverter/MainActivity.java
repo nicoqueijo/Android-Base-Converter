@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                 for (Character i : mUserInput) {
                     output = output + i;
                 }
-                output = BaseConverterActivity.baseConverter(output, mCurrentSeekbarFromProgress +
+                output = BaseConverter.baseConverter(output, mCurrentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, mCurrentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (output.equals("0")) {
                     mOutputValueLabel.setText("");
@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
                     output = output + i;
                 }
                 mInputValueLabel.setText(output);
-                output = BaseConverterActivity.baseConverter(output, mCurrentSeekbarFromProgress +
+                output = BaseConverter.baseConverter(output, mCurrentSeekbarFromProgress +
                         SEEKBAR_PROGRESS_OFFSET, mCurrentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
                 if (output.equals("0")) {
                     mOutputValueLabel.setText("");
@@ -560,7 +560,7 @@ public class MainActivity extends AppCompatActivity {
             output = output + i;
         }
         mInputValueLabel.setText(output);
-        output = BaseConverterActivity.baseConverter(output, mCurrentSeekbarFromProgress +
+        output = BaseConverter.baseConverter(output, mCurrentSeekbarFromProgress +
                 SEEKBAR_PROGRESS_OFFSET, mCurrentSeekbarToProgress + SEEKBAR_PROGRESS_OFFSET);
         mOutputValueLabel.setText(output);
     }

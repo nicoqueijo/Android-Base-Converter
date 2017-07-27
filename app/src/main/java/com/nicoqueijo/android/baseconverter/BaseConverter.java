@@ -3,7 +3,7 @@ package com.nicoqueijo.android.baseconverter;
 /**
  * Provides static methods to convert a number from one base to another supporting bases 2 through 16.
  */
-public class BaseConverterActivity {
+public class BaseConverter {
 
     private final static int OFFSET_OF_ONE = 1;
     private final static String HEX_TABLE = "0123456789ABCDEF";
