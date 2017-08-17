@@ -21,6 +21,5 @@ Base Converter App
 	
 -Choose a few color palletes for different themes
 -Apply custom fonts to text views in new dialogs
--Design layout for language dialog
 -Design layout for theme dialog
 -Credit icon source somehow (Icon made by Freepik from www.flaticon.com)
