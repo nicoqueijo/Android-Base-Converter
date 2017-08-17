@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     private int mCurrentSeekbarFromProgress = SEEKBAR_FROM_START_LOCATION;
     private int mCurrentSeekbarToProgress = SEEKBAR_TO_START_LOCATION;
 
+    private ActionBar mActionBar;
     private SeekBar mSeekBarFrom;
     private SeekBar mSeekBarTo;
 
@@ -123,6 +125,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mActionBar = getSupportActionBar();
+        mActionBar.setDisplayShowHomeEnabled(true);
+        mActionBar.setIcon(R.mipmap.ic_launcher);
+        mActionBar.setTitle(R.string.title);
 
         mSeekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
         mSeekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);
