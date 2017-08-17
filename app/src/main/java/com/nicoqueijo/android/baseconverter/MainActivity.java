@@ -25,6 +25,21 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
 
+    public static String nameFormatter(String rawName) {
+
+        final int SECOND_TO_LAST = 1;
+        String[] splitName;
+        String formattedName = "";
+        splitName = rawName.split("_");
+        for (int i = 0; i < splitName.length; i++) {
+            formattedName += splitName[i].substring(0, 1).toUpperCase() + splitName[i].substring(1);
+            if (i < (splitName.length - SECOND_TO_LAST)) {
+                formattedName += " ";
+            }
+        }
+        return formattedName;
+    }
+
     private static final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
     private static final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
     private final String COPIED_TO_CLIPBOARD_MESSAGE = "Copied to clipboard!";
@@ -584,7 +599,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Creates an alert dialog window with a custom message and displays it when a menu item is selected.
+     * // DOCUMENT THIS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
      *
      * @param item The menu item being selected.
      * @return Status of the operation.
@@ -593,20 +608,17 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case (R.id.menu_about):
-                AlertDialog aboutBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(R.string.about_message).show();
-                TextView aboutTextView = (TextView) aboutBuilder.findViewById(android.R.id.message);
-                aboutTextView.setTypeface(mCustomFontRegular);
+            case (R.id.menu_item_source_code):
+
                 break;
-            case (R.id.menu_how_to_use):
-                AlertDialog howToUseBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(R.string.how_to_use_message).show();
-                TextView howToUseTextView = (TextView) howToUseBuilder.findViewById(android.R.id.message);
-                howToUseTextView.setTypeface(mCustomFontRegular);
+            case (R.id.menu_item_language):
+
                 break;
-            case (R.id.menu_icon_info):
-                AlertDialog iconInfoBuilder = new AlertDialog.Builder(MainActivity.this).setMessage(R.string.icon_info_message).show();
-                TextView iconInfoTextView = (TextView) iconInfoBuilder.findViewById(android.R.id.message);
-                iconInfoTextView.setTypeface(mCustomFontRegular);
+            case (R.id.menu_item_theme):
+
+                break;
+            case (R.id.menu_item_rate):
+
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -752,12 +764,12 @@ public class MainActivity extends AppCompatActivity {
      * Loops through all views that contain text and sets the font to the custom font.
      */
     private void setCustomFont() {
-        for (int i = 0; i < mAllViewsArray.length; i++) {
-            if (mAllViewsArray[i] instanceof TextView) {
-                TextView currentTextView = (TextView) mAllViewsArray[i];
+        for (View view : mAllViewsArray) {
+            if (view instanceof TextView) {
+                TextView currentTextView = (TextView) view;
                 currentTextView.setTypeface(mCustomFontSemiBold);
-            } else if (mAllViewsArray[i] instanceof Button) {
-                Button currentButton = (Button) mAllViewsArray[i];
+            } else if (view instanceof Button) {
+                Button currentButton = (Button) view;
                 currentButton.setTypeface(mCustomFontSemiBold);
             }
         }

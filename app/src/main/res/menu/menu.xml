@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_about"
-        android:title="@string/about"/>
+        android:id="@+id/menu_item_source_code"
+        android:title="@string/source_code"
+        app:showAsAction="never" />
     <item
-        android:id="@+id/menu_how_to_use"
-        android:title="@string/how_to_use"/>
+        android:id="@+id/menu_item_language"
+        android:title="@string/language"
+        app:showAsAction="never" />
     <item
-        android:id="@+id/menu_icon_info"
-        android:title="@string/icon_info"/>
-
+        android:id="@+id/menu_item_theme"
+        android:title="@string/theme"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_item_rate"
+        android:title="@string/rate_app"
+        app:showAsAction="never" />
 </menu>
