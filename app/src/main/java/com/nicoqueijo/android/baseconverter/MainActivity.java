@@ -1,9 +1,12 @@
 package com.nicoqueijo.android.baseconverter;
 
+import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -25,24 +28,10 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
 
-    public static String nameFormatter(String rawName) {
-
-        final int SECOND_TO_LAST = 1;
-        String[] splitName;
-        String formattedName = "";
-        splitName = rawName.split("_");
-        for (int i = 0; i < splitName.length; i++) {
-            formattedName += splitName[i].substring(0, 1).toUpperCase() + splitName[i].substring(1);
-            if (i < (splitName.length - SECOND_TO_LAST)) {
-                formattedName += " ";
-            }
-        }
-        return formattedName;
-    }
-
-    private static final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
-    private static final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
-    private final String COPIED_TO_CLIPBOARD_MESSAGE = "Copied to clipboard!";
+    public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
+    public static final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
+    public static final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
+    public static final String COPIED_TO_CLIPBOARD_MESSAGE = "Copied to clipboard!";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
     private final int SEEKBAR_TO_START_LOCATION = 0;
@@ -609,16 +598,27 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case (R.id.menu_item_source_code):
-
+                Intent sourceCodeIntent = new Intent(Intent.ACTION_VIEW);
+                sourceCodeIntent.setData(Uri.parse(DEVELOPER_GITHUB_URL));
+                Intent sourceCodeChooser = Intent.createChooser(sourceCodeIntent, getString(R.string.launch_browser));
+                startActivity(sourceCodeChooser);
                 break;
             case (R.id.menu_item_language):
-
+                // Open dialog to select language
+                // Needs a communicator interface
                 break;
             case (R.id.menu_item_theme):
-
+                // Open dialog to select theme
+                // Needs a communicator interface
                 break;
             case (R.id.menu_item_rate):
-
+                Intent rateAppIntent = new Intent(Intent.ACTION_VIEW);
+                rateAppIntent.setData(Uri.parse("market://details?id=" + getPackageName()));
+                try {
+                    startActivity(rateAppIntent);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(this, R.string.google_play_error, Toast.LENGTH_LONG).show();
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);

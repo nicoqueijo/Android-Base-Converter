@@ -30,4 +30,6 @@
     <string name="language">Language</string>
     <string name="theme">Theme</string>
     <string name="rate_app">Rate app</string>
+    <string name="google_play_error">Unable to find Google Play app</string>
+    <string name="launch_browser">Select browser app</string>
 </resources>
