@@ -1,15 +1,16 @@
 package com.nicoqueijo.android.baseconverter;
 
+import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 /**
  * Android application. Converts numbers from one base to another supporting base 2 through 16.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Communicator {
 
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
     public static final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
@@ -76,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
     private int mCurrentSeekbarToProgress = SEEKBAR_TO_START_LOCATION;
 
     private ActionBar mActionBar;
+    private FragmentManager mFragmentManager = getFragmentManager();
+    private SharedPreferences mSharedPreferences;
+
     private SeekBar mSeekBarFrom;
     private SeekBar mSeekBarTo;
 
@@ -124,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        setTheme(mSharedPreferences.getInt("theme", R.style.AppTheme));
         setContentView(R.layout.activity_main);
         mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
@@ -550,6 +556,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * CHANGE THIS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * When the user selects an option in a DialogFragment without cancelling this method executes
+     * passing back the result of the option the user selected. If the user confirmed to clearing
+     * the game's scores it does that, otherwise the user set the app to a new language and it
+     * restarts the activity to load the layout in the language the user selected.
+     *
+     * @param message the result returned from opening a DialogFragment.
+     */
+    @Override
+    public void onDialogMessage(String message) {
+        if (message.equals("THEME")) {
+
+        } else {
+            restartActivity();
+        }
+    }
+
+    /**
+     * Finishes and then starts the activity with a new intent so onCreate gets called and as a
+     * result the new theme is applied.
+     */
+    public void restartActivity() {
+        this.finish();
+        final Intent intent = this.getIntent();
+        this.startActivity(intent);
+    }
+
+    /**
      * Checks if the input is 0. If it is, there is nothing to process so the method returns.
      * If the input is greater than 0 then it checks if adding another digit would cause overflow.
      * If it doesn't, it adds that digit to the input, performs the conversion to the new base,
@@ -612,6 +646,8 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.menu_item_language):
                 // Open dialog to select language
                 // Needs a communicator interface
+                LanguageChooserDialog languageChooserDialog = new LanguageChooserDialog();
+                languageChooserDialog.show(mFragmentManager, "dialog_language");
                 break;
             case (R.id.menu_item_theme):
                 // Open dialog to select theme
