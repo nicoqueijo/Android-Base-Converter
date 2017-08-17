@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="30dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingStart="30dp"
+        android:paddingTop="15dp"
+        android:text="@string/settings_language_title"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="60dp"
+        android:fadeScrollbars="false">
+
+        <LinearLayout
+            android:id="@+id/container_language_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/choice_english"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_united_kingdom"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/united_kingdom" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/english"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_spanish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_spanish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_spain"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/spain" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/spanish"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_french"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_french"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_france"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/france" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/french"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_german"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_german"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_germany"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/germany" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/german"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_italian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_italian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_italy"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/italy" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/italian"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_dutch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_dutch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_netherlands"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/netherlands" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/dutch"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_portuguese"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_portuguese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_portugal"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/portugal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/portuguese"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_polish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_polish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_poland"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/poland" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/polish"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_russian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_russian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_russia"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/russia" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/russian"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_turkish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_turkish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_turkey"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/turkey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/turkish"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_chinese"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_chinese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_china"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/china" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/chinese"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_japanese"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_japanese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_japan"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/japan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/japanese"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_korean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_korean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_south_korea"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/south_korea" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/korean"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_arabic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_arabic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_saudi_arabia"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/saudi_arabia" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/arabic"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/choice_hindi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_hindi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_india"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/india" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/hindi"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:paddingBottom="5dp"
+        android:paddingEnd="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:text="@string/cancel"
+        android:textAllCaps="true" />
+
+</RelativeLayout>

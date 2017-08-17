@@ -31,4 +31,23 @@
     <string name="rate_app">Rate app</string>
     <string name="google_play_error">Unable to find Google Play app</string>
     <string name="launch_browser">Select browser app</string>
+    <string name="settings_language_title">Language</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Languages -->
+    <string name="arabic">العَرَبِيَّة</string>
+    <string name="chinese">中文</string>
+    <string name="dutch">Nederlands</string>
+    <string name="english">English</string>
+    <string name="french">Français</string>
+    <string name="german">Deutsche</string>
+    <string name="hindi">हिंदी</string>
+    <string name="italian">Italiano</string>
+    <string name="japanese">日本語</string>
+    <string name="korean">한국어</string>
+    <string name="polish">Polski</string>
+    <string name="portuguese">Português</string>
+    <string name="russian">Pу́сский</string>
+    <string name="spanish">Español</string>
+    <string name="turkish">Türkçe</string>
 </resources>
