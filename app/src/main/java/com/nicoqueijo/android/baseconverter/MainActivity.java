@@ -569,7 +569,8 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         if (message.equals("THEME")) {
 
         } else {
-            restartActivity();
+            this.recreate();
+            //restartActivity();
         }
     }
 
