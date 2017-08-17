@@ -3,6 +3,8 @@ Base Converter App
 
 // TODO
 
+-Move copied to clipboard string to strings.xml
+
 -Translate strings to following languages
 	-Arabic
 	-German
@@ -18,7 +20,7 @@ Base Converter App
 	-Russian
 	-Turkish
 	-Chinese
-	
+
 -Choose a few color palletes for different themes
 -Apply custom fonts to text views in new dialogs
 -Design layout for theme dialog

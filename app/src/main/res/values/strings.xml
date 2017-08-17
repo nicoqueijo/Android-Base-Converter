@@ -27,7 +27,7 @@
     <string name="to">TO:</string>
     <string name="input">INPUT:</string>
     <string name="output">OUTPUT:</string>
-    <string name="title">\n\nBase Converter</string>
+    <string name="title">\t\tBase Converter</string>
     <string name="source_code">Source code</string>
     <string name="language">Language</string>
     <string name="theme">Theme</string>
