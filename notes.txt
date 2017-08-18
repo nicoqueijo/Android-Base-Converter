@@ -3,24 +3,9 @@ Base Converter App
 
 // TODO
 
--Move copied to clipboard string to strings.xml
 
--Translate strings to following languages
-	-Arabic
-	-German
-	-Spanish
-	-French
-	-Korean
-	-Hindi
-	-Italian
-	-Japanese
-	-Dutch
-	-Polish
-	-Portuguese
-	-Russian
-	-Turkish
-	-Chinese
-
+-Put this on all strings.xml files <?xml version="1.0" encoding="utf-8"?>
+-Preserve layout language opon orientation change
 -Choose a few color palletes for different themes
 -Apply custom fonts to text views in new dialogs
 -Design layout for theme dialog

@@ -25,18 +25,17 @@
     <string name="base">आधार:</string>
     <string name="from">से:</string>
     <string name="to">सेवा मेरे:</string>
-    <string name="input">INPUT:</string>
-    <string name="output">OUTPUT:</string>
+    <string name="input">निवेश:</string>
+    <string name="output">निर्गम:</string>
     <string name="title">\t\tबेस कन्वर्टर</string>
     <string name="source_code">सोर्स कोड</string>
-    <string name="language">Language</string>
-    <string name="theme">Theme</string>
-    <string name="rate_app">Rate app</string>
-    <string name="google_play_error">Unable to find Google Play app</string>
-    <string name="launch_browser">Select browser app</string>
-    <string name="settings_language_title">Language</string>
-    <string name="settings_theme_title">Theme</string>
-    <string name="cancel">Cancel</string>
+    <string name="language">भाषा</string>
+    <string name="theme">विषय</string>
+    <string name="rate_app">एप्लिकेशन का मूल्यांकन करें</string>
+    <string name="google_play_error">Google Play ऐप ढूंढने में असमर्थ</string>
+    <string name="launch_browser">ब्राउज़र आवेदन करें</string>
+    <string name="cancel">रद्द करना</string>
+	<string name="copied_to_clipboard">क्लिपबोर्ड पर नकल!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

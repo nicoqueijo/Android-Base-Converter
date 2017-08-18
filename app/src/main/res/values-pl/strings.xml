@@ -25,18 +25,17 @@
     <string name="base">BAZA:</string>
     <string name="from">OD:</string>
     <string name="to">DO:</string>
-    <string name="input">INPUT:</string>
-    <string name="output">OUTPUT:</string>
+    <string name="input">WKŁAD:</string>
+    <string name="output">WYDAJNOŚĆ:</string>
     <string name="title">\n\nBaza Przetwornik </string>
     <string name="source_code">Kod źródłowy</string>
-    <string name="language">Language</string>
-    <string name="theme">Theme</string>
-    <string name="rate_app">Rate app</string>
-    <string name="google_play_error">Unable to find Google Play app</string>
-    <string name="launch_browser">Select browser app</string>
-    <string name="settings_language_title">Language</string>
-    <string name="settings_theme_title">Theme</string>
-    <string name="cancel">Cancel</string>
+    <string name="language">Język</string>
+    <string name="theme">Motyw</string>
+    <string name="rate_app">Oceń aplikację</string>
+    <string name="google_play_error">Nie można znaleźć aplikacji Google Play</string>
+    <string name="launch_browser">Wybierz aplikację przeglądarki</string>
+    <string name="cancel">Anuluj</string>
+	<string name="copied_to_clipboard">Skopiuj do schowka!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

@@ -25,18 +25,17 @@
     <string name="base">BASE:</string>
     <string name="from">DE:</string>
     <string name="to">A:</string>
-    <string name="input">INPUT:</string>
-    <string name="output">OUTPUT:</string>
+    <string name="input">ENTRADA:</string>
+    <string name="output">SAÍDA:</string>
     <string name="title">\t\tConversor Base</string>
     <string name="source_code">Código fonte</string>
-    <string name="language">Language</string>
-    <string name="theme">Theme</string>
-    <string name="rate_app">Rate app</string>
-    <string name="google_play_error">Unable to find Google Play app</string>
-    <string name="launch_browser">Select browser app</string>
-    <string name="settings_language_title">Language</string>
-    <string name="settings_theme_title">Theme</string>
-    <string name="cancel">Cancel</string>
+    <string name="language">Idioma</string>
+    <string name="theme">Tema</string>
+    <string name="rate_app">Avalie o aplicativo</string>
+    <string name="google_play_error">Não foi possível encontrar o aplicativo Google Play</string>
+    <string name="launch_browser">Escolha um aplicativo de navegador</string>
+    <string name="cancel">Cancelar</string>
+	<string name="copied_to_clipboard">Copiado para a área de transferência!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

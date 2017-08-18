@@ -25,18 +25,17 @@
     <string name="base">ベース:</string>
     <string name="from">から:</string>
     <string name="to">に:</string>
-    <string name="input">INPUT:</string>
-    <string name="output">OUTPUT:</string>
+    <string name="input">入力:</string>
+    <string name="output">出力:</string>
     <string name="title">\t\tベースコンバータ</string>
     <string name="source_code">ソースコード</string>
-    <string name="language">Language</string>
-    <string name="theme">Theme</string>
-    <string name="rate_app">Rate app</string>
-    <string name="google_play_error">Unable to find Google Play app</string>
-    <string name="launch_browser">Select browser app</string>
-    <string name="settings_language_title">Language</string>
-    <string name="settings_theme_title">Theme</string>
-    <string name="cancel">Cancel</string>
+    <string name="language">言語</string>
+    <string name="theme">テーマ</string>
+    <string name="rate_app">アプリを評価</string>
+    <string name="google_play_error">Google Playアプリが見つかりません</string>
+    <string name="launch_browser">セレクトブラウザアプリケーション</string>
+    <string name="cancel">キャンセル</string>
+	<string name="copied_to_clipboard">クリップボードにコピーされました！</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

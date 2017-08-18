@@ -11,7 +11,7 @@
         android:paddingRight="30dp"
         android:paddingStart="30dp"
         android:paddingTop="15dp"
-        android:text="@string/settings_language_title"
+        android:text="@string/language"
         android:textSize="24dp"
         android:textStyle="bold" />
 

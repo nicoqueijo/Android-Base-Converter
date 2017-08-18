@@ -34,9 +34,8 @@
     <string name="rate_app">Rate app</string>
     <string name="google_play_error">Unable to find Google Play app</string>
     <string name="launch_browser">Select browser app</string>
-    <string name="settings_language_title">Language</string>
-    <string name="settings_theme_title">Theme</string>
     <string name="cancel">Cancel</string>
+	<string name="copied_to_clipboard">Copied to clipboard!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

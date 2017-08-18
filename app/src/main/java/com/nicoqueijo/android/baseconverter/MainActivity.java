@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
     public static final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
     public static final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
-    public static final String COPIED_TO_CLIPBOARD_MESSAGE = "Copied to clipboard!";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
     private final int SEEKBAR_TO_START_LOCATION = 0;
@@ -275,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
                 if (!outputText.isEmpty()) {
                     mClipData = ClipData.newPlainText("text", outputText);
                     mClipboardManager.setPrimaryClip(mClipData);
-                    Toast.makeText(getApplicationContext(), COPIED_TO_CLIPBOARD_MESSAGE, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }
@@ -291,7 +290,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
                 if (!inputText.isEmpty()) {
                     mClipData = ClipData.newPlainText("text", inputText);
                     mClipboardManager.setPrimaryClip(mClipData);
-                    Toast.makeText(getApplicationContext(), COPIED_TO_CLIPBOARD_MESSAGE, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }

@@ -25,18 +25,17 @@
     <string name="base">BAZ:</string>
     <string name="from">DAN:</string>
     <string name="to">IÇIN:</string>
-    <string name="input">INPUT:</string>
-    <string name="output">OUTPUT:</string>
+    <string name="input">GIRIŞ:</string>
+    <string name="output">ÇIKIŞ:</string>
     <string name="title">\t\tTemel Dönüştürücü</string>
     <string name="source_code">Kaynak kodu</string>
-    <string name="language">Language</string>
-    <string name="theme">Theme</string>
-    <string name="rate_app">Rate app</string>
-    <string name="google_play_error">Unable to find Google Play app</string>
-    <string name="launch_browser">Select browser app</string>
-    <string name="settings_language_title">Language</string>
-    <string name="settings_theme_title">Theme</string>
-    <string name="cancel">Cancel</string>
+    <string name="language">Dil</string>
+    <string name="theme">Tema</string>
+    <string name="rate_app">Uygulama oranı</string>
+    <string name="google_play_error">Google Play uygulaması bulunamadı</string>
+    <string name="launch_browser">Seç tarayıcı uygulaması</string>
+    <string name="cancel">İptal etmek</string>
+	<string name="copied_to_clipboard">Panoya kopyalandı!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

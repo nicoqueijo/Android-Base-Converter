@@ -29,14 +29,13 @@
     <string name="output">OUTPUT:</string>
     <string name="title">\n\nBase Converter</string>
     <string name="source_code">Broncode</string>
-    <string name="language">Language</string>
-    <string name="theme">Theme</string>
-    <string name="rate_app">Rate app</string>
-    <string name="google_play_error">Unable to find Google Play app</string>
-    <string name="launch_browser">Select browser app</string>
-    <string name="settings_language_title">Language</string>
-    <string name="settings_theme_title">Theme</string>
-    <string name="cancel">Cancel</string>
+    <string name="language">Taal</string>
+    <string name="theme">Thema</string>
+    <string name="rate_app">Beoordeel app</string>
+    <string name="google_play_error">Kan de Google Play-app niet vinden</string>
+    <string name="launch_browser">Select browser applicatie</string>
+    <string name="cancel">Annuleer</string>
+	<string name="copied_to_clipboard">Gekopieerd naar het klembord!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>
