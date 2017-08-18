@@ -4,6 +4,9 @@ Base Converter App
 // TODO
 	
 -Design layout for theme dialog
+-Drawables for each theme option (primary color with dark outline)
+-Java class for theme dialog
 -Credit icon source somehow (Icon made by Freepik from www.flaticon.com)
+-Java class for theme dialog
 -Move language dialog attributes to styles.xml
 -Move theme dialog attributes to styles.xml
