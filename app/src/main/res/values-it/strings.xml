@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- ITALIAN -->
 
@@ -36,6 +37,7 @@
     <string name="launch_browser">Selezionare applicazione browser</string>
     <string name="cancel">Annulla</string>
 	<string name="copied_to_clipboard">Copiato negli appunti!</string>
+	<string name="overflow_message">Numero troppo grande!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- KOREAN -->
 
@@ -36,6 +37,7 @@
     <string name="launch_browser">선택 브라우저 응용 프로그램</string>
     <string name="cancel">취소</string>
 	<string name="copied_to_clipboard">클립 보드로 복사되었습니다!</string>
+	<string name="overflow_message">번호가 너무 큽니다!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

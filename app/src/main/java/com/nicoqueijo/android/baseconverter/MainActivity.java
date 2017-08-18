@@ -7,6 +7,8 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Android application. Converts numbers from one base to another supporting base 2 through 16.
@@ -117,8 +121,8 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     private View[] mAllViewsArray;
 
     private ArrayList<Character> mUserInput = new ArrayList<>();
-    private Typeface mCustomFontSemiBold;
-    private Typeface mCustomFontRegular;
+    public static  Typeface mCustomFontSemiBold;
+    public static Typeface mCustomFontRegular;
 
     private Toast mOverflowToast = null;
     private ClipboardManager mClipboardManager;
@@ -128,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        setLocale(mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE));
         setTheme(mSharedPreferences.getInt("theme", R.style.AppTheme));
         setContentView(R.layout.activity_main);
         mActionBar = getSupportActionBar();
@@ -555,6 +560,20 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     }
 
     /**
+     * Sets the locale to a new language.
+     *
+     * @param lang the new language to set the app to.
+     */
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
+    }
+
+    /**
      * CHANGE THIS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
      * When the user selects an option in a DialogFragment without cancelling this method executes
      * passing back the result of the option the user selected. If the user confirmed to clearing
@@ -688,7 +707,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
 
         int currentBaseFrom = mCurrentSeekbarFromProgress + SEEKBAR_PROGRESS_OFFSET;
         Context context = getApplicationContext();
-        CharSequence overflowToastMessage = "Number too large!";
+        CharSequence overflowToastMessage = getString(R.string.overflow_message);
         int toastDuration = Toast.LENGTH_SHORT;
 
         switch (currentBaseFrom) {

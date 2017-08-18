@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- RUSSIAN -->
 
@@ -35,7 +36,8 @@
     <string name="google_play_error">Не удалось найти приложение Google Play</string>
     <string name="launch_browser">Выберите приложение браузера</string>
     <string name="cancel">Отмена</string>
-	<string name="copied_to_clipboard">Скопировано в буфер обмена!</string>
+	<string name="copied_to_clipboard">Скопировано в буфер обмена!</string>	
+	<string name="overflow_message">Номер слишком большой!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -46,6 +47,7 @@ public class LanguageChooserDialog extends DialogFragment {
     Communicator mCommunicator;
     private SharedPreferences mSharedPreferences;
     private Stack<RadioButton> mActiveRadioButton = new Stack<>();
+    private View[] mAllViewsArray;
 
     private ImageView mUnitedKingdomFlag;
     private ImageView mSpainFlag;
@@ -95,6 +97,23 @@ public class LanguageChooserDialog extends DialogFragment {
     private RadioButton mArabicRadioButton;
     private RadioButton mHindiRadioButton;
 
+    private TextView mEnglishTextView;
+    private TextView mSpanishTextView;
+    private TextView mFrenchTextView;
+    private TextView mGermanTextView;
+    private TextView mItalianTextView;
+    private TextView mDutchTextView;
+    private TextView mPortugueseTextView;
+    private TextView mPolishTextView;
+    private TextView mRussianTextView;
+    private TextView mTurkishTextView;
+    private TextView mChineseTextView;
+    private TextView mJapaneseTextView;
+    private TextView mKoreanTextView;
+    private TextView mArabicTextView;
+    private TextView mHindiTextView;
+
+    private TextView mLanguageTextView;
     private ScrollView mScrollView;
     private Button mCancelButton;
 
@@ -165,9 +184,35 @@ public class LanguageChooserDialog extends DialogFragment {
         mArabicRadioButton = (RadioButton) view.findViewById(R.id.radio_button_arabic);
         mHindiRadioButton = (RadioButton) view.findViewById(R.id.radio_button_hindi);
 
+        mEnglishTextView = (TextView) view.findViewById(R.id.label_english);
+        mSpanishTextView = (TextView) view.findViewById(R.id.label_spanish);
+        mFrenchTextView = (TextView) view.findViewById(R.id.label_french);
+        mGermanTextView = (TextView) view.findViewById(R.id.label_german);
+        mItalianTextView = (TextView) view.findViewById(R.id.label_italian);
+        mDutchTextView = (TextView) view.findViewById(R.id.label_dutch);
+        mPortugueseTextView = (TextView) view.findViewById(R.id.label_portuguese);
+        mPolishTextView = (TextView) view.findViewById(R.id.label_polish);
+        mRussianTextView = (TextView) view.findViewById(R.id.label_russian);
+        mTurkishTextView = (TextView) view.findViewById(R.id.label_turkish);
+        mChineseTextView = (TextView) view.findViewById(R.id.label_chinese);
+        mJapaneseTextView = (TextView) view.findViewById(R.id.label_japanese);
+        mKoreanTextView = (TextView) view.findViewById(R.id.label_korean);
+        mArabicTextView = (TextView) view.findViewById(R.id.label_arabic);
+        mHindiTextView = (TextView) view.findViewById(R.id.label_hindi);
+
+        mLanguageTextView = (TextView) view.findViewById(R.id.label_language);
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_view);
         mCancelButton = (Button) view.findViewById(R.id.button_cancel);
 
+        mAllViewsArray = new View[]{
+                mLanguageTextView, mCancelButton, mEnglishTextView, mSpanishTextView,
+                mFrenchTextView, mGermanTextView, mItalianTextView, mDutchTextView,
+                mPortugueseTextView, mPolishTextView, mRussianTextView, mTurkishTextView,
+                mChineseTextView, mJapaneseTextView, mKoreanTextView, mArabicTextView,
+                mHindiTextView
+        };
+
+        setCustomFont();
         disableRadioButtonsClickability();
         restoreSavedLanguage();
         restoreSavedScrollingPosition();
@@ -513,5 +558,21 @@ public class LanguageChooserDialog extends DialogFragment {
     private boolean isRunningOnTablet() {
         final double MINIMUM_ASPECT_RATIO_OF_A_PHONE = 1.6;
         return getAspectRatio() < MINIMUM_ASPECT_RATIO_OF_A_PHONE;
+    }
+
+    /**
+     * Loops through all views that contain text and sets the font to the custom font.
+     */
+    private void setCustomFont() {
+        for (View view : mAllViewsArray) {
+            if (view instanceof TextView) {
+                TextView currentTextView = (TextView) view;
+                currentTextView.setTypeface(MainActivity.mCustomFontRegular);
+            } else if (view instanceof Button) {
+                Button currentButton = (Button) view;
+                currentButton.setTypeface(MainActivity.mCustomFontRegular);
+            }
+        }
+        mLanguageTextView.setTypeface(MainActivity.mCustomFontSemiBold);
     }
 }

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- HINDI -->
 
@@ -36,6 +37,7 @@
     <string name="launch_browser">ब्राउज़र आवेदन करें</string>
     <string name="cancel">रद्द करना</string>
 	<string name="copied_to_clipboard">क्लिपबोर्ड पर नकल!</string>
+	<string name="overflow_message">संख्या बहुत बड़ी है!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

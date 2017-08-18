@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- ARABIC -->
 
@@ -22,12 +23,12 @@
     <string name="button_F">F</string>
     <string name="button_del">DEL</string>
     <string name="button_clr">CLR</string>
-    <string name="base">:قاعدة</string>
-    <string name="from">:من عند</string>
-    <string name="to">:إلى</string>
-    <string name="input">:إدخال</string>
-    <string name="output">:انتاج</string>
-    <string name="title">تحويل قاعدة\t\t</string>
+    <string name="base">قاعدة:</string>
+    <string name="from">من عند:</string>
+    <string name="to">إلى:</string>
+    <string name="input">إدخال:</string>
+    <string name="output">انتاج:</string>
+    <string name="title">\t\tتحويل قاعدة\t\t</string>
     <string name="source_code">مصدر الرمز</string>
     <string name="language">لغة</string>
     <string name="theme">المقدمة</string>
@@ -36,6 +37,7 @@
     <string name="launch_browser">حدد تطبيق مستعرض</string>
     <string name="cancel">إلغاء</string>
 	<string name="copied_to_clipboard">نسخ إلى الحافظة!</string>
+	<string name="overflow_message">عدد كبير جدا!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

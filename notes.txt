@@ -10,3 +10,5 @@ Base Converter App
 -Apply custom fonts to text views in new dialogs
 -Design layout for theme dialog
 -Credit icon source somehow (Icon made by Freepik from www.flaticon.com)
+-Move language dialog attributes to styles.xml
+-Move theme dialog attributes to styles.xml

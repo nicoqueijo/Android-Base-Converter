@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- POLISH -->
 
@@ -36,6 +37,7 @@
     <string name="launch_browser">Wybierz aplikację przeglądarki</string>
     <string name="cancel">Anuluj</string>
 	<string name="copied_to_clipboard">Skopiuj do schowka!</string>
+	<string name="overflow_message">Liczba zbyt duża!</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

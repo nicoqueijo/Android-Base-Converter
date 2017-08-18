@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/label_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingEnd="30dp"
@@ -57,6 +58,7 @@
                     android:src="@drawable/united_kingdom" />
 
                 <TextView
+                    android:id="@+id/label_english"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -92,6 +94,7 @@
                     android:src="@drawable/spain" />
 
                 <TextView
+                    android:id="@+id/label_spanish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -127,6 +130,7 @@
                     android:src="@drawable/france" />
 
                 <TextView
+                    android:id="@+id/label_french"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -162,6 +166,7 @@
                     android:src="@drawable/germany" />
 
                 <TextView
+                    android:id="@+id/label_german"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -197,6 +202,7 @@
                     android:src="@drawable/italy" />
 
                 <TextView
+                    android:id="@+id/label_italian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -232,6 +238,7 @@
                     android:src="@drawable/netherlands" />
 
                 <TextView
+                    android:id="@+id/label_dutch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -267,6 +274,7 @@
                     android:src="@drawable/portugal" />
 
                 <TextView
+                    android:id="@+id/label_portuguese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -302,6 +310,7 @@
                     android:src="@drawable/poland" />
 
                 <TextView
+                    android:id="@+id/label_polish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -337,6 +346,7 @@
                     android:src="@drawable/russia" />
 
                 <TextView
+                    android:id="@+id/label_russian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -372,6 +382,7 @@
                     android:src="@drawable/turkey" />
 
                 <TextView
+                    android:id="@+id/label_turkish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -407,6 +418,7 @@
                     android:src="@drawable/china" />
 
                 <TextView
+                    android:id="@+id/label_chinese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -442,6 +454,7 @@
                     android:src="@drawable/japan" />
 
                 <TextView
+                    android:id="@+id/label_japanese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -477,6 +490,7 @@
                     android:src="@drawable/south_korea" />
 
                 <TextView
+                    android:id="@+id/label_korean"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -512,6 +526,7 @@
                     android:src="@drawable/saudi_arabia" />
 
                 <TextView
+                    android:id="@+id/label_arabic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -547,6 +562,7 @@
                     android:src="@drawable/india" />
 
                 <TextView
+                    android:id="@+id/label_hindi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
