@@ -4,10 +4,29 @@ Base Converter App
 // TODO
 
 
--Put this on all strings.xml files <?xml version="1.0" encoding="utf-8"?>
--Preserve layout language opon orientation change
 -Choose a few color palletes for different themes
--Apply custom fonts to text views in new dialogs
+	-Pink
+		-Primary: #E91E63
+		-Dark: #880E4F
+
+	-Indigo
+		-Primary: #3F51B5
+		-Dark: #1A237E
+		
+	-Teal
+		-Primary: #009688
+		-Dark: #004D40
+		
+	-Green
+		-Primary: #4CAF50
+		-Dark: #1B5E20
+		
+	-Orange
+		-Primary: #FF9800
+		-Dark: #E65100
+		
+		
+-Make styles of selected color palletes
 -Design layout for theme dialog
 -Credit icon source somehow (Icon made by Freepik from www.flaticon.com)
 -Move language dialog attributes to styles.xml
