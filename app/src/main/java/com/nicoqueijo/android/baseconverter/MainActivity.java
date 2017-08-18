@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     private View[] mAllViewsArray;
 
     private ArrayList<Character> mUserInput = new ArrayList<>();
-    public static  Typeface mCustomFontSemiBold;
+    public static Typeface mCustomFontSemiBold;
     public static Typeface mCustomFontRegular;
 
     private Toast mOverflowToast = null;
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         super.onCreate(savedInstanceState);
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setLocale(mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE));
-        setTheme(mSharedPreferences.getInt("theme", R.style.AppTheme));
+        setTheme(mSharedPreferences.getInt("theme", R.style.AppThemePurple));
         setContentView(R.layout.activity_main);
         mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
