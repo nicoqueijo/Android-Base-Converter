@@ -3,10 +3,15 @@ Base Converter App
 
 // TODO
 	
--Design layout for theme dialog
--Drawables for each theme option (primary color with dark outline)
--Java class for theme dialog
+-Try changing actionbar font
 -Credit icon source somehow (Icon made by Freepik from www.flaticon.com)
--Java class for theme dialog
 -Move language dialog attributes to styles.xml
 -Move theme dialog attributes to styles.xml
+-Separate java classes to different packages by category
+-Assure javadocs for class headers and all methods
+-Make access modifiers as private as possible
+-Record new demo video
+-Take new screenshots
+-Update README with new features
+-Update Google play description with new screenshots
+-Update Google play with new desciption

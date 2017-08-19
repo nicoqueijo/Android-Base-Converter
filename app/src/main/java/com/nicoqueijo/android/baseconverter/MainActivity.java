@@ -302,8 +302,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         });
 
         /**
-         * Listener for the DEL button. Removes the last digit from the current input, recalculates
-         * the conversion, and re-outputs.
+         * Removes the last digit from the current input, recalculates the conversion, and re-outputs.
          */
         mButtonDel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -327,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         });
 
         /**
-         * Listener for the CLR button. Removes all digits from current input and sets a blank output.
+         * Removes all digits from current input and sets a blank output.
          */
         mButtonClr.setOnClickListener(new View.OnClickListener() {
             final int OFF_BY_ONE = 1;
@@ -346,10 +345,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 0. Calls the processNumberButtonPress method passing the character
-         * '0' as the argument.
-         */
         mButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -357,10 +352,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 1. Calls the processNumberButtonPress method passing the character
-         * '1' as the argument.
-         */
         mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -368,10 +359,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 2. Calls the processNumberButtonPress method passing the character
-         * '2' as the argument.
-         */
         mButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -379,10 +366,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 3. Calls the processNumberButtonPress method passing the character
-         * '3' as the argument.
-         */
         mButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -390,10 +373,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 4. Calls the processNumberButtonPress method passing the character
-         * '4' as the argument.
-         */
         mButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -401,10 +380,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 5. Calls the processNumberButtonPress method passing the character
-         * '5' as the argument.
-         */
         mButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -412,10 +387,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 6. Calls the processNumberButtonPress method passing the character
-         * '6' as the argument.
-         */
         mButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -423,10 +394,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 7. Calls the processNumberButtonPress method passing the character
-         * '7' as the argument.
-         */
         mButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -434,10 +401,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 8. Calls the processNumberButtonPress method passing the character
-         * '8' as the argument.
-         */
         mButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -445,10 +408,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button 9. Calls the processNumberButtonPress method passing the character
-         * '9' as the argument.
-         */
         mButton9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -456,10 +415,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button A. Calls the processNumberButtonPress method passing the character
-         * 'A' as the argument.
-         */
         mButtonA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -467,10 +422,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button B. Calls the processNumberButtonPress method passing the character
-         * 'B' as the argument.
-         */
         mButtonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -478,10 +429,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button C. Calls the processNumberButtonPress method passing the character
-         * 'C' as the argument.
-         */
         mButtonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -489,10 +436,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button D. Calls the processNumberButtonPress method passing the character
-         * 'D' as the argument.
-         */
         mButtonD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -500,10 +443,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button E. Calls the processNumberButtonPress method passing the character
-         * 'E' as the argument.
-         */
         mButtonE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -511,10 +450,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             }
         });
 
-        /**
-         * Listener for button F. Calls the processNumberButtonPress method passing the character
-         * 'F' as the argument.
-         */
         mButtonF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -574,32 +509,17 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     }
 
     /**
-     * CHANGE THIS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
      * When the user selects an option in a DialogFragment without cancelling this method executes
-     * passing back the result of the option the user selected. If the user confirmed to clearing
-     * the game's scores it does that, otherwise the user set the app to a new language and it
-     * restarts the activity to load the layout in the language the user selected.
+     * passing back the result of the option the user selected. Since both changing the language or
+     * theme requires the activity to be recreated to display the updates it doesn't matter what
+     * the message is. As long as a message is received it means the cancel button wasn't clicked and
+     * the user chose to either change the language or theme.
      *
      * @param message the result returned from opening a DialogFragment.
      */
     @Override
     public void onDialogMessage(String message) {
-        if (message.equals("THEME")) {
-
-        } else {
-            this.recreate();
-            //restartActivity();
-        }
-    }
-
-    /**
-     * Finishes and then starts the activity with a new intent so onCreate gets called and as a
-     * result the new theme is applied.
-     */
-    public void restartActivity() {
-        this.finish();
-        final Intent intent = this.getIntent();
-        this.startActivity(intent);
+        this.recreate();
     }
 
     /**
@@ -663,14 +583,12 @@ public class MainActivity extends AppCompatActivity implements Communicator {
                 startActivity(sourceCodeChooser);
                 break;
             case (R.id.menu_item_language):
-                // Open dialog to select language
-                // Needs a communicator interface
                 LanguageChooserDialog languageChooserDialog = new LanguageChooserDialog();
                 languageChooserDialog.show(mFragmentManager, "dialog_language");
                 break;
             case (R.id.menu_item_theme):
-                // Open dialog to select theme
-                // Needs a communicator interface
+                ThemeChooserDialog themeChooserDialog = new ThemeChooserDialog();
+                themeChooserDialog.show(mFragmentManager, "dialog_theme");
                 break;
             case (R.id.menu_item_rate):
                 Intent rateAppIntent = new Intent(Intent.ACTION_VIEW);
@@ -826,14 +744,8 @@ public class MainActivity extends AppCompatActivity implements Communicator {
      */
     private void setCustomFont() {
         for (View view : mAllViewsArray) {
-            if (view instanceof TextView) {
-                TextView currentTextView = (TextView) view;
-                currentTextView.setTypeface(mCustomFontSemiBold);
-            } else if (view instanceof Button) {
-                Button currentButton = (Button) view;
-                currentButton.setTypeface(mCustomFontSemiBold);
-            }
+            TextView currentTextView = (TextView) view;
+            currentTextView.setTypeface(mCustomFontSemiBold);
         }
     }
-
 }

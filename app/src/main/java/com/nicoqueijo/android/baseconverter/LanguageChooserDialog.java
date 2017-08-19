@@ -24,6 +24,9 @@ import java.util.Locale;
 
 import java.util.Stack;
 
+/*
+
+ */
 public class LanguageChooserDialog extends DialogFragment {
 
     public enum Language {
@@ -44,7 +47,7 @@ public class LanguageChooserDialog extends DialogFragment {
         hi, // HINDI
     }
 
-    Communicator mCommunicator;
+    private Communicator mCommunicator;
     private SharedPreferences mSharedPreferences;
     private Stack<RadioButton> mActiveRadioButton = new Stack<>();
     private View[] mAllViewsArray;
@@ -401,7 +404,7 @@ public class LanguageChooserDialog extends DialogFragment {
      * Retrieves the language setting from the SharedPreferences file and sets that language to the
      * appropriate RadioButton. If this is the first time running the app SharedPreferences won't
      * have a language value and the default value will be the system language. If the system
-     * language is a supported language in this app it defaults to English.
+     * language is not a supported language in this app it defaults to English.
      */
     private void restoreSavedLanguage() {
         String savedLanguage = mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE);
@@ -561,18 +564,15 @@ public class LanguageChooserDialog extends DialogFragment {
     }
 
     /**
-     * Loops through all views that contain text and sets the font to the custom font.
+     * Loops through all language text views and sets the font to the custom font. Also sets the
+     * dialog title view and button view to the bold custom font.
      */
     private void setCustomFont() {
         for (View view : mAllViewsArray) {
-            if (view instanceof TextView) {
-                TextView currentTextView = (TextView) view;
-                currentTextView.setTypeface(MainActivity.mCustomFontRegular);
-            } else if (view instanceof Button) {
-                Button currentButton = (Button) view;
-                currentButton.setTypeface(MainActivity.mCustomFontRegular);
-            }
+            TextView currentTextView = (TextView) view;
+            currentTextView.setTypeface(MainActivity.mCustomFontRegular);
         }
+        mCancelButton.setTypeface(MainActivity.mCustomFontSemiBold);
         mLanguageTextView.setTypeface(MainActivity.mCustomFontSemiBold);
     }
 }

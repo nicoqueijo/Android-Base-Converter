@@ -14,7 +14,7 @@
 
     <color name="colorTealPrimary">#009688</color>
     <color name="colorTealPrimaryDark">#004D40</color>
-    <color name="colorTealAccent">#9B00FF</color>
+    <color name="colorTealAccent">#009688</color>
 
     <color name="colorGreenPrimary">#4CAF50</color>
     <color name="colorGreenPrimaryDark">#1B5E20</color>
