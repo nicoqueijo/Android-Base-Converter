@@ -16,89 +16,174 @@
         android:textSize="24dp"
         android:textStyle="bold" />
 
-    <ScrollView
-        android:id="@+id/scroll_view"
+    <RelativeLayout
+        android:id="@+id/container_themes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="60dp"
-        android:fadeScrollbars="false">
+        android:layout_marginTop="60dp">
 
-        <RelativeLayout
-            android:id="@+id/container_themes"
+        <LinearLayout
+            android:id="@+id/themes_first_row"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/option_theme_purple"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp">
 
-            <ImageView
-                android:id="@+id/check_mark_purple"
+                <ImageView
+                    android:id="@+id/option_theme_purple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/theme_shape_purple" />
+
+                <ImageView
+                    android:id="@+id/check_mark_purple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_check_mark"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
-            <ImageView
-                android:id="@+id/option_theme_pink"
+                <ImageView
+                    android:id="@+id/option_theme_indigo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/theme_shape_indigo" />
+
+
+                <ImageView
+                    android:id="@+id/check_mark_indigo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_check_mark"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@id/option_theme_purple" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp">
 
-            <ImageView
-                android:id="@+id/check_mark_pink"
+                <ImageView
+                    android:id="@+id/option_theme_pink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/theme_shape_pink" />
+
+                <ImageView
+                    android:id="@+id/check_mark_pink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_check_mark"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/themes_second_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/themes_first_row"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp">
 
-            <ImageView
-                android:id="@+id/option_theme_indigo"
+                <ImageView
+                    android:id="@+id/option_theme_teal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/theme_shape_teal" />
+
+                <ImageView
+                    android:id="@+id/check_mark_teal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_check_mark"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@id/option_theme_pink" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp">
 
-            <ImageView
-                android:id="@+id/check_mark_indigo"
+                <ImageView
+                    android:id="@+id/option_theme_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/theme_shape_green" />
+
+                <ImageView
+                    android:id="@+id/check_mark_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_check_mark"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp">
 
-            <ImageView
-                android:id="@+id/option_theme_teal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_below="@id/option_theme_purple" />
+                <ImageView
+                    android:id="@+id/option_theme_orange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/theme_shape_orange" />
 
-            <ImageView
-                android:id="@+id/check_mark_teal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/check_mark_orange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_check_mark"
+                    android:visibility="visible" />
 
-            <ImageView
-                android:id="@+id/option_theme_green"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@id/option_theme_teal" />
+            </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/check_mark_green"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+        </LinearLayout>
 
-            <ImageView
-                android:layout_toRightOf="@id/option_theme_green"
-                android:id="@+id/option_theme_orange"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
-
-            <ImageView
-                android:id="@+id/check_mark_orange"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
-
-        </RelativeLayout>
-
-    </ScrollView>
+    </RelativeLayout>
 
     <Button
         android:id="@+id/button_cancel"
