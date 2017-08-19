@@ -30,7 +30,7 @@
     <string name="output">SORTIE:</string>
     <string name="title">\n\nConvertisseur De Base</string>
     <string name="source_code">Code source</string>
-    <string name="language">La Langue</string>
+    <string name="language">Langue</string>
     <string name="theme">Thème</string>
     <string name="rate_app">Application de taux</string>
     <string name="google_play_error">Impossible de trouver l\'application Google Play</string>

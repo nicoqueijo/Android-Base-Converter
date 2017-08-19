@@ -1,5 +1,7 @@
 package com.nicoqueijo.android.baseconverter;
 
+import com.nicoqueijo.android.baseconverter.TypefaceSpan;
+
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
@@ -35,8 +37,8 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements Communicator {
 
     public static final String DEVELOPER_GITHUB_URL = "https://github.com/nicoqueijo";
-    public static final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo_2/Exo2-SemiBold.ttf";
-    public static final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo_2/Exo2-Regular.ttf";
+    public static final String EXO_2_SEMIBOLD_FONT_PATH = "fonts/Exo2-SemiBold.ttf";
+    public static final String EXO_2_REGULAR_FONT_PATH = "fonts/Exo2-Regular.ttf";
 
     private final int SEEKBAR_FROM_START_LOCATION = 8;
     private final int SEEKBAR_TO_START_LOCATION = 0;
@@ -135,10 +137,15 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         setLocale(mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE));
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemePurple));
         setContentView(R.layout.activity_main);
+
+        SpannableString titleWithCustomFont = new SpannableString(getString(R.string.title));
+        titleWithCustomFont.setSpan(new TypefaceSpan(this, "Exo2-SemiBold.ttf"), 0,
+                titleWithCustomFont.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
         mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
         mActionBar.setIcon(R.mipmap.ic_launcher);
-        mActionBar.setTitle(R.string.title);
+        mActionBar.setTitle(titleWithCustomFont);
 
         mSeekBarFrom = (SeekBar) findViewById(R.id.seekbar_from_controller);
         mSeekBarTo = (SeekBar) findViewById(R.id.seekbar_to_controller);

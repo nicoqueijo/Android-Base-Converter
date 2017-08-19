@@ -3,11 +3,7 @@ Base Converter App
 
 // TODO
 
--Make purple outline darker
--Add malay
--Make lang dialog wrap content
 -Try changing actionbar font
--Credit icon source somehow (Icon made by Freepik from www.flaticon.com)
 -Move language dialog attributes to styles.xml
 -Move theme dialog attributes to styles.xml
 -Separate java classes to different packages by category
