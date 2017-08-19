@@ -3,12 +3,10 @@ Base Converter App
 
 // TODO
 
--Try changing actionbar font
+-Separate java classes to different packages by category
 -Move language dialog attributes to styles.xml
 -Move theme dialog attributes to styles.xml
--Separate java classes to different packages by category
--Assure javadocs for class headers and all methods
--Make access modifiers as private as possible
+-Final test run (language change, theme change, orientation change, save lang, save theme, different devices on emulator)
 -Record new demo video
 -Take new screenshots
 -Update README with new features

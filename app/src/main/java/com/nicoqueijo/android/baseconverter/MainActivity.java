@@ -1,7 +1,5 @@
 package com.nicoqueijo.android.baseconverter;
 
-import com.nicoqueijo.android.baseconverter.TypefaceSpan;
-
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
@@ -138,9 +136,13 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemePurple));
         setContentView(R.layout.activity_main);
 
+        mCustomFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
+        mCustomFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
+        mClipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+
         SpannableString titleWithCustomFont = new SpannableString(getString(R.string.title));
-        titleWithCustomFont.setSpan(new TypefaceSpan(this, "Exo2-SemiBold.ttf"), 0,
-                titleWithCustomFont.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        titleWithCustomFont.setSpan(new CustomTypefaceSpan("", mCustomFontSemiBold), 0,
+                titleWithCustomFont.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
 
         mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
@@ -195,10 +197,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
                 mButton8, mButton9, mButtonA, mButtonB, mButtonC, mButtonD, mButtonE, mButtonF,
                 mButtonDel, mButtonClr
         };
-
-        mCustomFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
-        mCustomFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
-        mClipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
         setCustomFont();
 
@@ -556,7 +554,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     }
 
     /**
-     * Creates a hamburger-style menu and sets the font to each menu item.
+     * Creates a hamburger-style menu and sets the custom font to each menu item.
      *
      * @param menu The menu to be created.
      * @return Status of the operation.
@@ -584,7 +582,6 @@ public class MainActivity extends AppCompatActivity implements Communicator {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case (R.id.menu_item_source_code):
                 Intent sourceCodeIntent = new Intent(Intent.ACTION_VIEW);
@@ -614,7 +611,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     }
 
     /**
-     * Sets a menu item to a particular font.
+     * Sets a menu item to the custom font.
      *
      * @param menuItem The menu item to change to affect.
      * @param font     The font to be applied.

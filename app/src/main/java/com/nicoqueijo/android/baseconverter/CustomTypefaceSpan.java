@@ -5,6 +5,9 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.style.TypefaceSpan;
 
+/**
+ * Used to set a custom font to layout views.
+ */
 public class CustomTypefaceSpan extends TypefaceSpan {
 
     private final Typeface newType;

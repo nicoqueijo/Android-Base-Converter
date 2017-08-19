@@ -24,8 +24,8 @@ import java.util.Locale;
 
 import java.util.Stack;
 
-/*
-
+/**
+ * Class for the dialog fragment window that lets the user change language.
  */
 public class LanguageChooserDialog extends DialogFragment {
 

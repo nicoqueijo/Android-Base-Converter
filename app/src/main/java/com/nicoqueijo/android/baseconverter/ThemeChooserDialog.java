@@ -17,7 +17,7 @@ import android.widget.TextView;
 import java.util.Stack;
 
 /**
- *
+ * Class for the dialog fragment window that lets the user change theme.
  */
 public class ThemeChooserDialog extends DialogFragment {
 
