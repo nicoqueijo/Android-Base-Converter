@@ -572,6 +572,42 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/choice_malay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_malay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:id="@+id/flag_malaysia"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_outline"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/malaysia" />
+
+                <TextView
+                    android:id="@+id/label_malay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/malay"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>

@@ -45,6 +45,7 @@ public class LanguageChooserDialog extends DialogFragment {
         ko, // KOREAN
         ar, // ARABIC
         hi, // HINDI
+        ms  // MALAY
     }
 
     private Communicator mCommunicator;
@@ -67,6 +68,7 @@ public class LanguageChooserDialog extends DialogFragment {
     private ImageView mSouthKoreaFlag;
     private ImageView mSaudiArabiaFlag;
     private ImageView mIndiaFlag;
+    private ImageView mMalaysiaFlag;
 
     private LinearLayout mEnglishOption;
     private LinearLayout mSpanishOption;
@@ -83,6 +85,7 @@ public class LanguageChooserDialog extends DialogFragment {
     private LinearLayout mKoreanOption;
     private LinearLayout mArabicOption;
     private LinearLayout mHindiOption;
+    private LinearLayout mMalayOption;
 
     private RadioButton mEnglishRadioButton;
     private RadioButton mSpanishRadioButton;
@@ -99,6 +102,7 @@ public class LanguageChooserDialog extends DialogFragment {
     private RadioButton mKoreanRadioButton;
     private RadioButton mArabicRadioButton;
     private RadioButton mHindiRadioButton;
+    private RadioButton mMalayRadioButton;
 
     private TextView mEnglishTextView;
     private TextView mSpanishTextView;
@@ -115,6 +119,7 @@ public class LanguageChooserDialog extends DialogFragment {
     private TextView mKoreanTextView;
     private TextView mArabicTextView;
     private TextView mHindiTextView;
+    private TextView mMalayTextView;
 
     private TextView mLanguageTextView;
     private ScrollView mScrollView;
@@ -154,6 +159,7 @@ public class LanguageChooserDialog extends DialogFragment {
         mSouthKoreaFlag = (ImageView) view.findViewById(R.id.flag_south_korea);
         mSaudiArabiaFlag = (ImageView) view.findViewById(R.id.flag_saudi_arabia);
         mIndiaFlag = (ImageView) view.findViewById(R.id.flag_india);
+        mMalaysiaFlag = (ImageView) view.findViewById(R.id.flag_malaysia);
 
         mEnglishOption = (LinearLayout) view.findViewById(R.id.choice_english);
         mSpanishOption = (LinearLayout) view.findViewById(R.id.choice_spanish);
@@ -170,6 +176,7 @@ public class LanguageChooserDialog extends DialogFragment {
         mKoreanOption = (LinearLayout) view.findViewById(R.id.choice_korean);
         mArabicOption = (LinearLayout) view.findViewById(R.id.choice_arabic);
         mHindiOption = (LinearLayout) view.findViewById(R.id.choice_hindi);
+        mMalayOption = (LinearLayout) view.findViewById(R.id.choice_malay);
 
         mEnglishRadioButton = (RadioButton) view.findViewById(R.id.radio_button_english);
         mSpanishRadioButton = (RadioButton) view.findViewById(R.id.radio_button_spanish);
@@ -186,6 +193,7 @@ public class LanguageChooserDialog extends DialogFragment {
         mKoreanRadioButton = (RadioButton) view.findViewById(R.id.radio_button_korean);
         mArabicRadioButton = (RadioButton) view.findViewById(R.id.radio_button_arabic);
         mHindiRadioButton = (RadioButton) view.findViewById(R.id.radio_button_hindi);
+        mMalayRadioButton = (RadioButton) view.findViewById(R.id.radio_button_malay);
 
         mEnglishTextView = (TextView) view.findViewById(R.id.label_english);
         mSpanishTextView = (TextView) view.findViewById(R.id.label_spanish);
@@ -202,6 +210,7 @@ public class LanguageChooserDialog extends DialogFragment {
         mKoreanTextView = (TextView) view.findViewById(R.id.label_korean);
         mArabicTextView = (TextView) view.findViewById(R.id.label_arabic);
         mHindiTextView = (TextView) view.findViewById(R.id.label_hindi);
+        mMalayTextView = (TextView) view.findViewById(R.id.label_malay);
 
         mLanguageTextView = (TextView) view.findViewById(R.id.label_language);
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_view);
@@ -212,7 +221,7 @@ public class LanguageChooserDialog extends DialogFragment {
                 mFrenchTextView, mGermanTextView, mItalianTextView, mDutchTextView,
                 mPortugueseTextView, mPolishTextView, mRussianTextView, mTurkishTextView,
                 mChineseTextView, mJapaneseTextView, mKoreanTextView, mArabicTextView,
-                mHindiTextView
+                mHindiTextView, mMalayTextView
         };
 
         setCustomFont();
@@ -326,6 +335,13 @@ public class LanguageChooserDialog extends DialogFragment {
             }
         });
 
+        mMalayOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeLanguage(mMalayRadioButton, Language.ms);
+            }
+        });
+
         mCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -375,7 +391,7 @@ public class LanguageChooserDialog extends DialogFragment {
     private void roundFlagImageCorners() {
         CornerRounder.roundImageCorners(mUnitedKingdomFlag, mSpainFlag, mFranceFlag, mGermanyFlag,
                 mItalyFlag, mNetherlandsFlag, mPortugalFlag, mPolandFlag, mRussiaFlag, mTurkeyFlag,
-                mChinaFlag, mJapanFlag, mSouthKoreaFlag, mSaudiArabiaFlag, mIndiaFlag);
+                mChinaFlag, mJapanFlag, mSouthKoreaFlag, mSaudiArabiaFlag, mIndiaFlag, mMalaysiaFlag);
     }
 
     /**
@@ -453,6 +469,9 @@ public class LanguageChooserDialog extends DialogFragment {
         } else if (savedLanguage.equals(Language.hi.name())) {
             mHindiRadioButton.setChecked(true);
             mActiveRadioButton.push(mHindiRadioButton);
+        } else if (savedLanguage.equals(Language.ms.name())) {
+            mMalayRadioButton.setChecked(true);
+            mActiveRadioButton.push(mMalayRadioButton);
         } else {
             mEnglishRadioButton.setChecked(true);
             mActiveRadioButton.push(mEnglishRadioButton);
@@ -494,6 +513,7 @@ public class LanguageChooserDialog extends DialogFragment {
         mKoreanRadioButton.setClickable(false);
         mArabicRadioButton.setClickable(false);
         mHindiRadioButton.setClickable(false);
+        mMalayRadioButton.setClickable(false);
     }
 
     /**

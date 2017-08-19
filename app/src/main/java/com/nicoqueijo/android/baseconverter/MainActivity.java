@@ -567,7 +567,10 @@ public class MainActivity extends AppCompatActivity implements Communicator {
     }
 
     /**
-     * // DOCUMENT THIS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     * Starts an intent/opens a dialog window based on the menu item selected. Source code option
+     * opens the developer's Github profile on a browser app. Theme and language options open a
+     * dialog window to choose a new theme or language. Rate app option opens the app's url in the
+     * Google Play store.
      *
      * @param item The menu item being selected.
      * @return Status of the operation.

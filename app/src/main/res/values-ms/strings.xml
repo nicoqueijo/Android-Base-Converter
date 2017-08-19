@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- GERMAN -->
+    <!-- MALAY -->
 
     <!-- UI labels -->
     <string name="base_from_starting_point">10</string>
@@ -23,22 +23,22 @@
     <string name="button_F">F</string>
     <string name="button_del">DEL</string>
     <string name="button_clr">CLR</string>
-    <string name="base">BASE:</string>
-    <string name="from">VON:</string>
-    <string name="to">NACH:</string>
-    <string name="input">EINGABE:</string>
-    <string name="output">AUSGABE:</string>
-    <string name="title">\t\tBasis-Konverter</string>
-    <string name="source_code">Quellcode</string>
-    <string name="language">Sprache</string>
-    <string name="theme">Thema</string>
-    <string name="rate_app">Bewertungs app</string>
-    <string name="google_play_error">Google Play App kann nicht gefunden werden</string>
-    <string name="launch_browser">Wählen Sie Browser-Anwendung</string>
-    <string name="cancel">Stornieren</string>
-	<string name="copied_to_clipboard">In die Zwischenablage kopiert!</string>
-	<string name="overflow_message">Nummer zu groß!</string>
-	
+    <string name="base">ASAS:</string>
+    <string name="from">DARI:</string>
+    <string name="to">KE:</string>
+    <string name="input">INPUT:</string>
+    <string name="output">OUTPUT:</string>
+    <string name="title">\t\tPenukar Asas</string>
+    <string name="source_code">Kod sumber</string>
+    <string name="language">Bahasa</string>
+    <string name="theme">Tema</string>
+    <string name="rate_app">Kadar aplikasi</string>
+    <string name="google_play_error">Tidak dapat mencari apl Google Play</string>
+    <string name="launch_browser">Pilih aplikasi pelayar</string>
+    <string name="cancel">Batalkan</string>
+    <string name="copied_to_clipboard">Disalin ke papan klip!</string>
+    <string name="overflow_message">Nombor terlalu besar!</string>
+
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>
     <string name="chinese">中文</string>
