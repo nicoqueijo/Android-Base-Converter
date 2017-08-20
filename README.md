@@ -7,10 +7,12 @@ Converts numbers from one base to another supporting base 2 through 16.
 <img src="screenshots/google_play.png" a_blank href="https://play.google.com/store/apps/details?id=com.nicoqueijo.android.baseconverter">
 </a>
 
-<br/>
-<br/>
+## Demo
 
 <img src="screenshots/demo_gif.gif">
+
+## Screenshots
+https://github.com/nicoqueijo/Android-Base-Converter/tree/master/screenshots
 
 ## Features
 * Converts very large numbers
