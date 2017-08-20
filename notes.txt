@@ -3,9 +3,6 @@ Base Converter App
 
 // TODO
 
--Separate java classes to different packages by category
--Move language dialog attributes to styles.xml
--Move theme dialog attributes to styles.xml
 -Final test run (language change, theme change, orientation change, save lang, save theme, different devices on emulator)
 -Record new demo video
 -Take new screenshots
