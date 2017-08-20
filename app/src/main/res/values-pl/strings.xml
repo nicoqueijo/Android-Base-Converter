@@ -38,6 +38,7 @@
     <string name="cancel">Anuluj</string>
 	<string name="copied_to_clipboard">Skopiuj do schowka!</string>
 	<string name="overflow_message">Liczba zbyt duża!</string>
+    <string name="theme_error_message">Ta funkcja jest dostępna tylko w witrynie Marshmallow (poziom API 21) lub wyższej</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

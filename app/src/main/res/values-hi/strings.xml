@@ -38,6 +38,7 @@
     <string name="cancel">रद्द करना</string>
 	<string name="copied_to_clipboard">क्लिपबोर्ड पर नकल!</string>
 	<string name="overflow_message">संख्या बहुत बड़ी है!</string>
+    <string name="theme_error_message">यह सुविधा केवल Marshmallow (एपीआई स्तर 21) या उच्चतर पर उपलब्ध है</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

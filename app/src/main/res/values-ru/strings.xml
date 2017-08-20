@@ -38,6 +38,7 @@
     <string name="cancel">Отмена</string>
 	<string name="copied_to_clipboard">Скопировано в буфер обмена!</string>	
 	<string name="overflow_message">Номер слишком большой!</string>
+    <string name="theme_error_message">Эта функция доступна только в Marshmallow (уровень API 21) или выше</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

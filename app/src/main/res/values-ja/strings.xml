@@ -38,6 +38,7 @@
     <string name="cancel">キャンセル</string>
 	<string name="copied_to_clipboard">クリップボードにコピーされました！</string>
 	<string name="overflow_message">番号が大きすぎます！</string>
+    <string name="theme_error_message">この機能は、マシュマロ（APIレベル21）以上でのみ利用可能です</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

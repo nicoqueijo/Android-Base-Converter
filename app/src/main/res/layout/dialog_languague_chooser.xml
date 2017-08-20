@@ -5,26 +5,13 @@
 
     <TextView
         android:id="@+id/label_language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/LanguageTitleStyle"
         android:paddingEnd="30dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:paddingStart="30dp"
-        android:paddingTop="15dp"
-        android:text="@string/language"
-        android:textSize="24dp"
-        android:textStyle="bold" />
+        android:paddingStart="30dp" />
 
     <ScrollView
         android:id="@+id/scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="60dp"
-        android:fadeScrollbars="false">
+        style="@style/LanguageScrollViewStyle">
 
         <LinearLayout
             android:id="@+id/container_language_list"
@@ -34,577 +21,321 @@
 
             <LinearLayout
                 android:id="@+id/choice_english"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_english"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_united_kingdom"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/united_kingdom" />
 
                 <TextView
                     android:id="@+id/label_english"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/english"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/english" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_spanish"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_spanish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_spain"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/spain" />
 
                 <TextView
                     android:id="@+id/label_spanish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/spanish"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/spanish" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_french"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_french"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_france"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/france" />
 
                 <TextView
                     android:id="@+id/label_french"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/french"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/french" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_german"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_german"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_germany"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/germany" />
 
                 <TextView
                     android:id="@+id/label_german"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/german"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/german" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_italian"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_italian"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_italy"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/italy" />
 
                 <TextView
                     android:id="@+id/label_italian"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/italian"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/italian" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_dutch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_dutch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_netherlands"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/netherlands" />
 
                 <TextView
                     android:id="@+id/label_dutch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/dutch"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/dutch" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_portuguese"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_portuguese"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_portugal"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/portugal" />
 
                 <TextView
                     android:id="@+id/label_portuguese"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/portuguese"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/portuguese" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_polish"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_polish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_poland"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/poland" />
 
                 <TextView
                     android:id="@+id/label_polish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/polish"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/polish" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_russian"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_russian"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_russia"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/russia" />
 
                 <TextView
                     android:id="@+id/label_russian"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/russian"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/russian" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_turkish"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_turkish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_turkey"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/turkey" />
 
                 <TextView
                     android:id="@+id/label_turkish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/turkish"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/turkish" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_chinese"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_chinese"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_china"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/china" />
 
                 <TextView
                     android:id="@+id/label_chinese"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/chinese"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/chinese" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_japanese"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_japanese"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_japan"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/japan" />
 
                 <TextView
                     android:id="@+id/label_japanese"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/japanese"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/japanese" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_korean"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_korean"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_south_korea"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/south_korea" />
 
                 <TextView
                     android:id="@+id/label_korean"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/korean"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/korean" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_arabic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_arabic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_saudi_arabia"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/saudi_arabia" />
 
                 <TextView
                     android:id="@+id/label_arabic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/arabic"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/arabic" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_hindi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_hindi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_india"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/india" />
 
                 <TextView
                     android:id="@+id/label_hindi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/hindi"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/hindi" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/choice_malay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                style="@style/LanguageChoiceStyle">
 
                 <RadioButton
                     android:id="@+id/radio_button_malay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp" />
+                    style="@style/LanguageRadioButtonStyle" />
 
                 <ImageView
                     android:id="@+id/flag_malaysia"
-                    android:layout_width="50dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/round_outline"
-                    android:scaleType="fitXY"
+                    style="@style/LanguageFlagStyle"
                     android:src="@drawable/malaysia" />
 
                 <TextView
                     android:id="@+id/label_malay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/malay"
-                    android:textSize="24dp" />
+                    style="@style/LanguageItemLabelStyle"
+                    android:text="@string/malay" />
 
             </LinearLayout>
 
@@ -614,18 +345,12 @@
 
     <Button
         android:id="@+id/button_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/CancelButtonStyle"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:background="@color/transparent"
-        android:paddingBottom="5dp"
         android:paddingEnd="5dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
         android:paddingStart="5dp"
-        android:text="@string/cancel"
-        android:textAllCaps="true" />
+        android:text="@string/cancel" />
 
 </RelativeLayout>

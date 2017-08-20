@@ -614,7 +614,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
                     themeChooserDialog.show(mFragmentManager, "dialog_theme");
                 } else {
                     AlertDialog themeErrorBuilder = new AlertDialog.Builder(MainActivity.this)
-                            .setMessage(R.string.there_error_message).show();
+                            .setMessage(R.string.theme_error_message).show();
                     TextView themeErrorTextView = (TextView) themeErrorBuilder
                             .findViewById(android.R.id.message);
                     themeErrorTextView.setTypeface(mCustomFontRegular);

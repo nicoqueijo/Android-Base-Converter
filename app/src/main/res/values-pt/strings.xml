@@ -38,6 +38,7 @@
     <string name="cancel">Cancelar</string>
 	<string name="copied_to_clipboard">Copiado para a área de transferência!</string>
 	<string name="overflow_message">Número muito grande!</string>
+    <string name="theme_error_message">Esta funcionalidade só está disponível em Marshmallow (API nível 21) ou superior</string>
 
 
     <!-- Languages -->
