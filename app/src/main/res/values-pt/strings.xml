@@ -28,7 +28,7 @@
     <string name="to">A:</string>
     <string name="input">ENTRADA:</string>
     <string name="output">SAÍDA:</string>
-    <string name="title">\t\tConversor Base</string>
+    <string name="title">\t\tConversor De Base</string>
     <string name="source_code">Código fonte</string>
     <string name="language">Idioma</string>
     <string name="theme">Tema</string>

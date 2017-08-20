@@ -19,7 +19,11 @@
             android:id="@+id/themes_first_row"
             style="@style/ThemeRowStyle">
 
-            <RelativeLayout style="@style/ThemeOptionStyle">
+            <RelativeLayout
+                style="@style/ThemeOptionStyle"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp">
 
                 <ImageView
                     android:id="@+id/option_theme_purple"
@@ -33,7 +37,11 @@
 
             </RelativeLayout>
 
-            <RelativeLayout style="@style/ThemeOptionStyle">
+            <RelativeLayout
+                style="@style/ThemeOptionStyle"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
                 <ImageView
                     android:id="@+id/option_theme_indigo"
@@ -48,7 +56,11 @@
 
             </RelativeLayout>
 
-            <RelativeLayout style="@style/ThemeOptionStyle">
+            <RelativeLayout
+                style="@style/ThemeOptionStyle"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp">
 
                 <ImageView
                     android:id="@+id/option_theme_pink"
@@ -69,7 +81,11 @@
             style="@style/ThemeRowStyle"
             android:layout_below="@id/themes_first_row">
 
-            <RelativeLayout style="@style/ThemeOptionStyle">
+            <RelativeLayout
+                style="@style/ThemeOptionStyle"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp">
 
                 <ImageView
                     android:id="@+id/option_theme_teal"
@@ -83,7 +99,11 @@
 
             </RelativeLayout>
 
-            <RelativeLayout style="@style/ThemeOptionStyle">
+            <RelativeLayout
+                style="@style/ThemeOptionStyle"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp">
 
                 <ImageView
                     android:id="@+id/option_theme_green"
@@ -97,7 +117,11 @@
 
             </RelativeLayout>
 
-            <RelativeLayout style="@style/ThemeOptionStyle">
+            <RelativeLayout
+                style="@style/ThemeOptionStyle"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp">
 
                 <ImageView
                     android:id="@+id/option_theme_orange"
