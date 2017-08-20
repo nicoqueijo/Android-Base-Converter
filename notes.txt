@@ -3,9 +3,3 @@ Base Converter App
 
 // TODO
 
--Final test run (language change, theme change, orientation change, save lang, save theme, different devices on emulator)
--Record new demo video
--Take new screenshots
--Update README with new features
--Update Google play description with new screenshots
--Update Google play with new desciption
