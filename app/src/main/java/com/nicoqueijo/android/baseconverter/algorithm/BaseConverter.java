@@ -1,4 +1,4 @@
-package com.nicoqueijo.android.baseconverter;
+package com.nicoqueijo.android.baseconverter.algorithm;
 
 /**
  * Provides static methods to convert a number from one base to another supporting bases 2 through 16.
@@ -16,7 +16,7 @@ public class BaseConverter {
      * @param baseTo     The desired base of the number after the conversion.
      * @return The resulting number after the conversion.
      */
-    protected static String baseConverter(String inputValue, int baseFrom, int baseTo) {
+    public static String baseConverter(String inputValue, int baseFrom, int baseTo) {
         String result = "";
         result = anythingToBaseTen(inputValue, baseFrom);
         result = baseTenToAnything(result, baseTo);

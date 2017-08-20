@@ -1,4 +1,4 @@
-package com.nicoqueijo.android.baseconverter;
+package com.nicoqueijo.android.baseconverter.activity;
 
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
@@ -13,6 +13,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -26,11 +27,20 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nicoqueijo.android.baseconverter.helper.CustomTypefaceSpan;
+import com.nicoqueijo.android.baseconverter.R;
+import com.nicoqueijo.android.baseconverter.helper.SystemInfo;
+import com.nicoqueijo.android.baseconverter.algorithm.BaseConverter;
+import com.nicoqueijo.android.baseconverter.fragment.LanguageChooserDialog;
+import com.nicoqueijo.android.baseconverter.fragment.ThemeChooserDialog;
+import com.nicoqueijo.android.baseconverter.interfaces.Communicator;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
 /**
  * Android application. Converts numbers from one base to another supporting base 2 through 16.
+ * Implements Communicator in order to be notified when the language or theme has changed.
  */
 public class MainActivity extends AppCompatActivity implements Communicator {
 
@@ -134,7 +144,11 @@ public class MainActivity extends AppCompatActivity implements Communicator {
         mSharedPreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         setLocale(mSharedPreferences.getString("language", SystemInfo.SYSTEM_LOCALE));
         setTheme(mSharedPreferences.getInt("theme", R.style.AppThemePurple));
-        setContentView(R.layout.activity_main);
+        if (SystemInfo.isRunningLollipopOrHigher()) {
+            setContentView(R.layout.activity_main);
+        } else {
+            setContentView(R.layout.activity_main_static_theme);
+        }
 
         mCustomFontSemiBold = Typeface.createFromAsset(getAssets(), EXO_2_SEMIBOLD_FONT_PATH);
         mCustomFontRegular = Typeface.createFromAsset(getAssets(), EXO_2_REGULAR_FONT_PATH);
@@ -575,7 +589,8 @@ public class MainActivity extends AppCompatActivity implements Communicator {
      * Starts an intent/opens a dialog window based on the menu item selected. Source code option
      * opens the developer's Github profile on a browser app. Theme and language options open a
      * dialog window to choose a new theme or language. Rate app option opens the app's url in the
-     * Google Play store.
+     * Google Play store. Theme change feature only works on API levels higher than 19. If user is
+     * running on API level 19 or lower an alert dialog shows an appropriate message.
      *
      * @param item The menu item being selected.
      * @return Status of the operation.
@@ -594,8 +609,16 @@ public class MainActivity extends AppCompatActivity implements Communicator {
                 languageChooserDialog.show(mFragmentManager, "dialog_language");
                 break;
             case (R.id.menu_item_theme):
-                ThemeChooserDialog themeChooserDialog = new ThemeChooserDialog();
-                themeChooserDialog.show(mFragmentManager, "dialog_theme");
+                if (SystemInfo.isRunningLollipopOrHigher()) {
+                    ThemeChooserDialog themeChooserDialog = new ThemeChooserDialog();
+                    themeChooserDialog.show(mFragmentManager, "dialog_theme");
+                } else {
+                    AlertDialog themeErrorBuilder = new AlertDialog.Builder(MainActivity.this)
+                            .setMessage(R.string.there_error_message).show();
+                    TextView themeErrorTextView = (TextView) themeErrorBuilder
+                            .findViewById(android.R.id.message);
+                    themeErrorTextView.setTypeface(mCustomFontRegular);
+                }
                 break;
             case (R.id.menu_item_rate):
                 Intent rateAppIntent = new Intent(Intent.ACTION_VIEW);

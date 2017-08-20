@@ -36,8 +36,9 @@
     <string name="google_play_error">Unable to find Google Play app</string>
     <string name="launch_browser">Select browser app</string>
     <string name="cancel">Cancel</string>
-	<string name="copied_to_clipboard">Copied to clipboard!</string>
-	<string name="overflow_message">Number too large!</string>
+    <string name="copied_to_clipboard">Copied to clipboard!</string>
+    <string name="overflow_message">Number too large!</string>
+    <string name="there_error_message">This feature is only available on Marshmallow (API level 21) or higher</string>
 
     <!-- Languages -->
     <string name="arabic">العَرَبِيَّة</string>

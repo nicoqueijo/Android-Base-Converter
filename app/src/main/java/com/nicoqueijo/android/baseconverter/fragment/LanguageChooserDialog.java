@@ -1,4 +1,4 @@
-package com.nicoqueijo.android.baseconverter;
+package com.nicoqueijo.android.baseconverter.fragment;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -19,6 +19,12 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.nicoqueijo.android.baseconverter.helper.CornerRounder;
+import com.nicoqueijo.android.baseconverter.activity.MainActivity;
+import com.nicoqueijo.android.baseconverter.R;
+import com.nicoqueijo.android.baseconverter.helper.SystemInfo;
+import com.nicoqueijo.android.baseconverter.interfaces.Communicator;
 
 import java.util.Locale;
 

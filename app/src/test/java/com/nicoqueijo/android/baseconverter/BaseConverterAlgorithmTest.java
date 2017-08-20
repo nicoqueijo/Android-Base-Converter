@@ -1,5 +1,7 @@
 package com.nicoqueijo.android.baseconverter;
 
+import com.nicoqueijo.android.baseconverter.algorithm.BaseConverter;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

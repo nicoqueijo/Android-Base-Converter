@@ -1,4 +1,4 @@
-package com.nicoqueijo.android.baseconverter;
+package com.nicoqueijo.android.baseconverter.helper;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;

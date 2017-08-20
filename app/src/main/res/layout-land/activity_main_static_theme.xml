@@ -76,7 +76,7 @@
 
                 <SeekBar
                     android:id="@+id/seekbar_from_controller"
-                    style="@style/SeekBarStyle"/>
+                    style="@style/SeekBarStyleStaticTheme"/>
 
             </LinearLayout>
 
@@ -121,7 +121,7 @@
 
                 <SeekBar
                     android:id="@+id/seekbar_to_controller"
-                    style="@style/SeekBarStyle"/>
+                    style="@style/SeekBarStyleStaticTheme"/>
 
             </LinearLayout>
 
@@ -167,19 +167,19 @@
 
                 <Button
                     android:id="@+id/button_A"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_A"
                     android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/button_B"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_B"
                     android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/button_C"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_C"
                     android:visibility="invisible"/>
 
@@ -192,19 +192,19 @@
 
                 <Button
                     android:id="@+id/button_D"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_D"
                     android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/button_E"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_E"
                     android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/button_F"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_F"
                     android:visibility="invisible"/>
 
@@ -217,19 +217,19 @@
 
                 <Button
                     android:id="@+id/button_1"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_1"
                     android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_2"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_2"
                     android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_3"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_3"
                     android:visibility="visible"/>
 
@@ -242,19 +242,19 @@
 
                 <Button
                     android:id="@+id/button_4"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_4"
                     android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_5"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_5"
                     android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_6"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_6"
                     android:visibility="visible"/>
 
@@ -267,19 +267,19 @@
 
                 <Button
                     android:id="@+id/button_7"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_7"
                     android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_8"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_8"
                     android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_9"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_9"
                     android:visibility="visible"/>
 
@@ -292,19 +292,19 @@
 
                 <Button
                     android:id="@+id/button_0"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_0"
                     android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_clr"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_clr"
                     android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/button_del"
-                    style="@style/ButtonStyle"
+                    style="@style/ButtonStyleStaticTheme"
                     android:text="@string/button_del"
                     android:visibility="visible"/>
 
