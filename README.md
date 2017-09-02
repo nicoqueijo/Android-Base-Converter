@@ -3,6 +3,8 @@ Android application.
 
 Converts numbers from one base to another in a dynamic fashion supporting base 2 through 16.
 
+## Installation
+
 <a href="https://play.google.com/store/apps/details?id=com.nicoqueijo.android.baseconverter" target="_blank">
 <img src="screenshots/google_play.png" a_blank href="https://play.google.com/store/apps/details?id=com.nicoqueijo.android.baseconverter">
 </a>
