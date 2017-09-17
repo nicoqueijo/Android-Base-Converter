@@ -1,4 +1,4 @@
-package com.nicoqueijo.android.baseconverter.activity;
+package com.nicoqueijo.android.baseconverter.activities;
 
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
@@ -27,12 +27,12 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nicoqueijo.android.baseconverter.helper.CustomTypefaceSpan;
+import com.nicoqueijo.android.baseconverter.helpers.CustomTypefaceSpan;
 import com.nicoqueijo.android.baseconverter.R;
-import com.nicoqueijo.android.baseconverter.helper.SystemInfo;
-import com.nicoqueijo.android.baseconverter.algorithm.BaseConverter;
-import com.nicoqueijo.android.baseconverter.fragment.LanguageChooserDialog;
-import com.nicoqueijo.android.baseconverter.fragment.ThemeChooserDialog;
+import com.nicoqueijo.android.baseconverter.helpers.SystemInfo;
+import com.nicoqueijo.android.baseconverter.algorithms.BaseConverter;
+import com.nicoqueijo.android.baseconverter.fragments.LanguageChooserDialog;
+import com.nicoqueijo.android.baseconverter.fragments.ThemeChooserDialog;
 import com.nicoqueijo.android.baseconverter.interfaces.Communicator;
 
 import java.util.ArrayList;
@@ -278,13 +278,11 @@ public class MainActivity extends AppCompatActivity implements Communicator {
             // Unused but declaration required for listener.
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             // Unused but declaration required for listener.
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
 

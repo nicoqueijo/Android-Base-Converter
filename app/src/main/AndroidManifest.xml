@@ -8,7 +8,7 @@
         android:label="@string/title"
         android:supportsRtl="true"
         android:theme="@style/AppThemePurple">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

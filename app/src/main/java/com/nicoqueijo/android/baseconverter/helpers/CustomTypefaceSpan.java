@@ -1,4 +1,4 @@
-package com.nicoqueijo.android.baseconverter.helper;
+package com.nicoqueijo.android.baseconverter.helpers;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;

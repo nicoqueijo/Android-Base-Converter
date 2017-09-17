@@ -1,6 +1,6 @@
 package com.nicoqueijo.android.baseconverter;
 
-import com.nicoqueijo.android.baseconverter.algorithm.BaseConverter;
+import com.nicoqueijo.android.baseconverter.algorithms.BaseConverter;
 
 import org.junit.Test;
 

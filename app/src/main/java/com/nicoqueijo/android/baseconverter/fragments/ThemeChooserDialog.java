@@ -1,4 +1,4 @@
-package com.nicoqueijo.android.baseconverter.fragment;
+package com.nicoqueijo.android.baseconverter.fragments;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nicoqueijo.android.baseconverter.activity.MainActivity;
+import com.nicoqueijo.android.baseconverter.activities.MainActivity;
 import com.nicoqueijo.android.baseconverter.R;
 import com.nicoqueijo.android.baseconverter.interfaces.Communicator;
 

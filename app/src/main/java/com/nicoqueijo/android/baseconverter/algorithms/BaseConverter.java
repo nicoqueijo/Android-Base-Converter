@@ -1,4 +1,4 @@
-package com.nicoqueijo.android.baseconverter.algorithm;
+package com.nicoqueijo.android.baseconverter.algorithms;
 
 /**
  * Provides static methods to convert a number from one base to another supporting bases 2 through 16.

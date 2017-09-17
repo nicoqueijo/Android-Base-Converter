@@ -1,8 +1,4 @@
-package com.nicoqueijo.android.baseconverter.helper;
-
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
+package com.nicoqueijo.android.baseconverter.helpers;
 
 import java.util.Locale;
 
