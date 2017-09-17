@@ -22,5 +22,8 @@ https://github.com/nicoqueijo/Android-Base-Converter/tree/master/screenshots
 * Six different themes
 * Copy/paste the input/output
 
+## Architecture
+<img src="screenshots/architecture.png">
+
 ## Acknowledgments
 * App icon made by Freepik from www.flaticon.com
