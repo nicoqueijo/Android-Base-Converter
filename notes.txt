@@ -1,5 +1,24 @@
 Base Converter App
 
-
-// TODO
-
+Architecture design:
+	Alphanumeric button presses:
+		Add the new character in input
+		Perform conversion
+		Output new result
+	Delete button press:
+		Remove last character in input 
+		Perform conversion
+		Output new result
+	Clear button press:
+		Clear input
+		Clear ouput
+	Change in base-from bar:
+		Clear input
+		Clear output
+	Change in base-to bar:
+		Perform conversion
+		Output new result
+	Change in orientation:
+		Save app data
+		Change app layout
+		Restore app data
